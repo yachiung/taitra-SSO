@@ -45,7 +45,7 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
   
     &::after{content: ''; position: absolute; top: 50%; right: .9em;
       width: 8px; height: 8px;  margin-top: -5px;
-      border: 2px solid $msgHint; border-bottom: none; border-left: none;
+      border: 2px solid $borderColorDark; border-bottom: none; border-left: none;
       transform: rotate(45deg);
     }
     &:hover{box-shadow: #fff 0 0 0 1px, $borderColorDark 0 0 0 3px; }
