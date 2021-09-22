@@ -1,0 +1,51 @@
+// 其他網站連結
+.otherSites{
+  position: relative;
+  width: 96vw; margin: 1em auto; padding: 3em 50px;
+
+  .slick-slide{
+    margin: 5px; text-align: center;
+    a{
+      display: block; max-width: 106px; 
+      margin: 0 auto; padding: 5px;
+      color: $fontColor; text-decoration: none;
+      transition: .2s;
+      &:hover{box-shadow: $borderColor 0 0 0 1px;}
+    }
+    img{ display: block; width: 100%;max-height: 106px; margin: 0 auto; }
+    p{margin:8px 0 0; max-width: 100%;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+      font-size: .95em;
+    }
+  }
+
+  //slick 套件的箭頭
+  .slick-arrow{
+    position: absolute; top: 50%; z-index: 9;
+    margin: -22px 0 0 0;padding: 0;
+    width: 44px; height: 44px; line-height: 50px; cursor: pointer;
+    border: none; text-align: center; font-size: 0;
+    background: transparentize($grayDark, .5); border-radius: 50%;
+    transition: .2s;
+    &::before {
+      content: ''; position: absolute; top: 50%;
+      width: 11px; height: 11px; margin-top: -7px;
+      border: 3px solid #fff; border-bottom: none; border-right: none;
+    }
+
+    &:hover{
+      background-color: $grayDark; box-shadow: none;
+      &::before{border-color: #fff;}
+    }
+    &.slick-prev{ left: 0;
+      &::before {margin-left: -3px; transform: rotate(-45deg);}
+    }
+    &.slick-next{ right: 0;
+      &::before {margin-left: -9px; transform: rotate(135deg);}
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    width: 94vw;
+  }
+}

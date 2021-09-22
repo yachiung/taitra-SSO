@@ -1,0 +1,21 @@
+// 表單送出按鈕群 //////////
+.btnDv{
+  display: flex; justify-content: space-between;
+  clear:both; text-align:center;
+  margin:0 auto;padding: 1.5em 0 5px;
+  border-top: 1px solid $borderColor;
+  input[type="button"], input[type="submit"], input[type="reset"], 
+  button {
+    flex:1 1 45%;
+    margin: 4px; min-width: 6em; height: 3.2em;border-radius: 2em;
+    &:only-child{min-width: 100%;}
+  }
+  .button{ 
+    margin: 4px; flex:1 1 45%;
+    &>a{ display: block; margin: 0; min-width: 6em; height: 3.2em;border-radius: 2em;}
+    &:only-child>a{width: 100%;}
+  }
+  input[type="button"], input[type="submit"], input[type="reset"], 
+  button{&:only-child{min-width: 10em;}}
+
+}

@@ -1,0 +1,58 @@
+body{
+  padding: 0; margin: 0;
+  *{box-sizing: border-box;}
+  font-size: 1em;
+}
+
+a{ color: $linkColor;}
+
+%mainSection{
+  padding: 2em 4vw; margin: 0 auto;
+}
+
+
+.webHeader{
+  position: relative;
+  border-bottom: 1px solid $borderColor;
+  h1{ 
+    margin: 0 6em 0 4vw; padding: 5px 0; height: 48px;
+    font-size: 1em; 
+    img{
+      display: block; height: 100%;
+      margin: 0;
+    }
+  }
+}
+.topLinks{
+  position: absolute; right: 4vw; top: 11px;
+  a{
+    text-decoration: none; color: $fontColor; padding: 0 5px;
+    border: 1px solid $borderColorLight;
+    transition: .2s;
+    &:hover{border-color: $linkColor; color: $linkColor}
+  }
+}
+
+.webFooter{
+  @extend %mainSection;
+  padding-top: 2.5em; padding-bottom: 2.5em;
+  margin-top: 5em;
+  background-color: $footerBgc; color: $fontInvert;
+  p{margin:1em 0;
+   &:first-child{ margin-top:0;}
+  }
+
+  ul{list-style: none; margin:0; padding: 0;}
+  .links{ overflow: hidden; margin-top: 2em;
+    li{
+      float: left; margin: 0; padding: 0;
+      &+li{ margin-left: 1.5em;}
+      a{display: block; color: lighten($linkColor, 45%);
+        text-decoration: none;
+        border-bottom: 1px solid lighten($linkColor, 45%);
+
+        &:hover{border-bottom-width: 2px;}
+      }
+    }
+  }
+}

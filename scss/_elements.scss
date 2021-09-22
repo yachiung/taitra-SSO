@@ -1,0 +1,167 @@
+// 區塊標題
+h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
+
+// 顯示密碼（圖示）
+.viewIcon{
+  position: relative;
+  display: inline-block; vertical-align: top; cursor: pointer;
+  margin:4px 2px 0;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: none; border: none; outline: none;
+  text-indent: -10em; overflow: hidden;  
+  background: $grayDark url(../images/icon_eye.png) no-repeat center center;
+  background-size: 32px; transition: .2s;
+  &:hover{ 
+    background-color: $grayDark;
+    box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+  }
+  &:focus{
+    background-color: $primaryColor;
+    box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
+  }
+  &::before{
+    display: none;
+    content: '';position: absolute; left: 0; right: 0;
+    top: 50%;height: 4px;  margin-top: -2px;
+    transform: rotate(-45deg);
+    background-color: #fff;
+
+  }
+
+  &.pwShow{
+    &::before{ display: block;}
+  }
+}
+// more
+.more{
+  overflow: hidden; padding: 5px;
+  a{ float: right; height: 2.4em; line-height: 2.4;
+    position: relative;
+    padding: 0 2em 0 .8em; text-decoration: none;
+    border-radius: 1.5em;
+    transition: .2s;
+    box-shadow: $borderColor 0 0 0 1px;
+    background: $bodyBgc; color: $fontColor;
+  
+    &::after{content: ''; position: absolute; top: 50%; right: .9em;
+      width: 8px; height: 8px;  margin-top: -5px;
+      border: 2px solid $msgHint; border-bottom: none; border-left: none;
+      transform: rotate(45deg);
+    }
+    &:hover{box-shadow: #fff 0 0 0 1px, $borderColorDark 0 0 0 3px; }
+  }
+}
+
+// 連結，像 button 樣式
+.linkBtn { display: inline-block;
+  &>a {
+    display: block; text-align: center; text-decoration: none;outline: none;
+    height: 2.8em; line-height: 2.7; border-radius: 2em;
+    padding: 0 1em; margin: 3px;
+    border: 1px solid $borderColor;
+    color: $fontColor; background: $bodyBgc;
+    transition: .2s; 
+    &:hover, &:focus {
+      border-color: #fff;
+      box-shadow: $borderColorDark 0 0 0 2px;
+    }
+  }
+}
+
+// （中間有字的）分隔線
+.hr{
+  margin: 2em 4vw; position: relative;
+  text-align: center; 
+  &::before{
+    content: '';
+    position: absolute; left: 0; top: 50%; width: 100%; 
+    height: 4px; margin-top: -2px; border-radius: 2px;
+    background-color: $borderColor;
+  }
+  span{display: inline-block; z-index: 3; position: relative;
+    padding: 0;font-size: 1em;
+    width: 2em; height: 2em; line-height: 2em; border-radius: 50%;
+    background: $bodyBgc; box-shadow: $borderColor 0 0 0 2px;
+  }
+}
+
+
+// 一整塊的錯誤訊息（待刪除）
+.warning{
+  padding: 1em 4vw; background: #d33; color: #fff;
+  line-height: 1.8;
+  p{margin:1em 0;
+    &:first-child{margin-top: 0;}
+    &:last-child{margin-bottom: 0;}
+  }
+}
+
+// 錯誤、提示、警告...訊息
+.msg, .msgBlock {
+  position: relative;
+  &::before{
+    content: ''; position: absolute;
+    border-radius: 50%;
+    background: url(../images/icon_msg.svg) no-repeat center 0;
+  }
+
+  &.error::before{ background-color: $msgError;}
+  &.hint::before{ background-color: $msgHint;}
+  &.correct::before{ background-color: $msgSafe;}
+  &.question::before{ background-color: $msgQuestion;}
+}
+.msg{
+  line-height: 1.8; font-size: 1rem;
+  
+  padding-left: 2em;
+  margin: 1px auto 5px;
+
+  &::before{
+    left: 4px; top:.15em;
+    width: 1.5em; height: 1.5em;
+    background-size: 16px;
+  }
+  &.error::before{ background-position: center 4px;}
+  &.correct::before{ background-position: center -16px;}
+  &.hint::before{ background-position: center -36px;}
+  &.question::before{ background-position: center -56px;}
+
+  &.error{ color: $msgError;}
+  &.hint{ color: $msgHint;}
+  &.correct{ color: $msgSafe;}
+  &.question{ color: $msgQuestion;}
+
+}
+.msgBlock{
+  padding: 1.2em 1em; margin: 1em 4vw;
+  line-height: 1.8; font-size: 1rem;
+  border: 1px solid $msgQuestion;
+  border-left-width: 4px;
+  &.error{ border-color: $msgError; }
+  &.correct{ border-color: $msgSafe; }
+  &.hint{ border-color: $msgHint; }
+  &.question{ border-color: $msgQuestion; }
+
+  &::before{ 
+    width: 44px; height: 44px; left: .85em; top: 1em;
+    background-size:  30px;
+  }
+  &.error, &.hint, &.correct, &.question{
+    padding-left: 4.5em;
+  }
+
+  &.error::before{ background-position: center 8px;}
+  &.correct::before{ background-position: center -30px;}
+  &.hint::before{ background-position: center -68px;}
+  &.question::before{ background-position: center -105px;}
+
+  p{margin: 0;
+    &+p{margin-top: 1.5em;}
+  }
+}
+
+// 我不是機器人
+.recaptcha{
+  margin: 1em auto;
+ img{display: block; width: 100%;}
+}
