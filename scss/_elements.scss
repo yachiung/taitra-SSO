@@ -159,6 +159,8 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
     &+p{margin-top: 1.5em;}
   }
 }
+body>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
+.webHeader+.msgBlock{ margin-top: 4vw;}
 
 // 我不是機器人
 .recaptcha{
