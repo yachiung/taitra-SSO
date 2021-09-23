@@ -26,11 +26,11 @@ a{ color: $linkColor;}
   }
 }
 .topLinks{
-  list-style: none; margin:0; padding: 0; line-height: 1.1;
-  position: absolute; right: 4vw; top: 16px;
+  list-style: none; margin:0; padding: 0; line-height: 1.2;
+  position: absolute; right: 4vw; top: 15px;
   li{display: inline-block; margin: 0 0 0 2px;}
   a{
-    text-decoration: none; color: $fontColor; padding: 0 5px;
+    text-decoration: none; color: $fontColor; padding:2px 5px;
     border: 1px solid $borderColorLight;
     transition: .2s;
     &:hover{border-color: $linkColor; color: $linkColor}

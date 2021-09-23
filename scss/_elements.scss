@@ -150,7 +150,7 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
     padding-left: 4.5em;
   }
 
-  &.error::before{ background-position: center 8px;}
+  &.error::before{ background-position: center 7px;}
   &.correct::before{ background-position: center -30px;}
   &.hint::before{ background-position: center -68px;}
   &.question::before{ background-position: center -105px;}
@@ -163,5 +163,5 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
 // 我不是機器人
 .recaptcha{
   margin: 1em auto;
-  img{display: block; width: 100%;}
+  img{display: block; width: 100%; max-width: 308px; margin: 0 auto;}
 }
