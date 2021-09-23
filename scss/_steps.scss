@@ -1,5 +1,5 @@
 .steps{
-  padding: 1.7em 0 1.5em; margin: 0 ; text-align: center;
+  padding: 1.3em 0 .6em; margin:0; text-align: center;
   overflow: hidden;
   ul, ol{
     display: flex; justify-content: space-between;
@@ -31,5 +31,11 @@
         }
       }
     }
+  }
+
+
+  &.fixed{
+    position: fixed; top: 0; right: 0; left: 0; z-index: 999;
+    background-color: rgba(255,255,255,.95); box-shadow: $shadow 0 2px 6px;
   }
 }

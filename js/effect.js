@@ -50,33 +50,52 @@ $(function(){
   })
 
 
-    // ----------------------------------------------------- slick 參數設定
-    $('.otherSites').slick({
-      arrows: true,                       //左右箭頭
-      autoplay: true,                    //自動播放
-      autoplaySpeed: 3000,                //自動播放秒數
-      dots: false,                        //顯示圓點
-      draggable: true,                    //滑鼠可以拖曳
-      infinite: true,                     //無限輪播
-      pauseOnHover: true,                 //滑鼠移過後暫停自動撥放
-      rtl: false,                         //改變輪播方向
-      slidesToShow: 2,                    //一次顯示幾張
-      slidesToScroll: 1,                  //一次輪播幾張
-      vertical: false,                   //改成垂直方向
-      mobileFirst:true,
-      responsive: [
-        {
-          breakpoint: 400,
-          settings: {
-            slidesToShow: 3,
-          }
-        },
-        {
-          breakpoint: wwMedium,
-          settings: {
-            slidesToShow: 4,
-          }
+  // ----------------------------------------------------- slick 參數設定
+  $('.otherSites').slick({
+    arrows: true,                       //左右箭頭
+    autoplay: true,                    //自動播放
+    autoplaySpeed: 3000,                //自動播放秒數
+    dots: false,                        //顯示圓點
+    draggable: true,                    //滑鼠可以拖曳
+    infinite: true,                     //無限輪播
+    pauseOnHover: true,                 //滑鼠移過後暫停自動撥放
+    rtl: false,                         //改變輪播方向
+    slidesToShow: 2,                    //一次顯示幾張
+    slidesToScroll: 1,                  //一次輪播幾張
+    vertical: false,                   //改成垂直方向
+    mobileFirst:true,
+    responsive: [
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 3,
         }
-      ]
-    });
+      },
+      {
+        breakpoint: wwMedium,
+        settings: {
+          slidesToShow: 4,
+        }
+      }
+    ]
+  });
+
+
+  // 固定步驟
+  var _steps = $('.steps');
+  const hh = $('.webHeader').outerHeight();
+  const stepHeight = _steps.innerHeight();
+  _window.scroll(function(){
+    if( $(this).scrollTop() > hh) {
+      _steps.addClass('fixed');
+      _body.offset({top: stepHeight});
+    } else {
+      _steps.removeClass('fixed');
+      _body.offset({top: 0});
+
+    }
+  })
+
+
+
 })
