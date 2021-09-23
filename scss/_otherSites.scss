@@ -1,12 +1,12 @@
 // 其他網站連結
 .otherSites{
   position: relative;
-  width: 96vw; margin: 1em auto; padding: 2em 50px 0;
+  width: 96vw; margin: 1em auto; padding: 2em 50px;
   .slick-slide{
-    margin: 5px; text-align: center;
+    margin: 5px 0; text-align: center;
     a{
-      display: block; max-width: 106px; 
-      margin: 0 auto; padding: 5px;
+      display: block; 
+      margin: 0 auto; padding: 5px; max-width: 106px; 
       color: $fontColor; text-decoration: none;
       transition: .2s;
       &:hover{box-shadow: $borderColor 0 0 0 1px;}
@@ -21,17 +21,16 @@
   //slick 套件的箭頭
   .slick-arrow{
     position: absolute; top: 50%; z-index: 9;
-    margin: -22px 0 0 0;padding: 0;
-    width: 44px; height: 44px; line-height: 50px; cursor: pointer;
-    border: none; text-align: center; font-size: 0;
-    background: transparentize($grayDark, .5); border-radius: 50%;
+    width: 44px; height: 44px; margin: -22px 0 0 0; padding: 0;
+    line-height: 50px; border-radius: 50%;
+    border: none; text-align: center; font-size: 0;cursor: pointer;
+    background: transparentize($grayDark, .5);
     transition: .2s;
     &::before {
       content: ''; position: absolute; top: 50%;
       width: 11px; height: 11px; margin-top: -7px;
       border: 3px solid #fff; border-bottom: none; border-right: none;
     }
-
     &:hover{
       background-color: $grayDark; box-shadow: none;
       &::before{border-color: #fff;}

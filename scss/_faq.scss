@@ -16,11 +16,10 @@
       }
     }
     .qNumber{
-      display: inline-block; min-width: 2.6em; height: 2.6em; line-height: 2.65; border-radius: 1.5em;
-      text-align: center; margin: 0 5px 0 0;
+      display: inline-block;text-align: center;
+      min-width: 2.6em; height: 2.6em; line-height: 2.65; margin: 0 5px 0 0;
+      border-radius: 1.5em;
       background: $grayDark; color: $fontInvert;
     }
   }
-
-  &+.webFooter{ margin-top: 0; }
 }
