@@ -39,6 +39,15 @@
     input{ padding-right: 54px;}
     .viewIcon{ position: absolute; right: 6px; top: 1.1em; }
   }
-
   .singleCheck{font-size: 1rem;}
+}
+.style2 .formRow{
+  label.shift{
+    background-image: linear-gradient(-15deg,#0957b6 -10%, #14d0de 120%);
+    &.error{
+      background-image: linear-gradient(-15deg,#e61163 , #fe707e );
+      // linear-gradient(to bottom, #F02A76, #F96B87);
+
+    }
+  }
 }

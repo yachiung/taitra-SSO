@@ -36,6 +36,60 @@ a{ color: $linkColor;}
     &:hover{border-color: $linkColor; color: $linkColor}
   }
 }
+// 頁頭 style2
+.style2 .webHeader{
+  position: relative; overflow: hidden;
+  border-bottom: none; padding-bottom: 3px;
+  &::after{
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    // background-image: linear-gradient(to right ,#3fc6d0 -50%, #3e14d8 150%);
+    background-image: linear-gradient(to right ,#28dff4 ,#047cb0, #07cba7, #ffc123, #df2d7a, #8B5DDF);
+    background-size: 600% 200%;
+    background-position: 0 50%;
+    animation: webHeader 16s ease-in-out infinite alternate;
+
+  }
+  h1{ 
+    margin: 0; padding: 4px;  font-size: 1em;
+    &:first-child{margin-left: 4vw;}
+    &+h1{ margin-left: 5px;}
+
+    float: left; width: 64px; height: 64px;
+    img{
+      display: block; height: 100%; width: 100%; object-fit: contain; margin: 0;
+      background: #fff;
+    }
+  }
+
+  .topLinks{ top: 50%; font-size: 13px;
+    margin-top: -25px;
+    li{ margin: 0 0 0 2px;
+      &>a{ display: block; padding: 0; text-align: center;
+        width: 46px; height: 46px; line-height: 45px; border-radius: 50%;
+        border: none;
+        color: #fff;
+        background-image: linear-gradient(20deg,#3fc6d0 -10%, #3e14d8 240%);
+
+        &:hover{ transform: scale(1.1)}
+      }
+
+      &:nth-child(2){
+        &>a{background-image: linear-gradient(20deg,#3fc6d0 -50%, #3e14d8 180%); }
+      }
+    }
+
+  }
+}
+
+@keyframes webHeader {
+  0%{
+    background-position: 0 50%;
+  }
+  100%{
+    background-position: 100% 50%;
+  }
+}
+
 
 // 頁尾
 .webFooter{
@@ -46,7 +100,7 @@ a{ color: $linkColor;}
     border-bottom: 1px solid lighten($linkColor, 45%);
   }
   p{
-    margin:1em 0;
+    margin:.5em 0;
     &:first-child{ margin-top:0;}
   }
 
@@ -60,4 +114,8 @@ a{ color: $linkColor;}
       }
     }
   }
+}
+
+.style2 .webFooter{
+  background-image: linear-gradient( #07abae ,#045f7b );
 }
