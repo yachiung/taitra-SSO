@@ -61,14 +61,14 @@ a{ color: $linkColor;}
     }
   }
 
-  .topLinks{ top: 50%; font-size: 13px;
-    margin-top: -25px;
+  .topLinks{ top: 50%; font-size: 14px;
+    margin-top: -27px;
     li{ margin: 0 0 0 2px;
       &>a{ display: block; padding: 0; text-align: center;
-        width: 46px; height: 46px; line-height: 45px; border-radius: 50%;
+        width: 50px; height: 50px; line-height: 50px; border-radius: 50%;
         border: none;
         color: #fff;
-        background-image: linear-gradient(20deg,#3fc6d0 -10%, #3e14d8 240%);
+        background-image: linear-gradient(30deg,#3fc6d0 -10%, #3e14d8 240%);
 
         &:hover{ transform: scale(1.1)}
       }
