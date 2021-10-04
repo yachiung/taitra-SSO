@@ -111,9 +111,23 @@ $(function(){
         _a.slideUp(400);
         _qaPair.removeClass('show');
       }
-      
     })
+  })
 
+
+  // 水平滑動的頁籤組
+  var _slideInTabSet = $('.slideInTabSet');
+  _slideInTabSet.each(function(){
+    let _this = $(this)
+    let _tabItem = _this.find('.tabItems>li');
+    let i = 0;
+
+    let _blockList = _this.find('.blockList');
+
+    _tabItem.click(function(){
+      $(this).addClass('now').siblings().removeClass('now');
+      i = $(this).index();
+      _blockList.animate({ left: (-100*i) + '%'}, 400) });
   })
 
 

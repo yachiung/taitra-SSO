@@ -1,0 +1,50 @@
+// 左右滑動的頁籤
+.slideInTabSet{
+  outline: 1px solid red;
+
+  .tabItems{
+    list-style: none; margin: 0; padding: 0;
+    display: flex;
+    outline: 1px dashed pink;
+    text-align: center;
+    li{background: #eee;
+      flex:1 1 auto;
+      height: 2.4em; line-height: 2.4; padding: 0 1em;
+      white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+      cursor: pointer;
+      &.now{
+        background: #555; color: #fff
+      }
+    }
+  }
+
+  .slideArea{
+    width: 100%; margin: 10px auto;
+    overflow: visible;
+    position: relative;
+    box-shadow: #c00 0 0 0 1px;
+    
+    
+  }
+  
+  .blockList{
+    display: flex; flex-flow: row nowrap;
+    position: relative; top: 0; left: -200%;
+    outline: 2px dotted lightblue;
+  }
+
+  .slideInBlock{
+    width: 100%; flex: 0 0 100%;
+
+
+
+
+
+  }
+
+}
+
+
+body>.slideInTabSet{
+  @extend %mainSection;
+}

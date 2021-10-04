@@ -1,0 +1,105 @@
+.areaSelectSet{
+  background: paleturquoise;
+padding: 5px;
+  .selected{
+    margin: 5px 0; padding: 0 6em 0 0;
+    background: #fff; border-radius: 4px;
+    position: relative;
+
+    .pool{
+      display: block; min-height: 3em;
+    }
+    .count{
+      position: absolute; right: 56px; top: 50%; margin-top: -.9em;
+      display: inline-block; text-align: center;
+      font-weight: bold; box-shadow: #ccc 0 0 0 1px; border-radius: 4px;
+      height: 1.8em;line-height: 1.8em; min-width:1.8em; padding: 0 .4em; 
+    }
+
+    button.icon_del{
+      position: absolute; right: 5px; top: 50%;
+      margin-top: -1.25em;
+    }
+  }
+
+
+  .areaSearch{
+     margin: 5px 0;
+     background: #fff; border-radius: 4px;
+     display: flex; flex-flow: row nowrap;
+
+     input[type="text"]{
+       border: none;
+       flex:1 1 60%;
+     }
+     button{
+       flex:0 0 3em; width: 3em;
+     }
+  }
+}
+
+.areaList{
+  label{ display: block; min-height: 2em; line-height: 1.5;
+    border: 1px solid transparent;
+    padding: .4em 5px; margin: 5px 0 0 1.5em;
+    &:hover{border-color: #fff;}
+
+
+    &.all{ margin-left: 0; font-weight: bold;}
+  }
+
+
+  .group{
+    padding: .5em 0;
+    &+.group{margin-top: 1em;
+      border-top: 1px dashed #999;
+    }
+  }
+}
+
+
+button[class^="icon_"]{
+  background-color: transparent;
+   width: 2.5em; height: 2.5em; padding: 0;
+   border-radius: 50%;
+}
+
+
+
+// ------------------
+// 偏好議題
+.category{
+  ul{ list-style: none; padding: 0;margin: 0; text-align: center;}
+  li{
+    position: relative;
+    float: left; width: 33.33%; margin: 15px 0; padding: 0;
+    // outline: 1px dashed pink;
+
+    &::after{
+      display: none;
+      content: ''; position: absolute; left: 50%; bottom: 50%;z-index: 9;
+      width: 30px; height: 16px; margin: auto auto -10px -15px;
+      border: 4px solid #fff; border-top: none; border-right: none;
+      transform: rotate(-45deg);      
+    }
+    &::before{
+      display: none;
+      content: ''; position: absolute; left: 50%; bottom: 6px;
+      background-color: #0008;border-radius: 50%;
+      width: 24vw; height: 24vw; margin-left: -12vw;
+      z-index: 8;
+    }
+    
+    img{
+      display: block; position: relative; margin: 6px auto;
+      width: 24vw; height: 24vw; object-fit: cover; border-radius: 50%;
+    }
+
+    &.selected{
+      img{
+        box-shadow: #fff 0 0 0 2px, #d00 0 0 0 5px;
+      }
+      &::before, &::after{display: block;}
+    }
+  }
+}
