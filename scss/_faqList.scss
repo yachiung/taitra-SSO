@@ -1,0 +1,36 @@
+.qaList{
+  @extend %mainSection;
+  ul{list-style: none; margin: 0;padding: 0;}
+  li{ line-height: 1.7;
+    margin: 4px 0 8px; padding: 0 0 6px;
+    border: 1px solid #bbb; border-radius: 12px;
+    &:hover{ border-color: #666;
+      .q::after{border-color: #000;}
+    }
+    .q, .a{ padding: 15px;}
+    .q{ 
+      position: relative;
+      padding: 18px 15px 10px;
+      cursor: pointer;
+      &::after{
+        position: absolute; right: 20px; top: 24px;
+        content: ''; width: 8px;height: 8px;
+        border: 2px solid #888; border-left: none; border-top: none;
+        transform: rotate(45deg);
+        transition: .25s;
+      }
+    }
+    .a{display: none;
+      padding: 10px 15px 12px; border-top: 1px solid #ddd;
+    }
+
+    &.show{
+      .q{
+        &::after{
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+  }
+}

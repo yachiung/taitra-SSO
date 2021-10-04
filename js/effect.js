@@ -96,6 +96,26 @@ $(function(){
     }
   })
 
+  // 常見問題開合
+  var _qaList = $('.qaList');
+  _qaList.each(function(){
+    let _q = $(this).find('.q');
+    
+    _q.click(function(){
+      let _a = $(this).next('.a');
+      let _qaPair = $(this).parent('li');
+      if( _a.is(':hidden') ){
+        _a.slideDown(400);
+        _qaPair.addClass('show');
+      } else {
+        _a.slideUp(400);
+        _qaPair.removeClass('show');
+      }
+      
+    })
+
+  })
+
 
 
 })
