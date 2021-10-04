@@ -12,6 +12,10 @@ a{ color: $linkColor;}
 }
 // % % % % % % % % % % % % //
 
+.main{
+  @extend %mainSection;
+}
+
 
 // 頁頭
 .webHeader{
