@@ -94,8 +94,7 @@ input[type="button"] {
   height: 3em; line-height: 3em;
   padding: 0 1em; margin: 3px;
   border: 1px solid $btnBg1;
-  color: $btnColor;
-  background-color: $btnBg1;
+  background-color: $btnBg1; color: $btnColor;
   vertical-align: middle;
   border-radius: 6px; cursor: pointer; 
   outline: none; transition: .2s;
@@ -114,8 +113,8 @@ input[type="button"] {
     height: 3em; line-height: 3em;
     padding: 0 1em; margin: 3px;
     outline: none; transition: .2s;
-    background-color: $bodyBgc; color: $primaryColor;
     border: 1px solid $btnBg1;
+    background-color: $bodyBgc; color: $primaryColor;
     &:hover {
       box-shadow: $btnBg2 0 0 0 1px;
     }
