@@ -3,7 +3,7 @@ $primaryColor: #3f5e80; //主色
 $secondaryColor: #f16113; //輔色
 $lightColor: #ebb71c; //點綴
 $linkColor: #007cc9; //連結文字顏色
-$importantColor: #e8150a; //重要
+$importantColor: #c90a00; //重要
 $bodyBgc: #fff; //body 背景色
 $footerBgc:#6e7c85; //footer 背景色
 
@@ -21,7 +21,7 @@ $shadow:#0003;
 $shadow2:#0006;
 
 $btnBg1: $primaryColor ;
-$btnBg2:lighten($primaryColor, 8%);
+$btnBg2:lighten($primaryColor, 12%);
 $btnColor: #fff;
 
 $gray: #c8cdd0;

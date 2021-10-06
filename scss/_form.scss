@@ -18,13 +18,13 @@
   &.error{border-color:transparent;box-shadow: $msgError 0 0 0 2px;}
 }
 
-.style2 {
-  %textInput{
-    &:hover{border-color: #176fb3;}
-    &:focus{border-color:transparent;box-shadow: #176fb3 0 0 0 2px;outline: none;}
-    &.error{border-color:transparent;box-shadow: #e61163 0 0 0 2px;}
-  }
-}
+// .style2 {
+//   %textInput{
+//     &:hover{border-color: #176fb3;}
+//     &:focus{border-color:transparent;box-shadow: #176fb3 0 0 0 2px;outline: none;}
+//     &.error{border-color:transparent;box-shadow: #e61163 0 0 0 2px;}
+//   }
+// }
 
 // 下拉選單樣式
 %selectStyle {
@@ -101,7 +101,7 @@ input[type="button"] {
   &:hover {
     background-color: $btnBg2;
     border-color: $btnBg2;
-    box-shadow: $btnBg2 0 0 0 1px;
+    box-shadow: $btnBg2 0 0 0 2px;
     color: $fontInvert;
   }
 }
@@ -121,21 +121,20 @@ input[type="button"] {
   }
 }
 
-.style2{
-  button,
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
-    background-image:linear-gradient( #1ad8ed -20%, #1872bb);
-    border-color: #fff;
-    &:hover{
-      // border-color: #1ad8ed;
-      box-shadow: #1872bb 0 0 0 2px;
-      background-image:linear-gradient( to top, #1ad8ed -60%, #1872bb);
-    }
-  }
-
-}
+// .style2{
+//   button,
+//   input[type="submit"],
+//   input[type="reset"],
+//   input[type="button"] {
+//     background-image:linear-gradient( #1ad8ed -20%, #1872bb);
+//     border-color: #fff;
+//     &:hover{
+//       // border-color: #1ad8ed;
+//       box-shadow: #1872bb 0 0 0 2px;
+//       background-image:linear-gradient( to top, #1ad8ed -60%, #1872bb);
+//     }
+//   }
+// }
 
 textarea {
   @extend %textInput;

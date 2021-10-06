@@ -1,50 +1,70 @@
 // 左右滑動的頁籤
-.slideInTabSet{
-  outline: 1px solid red;
+.sliderTabs{
+  --ih : 2.8em;
+
+  width:96vw ; margin: 0 auto; padding: 2vw 2vw 1em;
+  box-shadow: $borderColorLight 0 0 0 1px;
+  background: $grayLight;
 
   .tabItems{
-    list-style: none; margin: 0; padding: 0;
-    display: flex;
-    outline: 1px dashed pink;
-    text-align: center;
-    li{background: #eee;
-      flex:1 1 auto;
-      height: 2.4em; line-height: 2.4; padding: 0 1em;
+    position: relative; z-index: 9;
+    box-shadow: $shadow 0 4px 8px -2px;
+    border: 4px solid #fff;
+    background: $bodyBgc;
+    border-radius: var(--ih);
+    margin:0 12px -1.6em;
+    ul{
+      display: flex;
+      list-style: none; margin: 0; padding:0; text-align: center;
+      position: relative; z-index: 5;
+    }
+
+    .movingBg{
+      content: ''; position: absolute; top:0; left:0; height: var(--ih);
+      background: $primaryColor; border-radius: 2em;
+    }
+    
+    li{
+      flex:1 1 auto; 
+      height: var(--ih); line-height: var(--ih); 
+      padding: 0 1em; margin: 0;
       white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
-      cursor: pointer;
-      &.now{
-        background: #555; color: #fff
-      }
+      cursor: pointer; transition: .3s;
+      &.now{color: #fff;}
     }
   }
 
   .slideArea{
-    width: 100%; margin: 10px auto;
-    overflow: visible;
-    position: relative;
-    box-shadow: #c00 0 0 0 1px;
-    
-    
+    position: relative;overflow: hidden;
+    width: 100%; margin: 0 auto;
+    // border: 1px dashed pink; 
+    border-radius: 12px;
   }
   
   .blockList{
     display: flex; flex-flow: row nowrap;
-    position: relative; top: 0; left: -200%;
-    outline: 2px dotted lightblue;
+    position: relative; top: 0; left: 0;
   }
-
+  
   .slideInBlock{
+    padding-top: 2em;
     width: 100%; flex: 0 0 100%;
-
-
-
-
+    background: #fff;
 
   }
 
 }
 
 
-body>.slideInTabSet{
-  @extend %mainSection;
+
+// 多一步驟，把握更多商機
+.slogan{
+  margin: 0 auto 1.5em; padding:1.2em 2vw .8em;
+  background: #f7ef95; border-radius: 12px;
+  box-shadow: #fff 0 0 0 3px;
+  line-height: 1.8;
+  h3{ text-align: center; margin: 0 0 .4em;}
+  p{margin: 0;
+    &+p{margin-top: 1em;}
+  }
 }

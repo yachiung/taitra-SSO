@@ -115,19 +115,78 @@ $(function(){
   })
 
 
-  // 水平滑動的頁籤組
-  var _slideInTabSet = $('.slideInTabSet');
-  _slideInTabSet.each(function(){
-    let _this = $(this)
-    let _tabItem = _this.find('.tabItems>li');
-    let i = 0;
 
+
+
+  // 水平滑動的頁籤組
+  var _sliderTabs = $('.sliderTabs');
+  _sliderTabs.each(function(){
+    let _this = $(this);
+    let _tabItems = _this.find('.tabItems');
+    let _tabItem = _tabItems.find('li');
+    let tabItemLength = _tabItem.length;
+    let i = _tabItem.filter('.now').index();
     let _blockList = _this.find('.blockList');
+
+    _tabItems.append('<span class="movingBg"></span>'); //頁籤移動背景
+    let _movingBg = _tabItems.find('.movingBg');
+
+    _movingBg.css({
+      left: (100/tabItemLength)*i + '%',
+      width: (100/tabItemLength) + '%'
+    });
+
+    _tabItem.css('width', (100/tabItemLength) + '%');
 
     _tabItem.click(function(){
       $(this).addClass('now').siblings().removeClass('now');
+
       i = $(this).index();
+      _movingBg.animate({ left: (100/tabItemLength)*i + '%' }, 300);
       _blockList.animate({ left: (-100*i) + '%'}, 400) });
+  })
+
+
+
+
+  // 關注產業、偏好議題
+  $('.checkGrid').each(function(){
+    let _this = $(this);
+    let _item = _this.find('li');
+    let count = _item.filter('.selected').length;
+    let _warning = _this.find('.warning');
+    let total = _item.length;
+    const breakNumber = 12;
+    const countMax = 5;
+
+    _item.click( function(){
+      let _this = $(this);
+      if (count < countMax ){
+        if( _this.hasClass('selected') ){
+          $(this).removeClass('selected');
+          count --; 
+        } else {
+          $(this).addClass('selected');
+          count ++;
+        }
+      } else {
+        if( _this.hasClass('selected') ){
+          $(this).removeClass('selected');
+          count --;
+          _warning.stop(true, false).fadeOut(200);
+        } else {
+          _warning.css({
+            left: _this.position().left,
+            top: _this.position().top
+          });
+          _warning.stop(true, false).fadeIn(200).delay(2000).fadeOut(600);
+        }
+      }
+    })
+
+    console.log(total);
+
+
   })
 
 

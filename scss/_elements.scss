@@ -107,14 +107,14 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
 
 
 // 一整塊的錯誤訊息（待刪除）
-.warning{
-  padding: 1em 4vw; background: #d33; color: #fff;
-  line-height: 1.8;
-  p{margin:1em 0;
-    &:first-child{margin-top: 0;}
-    &:last-child{margin-bottom: 0;}
-  }
-}
+// .warning{
+//   padding: 1em 4vw; background: #d33; color: #fff;
+//   line-height: 1.8;
+//   p{margin:1em 0;
+//     &:first-child{margin-top: 0;}
+//     &:last-child{margin-bottom: 0;}
+//   }
+// }
 
 // 錯誤、提示、警告...訊息
 .msg, .msgBlock {
@@ -181,6 +181,8 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
   }
 
   em{display: inline-block; font-style: normal; font-weight: bold;}
+
+  .btnDv{border: none;}
 
 }
 .style2 {
@@ -254,4 +256,38 @@ body>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
     background: #000; color: #fff;
      border-radius: 4px;
   }
+}
+
+
+
+// icons
+button[class^="icon_"], span[class^="icon_"]{
+  display: inline-block; position: relative; box-sizing: content-box;
+  margin: 0; padding: 0 44px 0 0;border-radius: 25px;
+  width: 0; height: 44px; line-height: 44px; 
+  white-space: nowrap; overflow: hidden; text-indent: .6em;
+  border: none; background-color: transparent;
+  transition: .2s;
+  // background: $btnBg1 url(../images/icons.png) no-repeat center 10px;
+  // background-size: 24px;
+  &::after{
+    content: '';position: absolute; top: 0; right: 0;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: $btnBg1  url(../images/icons.png) no-repeat center 10px;
+    background-size: 24px;
+  }
+
+  &:hover{
+    background-color: $btnBg1; border: none;
+    box-shadow: $btnBg1 0 0 0 3px;
+    &::after{
+      background-color: $btnBg2;
+    }
+  }
+}
+button.icon_del::after{
+  background-position: center -70px;
+}
+button.icon_search::after{
+  background-position: center -150px;
 }

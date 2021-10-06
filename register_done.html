@@ -33,110 +33,396 @@
   <div class="msgBlock correct">
     <p>帳號註冊成功</p>
     <p>你現在可以登入會員，開始使用Taitra的各項服務</p>
+    <div class="btnDv">
+      <input type="submit" value="立即登入">
+    </div>
   </div>
 
-  <div class="btnDv">
-    <input type="submit" value="立即登入">
-  </div>
 
-  <section class="xxx">
-    <p>多一步驟，把握更多商機</p>
-    <p>選擇您的關注議題(可複選)，讓我們提供您更準確的資訊與服務</p>
-  </section>
+  <section class="sliderTabs">
 
-  <section class="slideInTabSet">
-    <ul class="tabItems">
-      <li class="now">核心市場</li>
-      <li>關注產業</li>
-      <li>偏好議題</li>
-    </ul>
+    <div class="slogan">
+      <h3>多一步驟，把握更多商機</h3>
+      <p>選擇您的關注議題(可複選)，讓我們提供您更準確的資訊與服務。</p>
+    </div>
+
+    <div class="tabItems">
+      <ul>
+        <li class="now">核心市場</li>
+        <li>關注產業</li>
+        <li>偏好議題</li>
+      </ul>
+    </div>
+    
     <div class="slideArea">
       <div class="blockList">
-        <section class="slideInBlock">
-          <p>請輸入目標市場(洲別或國家)名稱關鍵字</p>
-          <p>洲別與國家　(可複選，最多5個)</p>
+        <div class="slideInBlock">
           <section class="areaSelectSet">
-            <div class="selected">
-              <span class="pool"></span>
-              <span class="count">5</span>
-              <button type="button" class="icon_del"></button>
+            <div class="areaSelected">
+              <!-- <p>請輸入目標市場（洲別或國家）名稱關鍵字</p> -->
+              <p>目標市場地區。可複選，最多<em>5</em>個，已選<span class="count">4</span>個</p>
+              <button type="button" class="icon_del">全部刪除</button>
+              <div class="pool">
+                <div class="one">Brunei Darussalam - 汶萊<button class="icon_del"></button></div>
+                <div class="one">Cambodia - 柬埔寨<button class="icon_del"></button></div>
+                <div class="one">Hong Kong - 香港<button class="icon_del"></button></div>
+                <div class="one">India - 印度<button class="icon_del"></button></div>
+              </div>
             </div>
             <div class="areaSearch">
-              <input type="text" placeholder="輸入國家名稱關鍵字">
-              <input type="button" class="icon_search">
+              <input type="text" placeholder="請輸入洲別或國家名稱關鍵字">
+              <button type="button" class="icon_search"></button>
             </div>
             <div class="areaList">
               <div class="group">
-                <label class="all"><input type="checkbox">Asia（亞洲）</label>
-                <label><input type="checkbox">Bhutan（不丹）</label>
-                <label><input type="checkbox">China（中國）</label>
-                <label><input type="checkbox">North Korea（北韓）</label>
-                <label><input type="checkbox">South Korea（南韓）</label>
-                <label><input type="checkbox">Janpan（日本）</label>
-                <label><input type="checkbox">India（印度）</label>
-                <label><input type="checkbox">Singapore（新加坡）</label>
-                <label><input type="checkbox">Vietnam（越南）</label>
-                <label><input type="checkbox">Malaysia（馬來西亞）</label>
+                <label class="all"><input type="checkbox">Asia - 亞洲</label>
+                <label><input type="checkbox">Bangladesh - 孟加拉</label>
+                <label><input type="checkbox">Bhutan - 不丹</label>
+                <label><input type="checkbox" checked>Brunei Darussalam - 汶萊</label>
+                <label><input type="checkbox" checked>Cambodia - 柬埔寨</label>
+                <label><input type="checkbox" checked>Hong Kong - 香港</label>
+                <label><input type="checkbox" checked>India - 印度</label>
+                <label><input type="checkbox">Indonesia - 印尼</label>
+                <label><input type="checkbox">Japan - 日本</label>
+                <label><input type="checkbox">Kazakhstan - 哈薩克</label>
+                <label><input type="checkbox">Korea, North Korea - 北韓</label>
+                <label><input type="checkbox">Korea, South Korea - 南韓</label>
+                <label><input type="checkbox">Lao People's Democratic Republic - 寮國</label>
+                <label><input type="checkbox">Macau - 澳門</label>
+                <label><input type="checkbox">Mainland China - 中國</label>
+                <label><input type="checkbox">Malaysia - 馬來西亞</label>
+                <label><input type="checkbox">Mongolia - 蒙古</label>
+                <label><input type="checkbox">Myanmar - 緬甸</label>
+                <label><input type="checkbox">Nepal - 尼泊爾</label>
+                <label><input type="checkbox">Oth Asian - 其他亞洲國家</label>
+                <label><input type="checkbox">Pakistan - 巴基斯坦</label>
+                <label><input type="checkbox">Philippines - 菲律賓群島</label>
+                <label><input type="checkbox">Ryukyu - 琉球</label>
+                <label><input type="checkbox">Singapore - 新加坡</label>
+                <label><input type="checkbox">Sri Lanka - 斯里蘭卡</label>
+                <label><input type="checkbox">State of Palestine - 巴勒斯坦</label>
+                <label><input type="checkbox">Taiwan - 台灣</label>
+                <label><input type="checkbox">Thailand - 泰國</label>
+                <label><input type="checkbox">Viet Nam - 越南</label>
               </div>
               <div class="group">
-                <label class="all"><input type="checkbox">Oceania（大洋洲）</label>
-                <label><input type="checkbox">Australia（澳洲）</label>
-                <label><input type="checkbox">Fiji（斐濟）</label>
-                <label><input type="checkbox">New Zealand（紐西蘭）</label>
-                <label><input type="checkbox">Solomon Islands（索羅門群島）</label>
+                <label class="all"><input type="checkbox">North America - 北美洲</label>
+                <label><input type="checkbox">Canada - 加拿大</label>
+                <label><input type="checkbox">Greenland - 格陵蘭</label>
+                <label><input type="checkbox">Guadeloupe - 瓜達康納爾島</label>
+                <label><input type="checkbox">Heard and Mc Donald Island - 赫德及麥當勞群島</label>
+                <label><input type="checkbox">Oth N A - 其他北美洲國家</label>
+                <label><input type="checkbox">St. Helena St．Helena - 聖赫勒拿島</label>
+                <label><input type="checkbox">St. Pierre and Miquelon - 聖匹及密啟倫群島</label>
+                <label><input type="checkbox">United States - 美國</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">Oceania - 大洋洲</label>
+                <label><input type="checkbox">American Samoa - 美屬薩摩亞</label>
+                <label><input type="checkbox">Australia - 澳大利亞</label>
+                <label><input type="checkbox">Christmas Island - 聖誕島嶼</label>
+                <label><input type="checkbox">Cocos (Keeling) Islands - 裴濟</label>
+                <label><input type="checkbox">Cook Islands - 科克群島</label>
+                <label><input type="checkbox">East Timor - 帝汶</label>
+                <label><input type="checkbox">Fiji - 裴濟</label>
+                <label><input type="checkbox">French Polynesia - 法國的玻里尼西亞</label>
+                <label><input type="checkbox">Guam - 關島</label>
+                <label><input type="checkbox">Kiribati - 吉里巴斯</label>
+                <label><input type="checkbox">Maldives - 馬爾地夫</label>
+                <label><input type="checkbox">Marshall Islands - 馬紹爾群島</label>
+                <label><input type="checkbox">Micronesia, Federated States Of - 密克羅尼西亞</label>
+                <label><input type="checkbox">Nauru - 諾魯</label>
+                <label><input type="checkbox">New Caledonia - 新蘇格蘭</label>
+                <label><input type="checkbox">New Zealand - 紐西蘭</label>
+                <label><input type="checkbox">Niue - 尼烏亞島</label>
+                <label><input type="checkbox">Norfolk Island - 諾福克島嶼</label>
+                <label><input type="checkbox">Northern Mariana Islands - 馬里亞納群島</label>
+                <label><input type="checkbox">Other Oceania - 其他大洋洲國家</label>
+                <label><input type="checkbox">Palau - 帛琉</label>
+                <label><input type="checkbox">Papua New Guinea - 巴布亞新幾內亞</label>
+                <label><input type="checkbox">Samoa - 薩摩亞群島</label>
+                <label><input type="checkbox">Solomon Islands - 所羅門群島</label>
+                <label><input type="checkbox">Tahiti - 大溪地</label>
+                <label><input type="checkbox">Tokelau - 托客勞群島</label>
+                <label><input type="checkbox">Tonga - 東加王國</label>
+                <label><input type="checkbox">Tuvalu - 吐瓦魯</label>
+                <label><input type="checkbox">US T/P P A - 未列名美屬太平洋領域</label>
+                <label><input type="checkbox">Vanuatu - 梵尼瓦土;萬那杜</label>
+                <label><input type="checkbox">Wallis And Futuna Islands - 沃利斯和富圖納群島</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">Europe - 歐洲</label>
+                <label><input type="checkbox">Albania - 阿爾巴尼亞</label>
+                <label><input type="checkbox">Andorra - 安道爾</label>
+                <label><input type="checkbox">Armenia - 亞美尼亞</label>
+                <label><input type="checkbox">Austria - 奧地利</label>
+                <label><input type="checkbox">Azerbaijan - 亞塞拜然共和國</label>
+                <label><input type="checkbox">Belarus - 白俄羅斯</label>
+                <label><input type="checkbox">Belgium - 比利時</label>
+                <label><input type="checkbox">Bosnia-Herzegowina - 波士尼亞-赫塞哥維那</label>
+                <label><input type="checkbox">Bulgaria - 保加利亞</label>
+                <label><input type="checkbox">CROATIA (Local Name: Hrvatska) - 克羅埃西亞</label>
+                <label><input type="checkbox">Cyprus - 賽普勒斯</label>
+                <label><input type="checkbox">Czech Republic - 捷克</label>
+                <label><input type="checkbox">Denmark - 丹麥</label>
+                <label><input type="checkbox">Estonia - 愛沙尼亞</label>
+                <label><input type="checkbox">Faroe Islands - 法羅群島</label>
+                <label><input type="checkbox">Finland - 芬蘭</label>
+                <label><input type="checkbox">France - 法國</label>
+                <label><input type="checkbox">France, Metropolitan - *法國，大都市的</label>
+                <label><input type="checkbox">Georgia - 喬治亞</label>
+                <label><input type="checkbox">Germany - 德國</label>
+                <label><input type="checkbox">Gibraltar - 直布羅陀海峽</label>
+                <label><input type="checkbox">Greece - 希臘</label>
+                <label><input type="checkbox">Hungary - 匈牙利</label>
+                <label><input type="checkbox">Iceland - 冰島</label>
+                <label><input type="checkbox">Ireland - 愛爾蘭</label>
+                <label><input type="checkbox">Italy - 義大利</label>
+                <label><input type="checkbox">Kyrgyzstan - 吉爾吉斯共和國</label>
+                <label><input type="checkbox">Latvia - 拉脫維亞</label>
+                <label><input type="checkbox">Liechtenstein - 列支敦斯登</label>
+                <label><input type="checkbox">Lithuania - 立陶宛</label>
+                <label><input type="checkbox">Luxembourg - 盧森堡</label>
+                <label><input type="checkbox">Macedonia, The Former Yugoslav Rep. Of - 馬其頓</label>
+                <label><input type="checkbox">Malta - 馬爾他</label>
+                <label><input type="checkbox">Moldova Rep. - 摩爾多瓦共和國</label>
+                <label><input type="checkbox">Monaco - 摩納哥</label>
+                <label><input type="checkbox">Montenegro - 蒙特內哥羅</label>
+                <label><input type="checkbox">Netherlands - 荷蘭</label>
+                <label><input type="checkbox">Norway - 挪威</label>
+                <label><input type="checkbox">Oth Europ - 其他歐洲國家</label>
+                <label><input type="checkbox">Poland - 波蘭</label>
+                <label><input type="checkbox">Portugal - 葡萄牙</label>
+                <label><input type="checkbox">Romania - 羅馬尼亞</label>
+                <label><input type="checkbox">Russian Federation - 俄羅斯聯邦</label>
+                <label><input type="checkbox">San Marino - 聖馬利諾</label>
+                <label><input type="checkbox">Serbia - 塞爾維亞</label>
+                <label><input type="checkbox">Serbia and Montenegro - 塞爾維亞與蒙特內哥羅</label>
+                <label><input type="checkbox">Slovakia (Slovak Republic) - 斯洛伐克共和國</label>
+                <label><input type="checkbox">Slovenia - 斯洛法尼亞</label>
+                <label><input type="checkbox">Spain - 西班牙</label>
+                <label><input type="checkbox">Sweden - 瑞典</label>
+                <label><input type="checkbox">Switzerland - 瑞士</label>
+                <label><input type="checkbox">Tajikistan - 塔吉克共和國</label>
+                <label><input type="checkbox">Turkey - 土耳其</label>
+                <label><input type="checkbox">Turkmenistan - 土庫曼</label>
+                <label><input type="checkbox">Ukraine - 烏克蘭</label>
+                <label><input type="checkbox">United Kingdom - 英國</label>
+                <label><input type="checkbox">Uzbekistan - 烏茲別克斯坦</label>
+                <label><input type="checkbox">Vatican City State (Holy See) - 梵蒂岡</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">Middle East - 中東</label>
+                <label><input type="checkbox">Afghanistan - 阿富汗</label>
+                <label><input type="checkbox">Bahrain - 巴林</label>
+                <label><input type="checkbox">Iran - 伊朗</label>
+                <label><input type="checkbox">Iraq - 伊拉克</label>
+                <label><input type="checkbox">Israel - 以色列</label>
+                <label><input type="checkbox">Jordan - 約旦</label>
+                <label><input type="checkbox">Kuwait - 科威特</label>
+                <label><input type="checkbox">Lebanon - 黎巴嫩</label>
+                <label><input type="checkbox">Oman - 阿曼</label>
+                <label><input type="checkbox">Oth M Near E - 其他中東國家</label>
+                <label><input type="checkbox">Qatar - 卡達</label>
+                <label><input type="checkbox">Saudi Arabia - 沙烏地阿拉伯</label>
+                <label><input type="checkbox">Syrian Arab Republic - 敘利亞</label>
+                <label><input type="checkbox">United Arab Emirates - 阿拉伯聯合大公國</label>
+                <label><input type="checkbox">Yemen - 葉門</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">Central America - 中美洲</label>
+                <label><input type="checkbox">Anguilla - 安圭拉島</label>
+                <label><input type="checkbox">Antigua And Barbuda - 安提瓜和巴爾布達</label>
+                <label><input type="checkbox">BR T/C C A - 未列名英屬中美洲領域</label>
+                <label><input type="checkbox">Bahamas - 巴哈馬群島</label>
+                <label><input type="checkbox">Barbados - 巴貝多</label>
+                <label><input type="checkbox">Belize - 貝里斯</label>
+                <label><input type="checkbox">Bermuda - 百慕達群島</label>
+                <label><input type="checkbox">Cayman Islands - 開曼群島</label>
+                <label><input type="checkbox">Costa Rica - 哥斯大黎加</label>
+                <label><input type="checkbox">Cuba - 古巴</label>
+                <label><input type="checkbox">Dominica - 多明尼克島</label>
+                <label><input type="checkbox">Dominican Republic - 多明尼加</label>
+                <label><input type="checkbox">El Salvador - 薩爾瓦多</label>
+                <label><input type="checkbox">F T/C C A - 未列名法屬中美洲領域</label>
+                <label><input type="checkbox">Grenada - 格瑞那達</label>
+                <label><input type="checkbox">Guatemala - 瓜地馬拉</label>
+                <label><input type="checkbox">Haiti - 海地</label>
+                <label><input type="checkbox">Honduras - 宏都拉斯</label>
+                <label><input type="checkbox">Jamaica - 牙買加</label>
+                <label><input type="checkbox">Martinique - 馬丁尼克</label>
+                <label><input type="checkbox">Mexico - 墨西哥</label>
+                <label><input type="checkbox">Montserrat - 蒙特色納島</label>
+                <label><input type="checkbox">Netherlands Antilles - 荷屬西印度群島</label>
+                <label><input type="checkbox">Nevis - 納維斯</label>
+                <label><input type="checkbox">Nicaragua - 尼加拉瓜</label>
+                <label><input type="checkbox">Oth C A - 其他中美洲國家</label>
+                <label><input type="checkbox">Panama - 巴拿馬</label>
+                <label><input type="checkbox">Puerto Rico - 波多黎各</label>
+                <label><input type="checkbox">Saint Lucia - 聖露西亞</label>
+                <label><input type="checkbox">St Kitts and Nevis - 聖克里斯多福及尼維斯</label>
+                <label><input type="checkbox">St Vincent - 聖文森</label>
+                <label><input type="checkbox">Trinidad And Tobago - 千理達和托貝哥共和國</label>
+                <label><input type="checkbox">Turks And Caicos Islands - 土克斯和開卡斯群島</label>
+                <label><input type="checkbox">US T/P C A - 未列名美屬中美洲領域</label>
+                <label><input type="checkbox">Virgin Islands (British) - 英屬維爾京群島</label>
+                <label><input type="checkbox">Virgin Islands (U.S.) - 美屬維爾京群島</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">South America - 南美洲</label>
+                <label><input type="checkbox">Argentina - 阿根廷</label>
+                <label><input type="checkbox">Aruba - 亞魯伯</label>
+                <label><input type="checkbox">Bolivia - 玻利維亞</label>
+                <label><input type="checkbox">Brazil - 巴西</label>
+                <label><input type="checkbox">Chile - 智利</label>
+                <label><input type="checkbox">Colombia - 哥倫比亞</label>
+                <label><input type="checkbox">Ecuador - 厄瓜多爾</label>
+                <label><input type="checkbox">Falkland Islands (Malvinas) - 福克蘭群島</label>
+                <label><input type="checkbox">French Guiana - 法屬圭亞那</label>
+                <label><input type="checkbox">Guyana - 蓋亞那</label>
+                <label><input type="checkbox">Oth S A - 其他南美洲國家</label>
+                <label><input type="checkbox">Paraguay - 巴拉圭</label>
+                <label><input type="checkbox">Peru - 秘魯</label>
+                <label><input type="checkbox">S. Georgia And The S. Sandwich Islands - *喬治亞州</label>
+                <label><input type="checkbox">Suriname - 蘇利南</label>
+                <label><input type="checkbox">Uruguay - 烏拉圭</label>
+                <label><input type="checkbox">Venezuela - 委內瑞拉</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">Africa - 非洲</label>
+                <label><input type="checkbox">Algeria - 阿爾及利亞</label>
+                <label><input type="checkbox">Angola - 安哥拉</label>
+                <label><input type="checkbox">Benin - 貝南</label>
+                <label><input type="checkbox">Botswana - 波札那</label>
+                <label><input type="checkbox">Burkina Faso - 布吉納法索</label>
+                <label><input type="checkbox">Burundi - 蒲隆地</label>
+                <label><input type="checkbox">Cameroon - 喀麥隆</label>
+                <label><input type="checkbox">Cape Verde - 維德角</label>
+                <label><input type="checkbox">Central African Republic - 中非共和國</label>
+                <label><input type="checkbox">Chad - 查德</label>
+                <label><input type="checkbox">Comoros - 葛摩伊斯蘭聯邦共和國</label>
+                <label><input type="checkbox">Congo - 剛果共和國</label>
+                <label><input type="checkbox">Cote D'Ivoire - 象牙海岸</label>
+                <label><input type="checkbox">Democratic Republic of Congo - 剛果民主共和國</label>
+                <label><input type="checkbox">Djibouti - 吉布地</label>
+                <label><input type="checkbox">Egypt - 埃及</label>
+                <label><input type="checkbox">Equatorial Guinea - 赤道幾內亞</label>
+                <label><input type="checkbox">Eritrea - 厄立特里亞</label>
+                <label><input type="checkbox">Ethiopia - 衣索比亞</label>
+                <label><input type="checkbox">Gabon - 加彭</label>
+                <label><input type="checkbox">Gambia - 甘比亞</label>
+                <label><input type="checkbox">Ghana - 迦納</label>
+                <label><input type="checkbox">Guinea - 幾內亞</label>
+                <label><input type="checkbox">Guinea-Bissau - 幾內亞比索</label>
+                <label><input type="checkbox">Kenya - 肯亞</label>
+                <label><input type="checkbox">Lesotho - 賴索托</label>
+                <label><input type="checkbox">Liberia - 賴比瑞亞</label>
+                <label><input type="checkbox">Libyan Arab Jamahiriya - 阿拉伯利比亞民眾國</label>
+                <label><input type="checkbox">Madagascar - 馬達加斯加</label>
+                <label><input type="checkbox">Malawi - 馬拉威</label>
+                <label><input type="checkbox">Mali - 馬利</label>
+                <label><input type="checkbox">Mauritania - 茅利塔尼亞</label>
+                <label><input type="checkbox">Mauritius - 模里西斯</label>
+                <label><input type="checkbox">Morocco - 摩洛哥</label>
+                <label><input type="checkbox">Mozambique - 莫三比克</label>
+                <label><input type="checkbox">Namibia - 納米比亞</label>
+                <label><input type="checkbox">Niger - 尼日</label>
+                <label><input type="checkbox">Nigeria - 奈及利亞</label>
+                <label><input type="checkbox">Oth African - 其他非洲國家</label>
+                <label><input type="checkbox">Republic of Somaliland - 索馬利蘭共和國</label>
+                <label><input type="checkbox">Republic of South Sudan - 南蘇丹共和國</label>
+                <label><input type="checkbox">Reunion - 留尼旺島</label>
+                <label><input type="checkbox">Rwanda - 盧安達</label>
+                <label><input type="checkbox">Sao Tome - 聖多美--普林西比</label>
+                <label><input type="checkbox">Senegal - 塞內加爾</label>
+                <label><input type="checkbox">Seychelles - 賽席爾群島</label>
+                <label><input type="checkbox">Sierra Leone - 獅子山</label>
+                <label><input type="checkbox">Somalia - 索馬利亞</label>
+                <label><input type="checkbox">South Africa - 南非</label>
+                <label><input type="checkbox">Sudan - 蘇丹</label>
+                <label><input type="checkbox">Swaziland - 史瓦濟蘭</label>
+                <label><input type="checkbox">Tanzania, United Republic Of - 坦尚尼亞</label>
+                <label><input type="checkbox">Togo - 多哥共和國</label>
+                <label><input type="checkbox">Tunisia - 突尼西亞</label>
+                <label><input type="checkbox">Uganda - 烏干達</label>
+                <label><input type="checkbox">Western Sahara - 西撒哈拉沙漠</label>
+                <label><input type="checkbox">Zaire - 剛果民主共和國（薩伊）</label>
+                <label><input type="checkbox">Zambia - 尚比亞</label>
+                <label><input type="checkbox">Zimbabwe - 辛巴威</label>
+                <label><input type="checkbox">Other - 其他</label>
+              </div>
+              <div class="group">
+                <label class="all"><input type="checkbox">Antarctica - 南極洲</label>
+                <label><input type="checkbox">Bouvet Island - 布干維爾島</label>
+                <label><input type="checkbox">British Indian Ocean Territory - 英屬印度洋領域</label>
+                <label><input type="checkbox">French Southern Territories - 法屬南部領地</label>
+                <label><input type="checkbox">Mayotte - 梅約特</label>
+                <label><input type="checkbox">Neutral Zone - 中立區</label>
+                <label><input type="checkbox">Other - 其他國家</label>
+                <label><input type="checkbox">Other - 其他國家</label>
+                <label><input type="checkbox">Other - 其它</label>
+                <label><input type="checkbox">Other E.C.C. - 其他東歐共產國家</label>
+                <label><input type="checkbox">Pitcairn - 皮特康島</label>
+                <label><input type="checkbox">Svalbard And Jan Mayen Islands - 冷岸和央麥恩島</label>
+                <label><input type="checkbox">United States Minor Outlying Islands - 美國本土外小島嶼</label>
               </div>
             </div>
           </section>
-        </section>
-        <section class="slideInBlock">
-          <!-- 關注產業 -->
-          <p>請選擇關注產業別（可複選，最多5項）</p>
-          <div class="category">
+        </div>
+        <div class="slideInBlock">
+          <section class="checkGrid">
+            <p>請選擇關注產業別（可複選，最多5項）</p>
             <ul>
-              <li>畜牧業</li>
-              <li>文創產業</li>
-              <li>農業</li>
-              <li>生醫業</li>
-              <li>石化業</li>
-              <li>製造業</li>
-              <li>旅遊業</li>
-              <li>餐飲業</li>
-              <li>金融業</li>
-              <li>航太業</li>
-              <li>科技資訊業</li>
-              <li>韌體製造業</li>
-              <li>xxx 業</li>
-              <li>xxx 業</li>
-              <li>xxx 業</li>
-              
+              <li class="selected"><span class="cateName">畜牧業</span><img src="publicData/ph24.jpg"></li>
+              <li><span class="cateName">文創產業</span><img src="publicData/ph18.jpg"></li>
+              <li class="selected"><span class="cateName">農業</span><img src="publicData/ph19.jpg"></li>
+              <li><span class="cateName">生醫業</span><img src="publicData/ph11.jpg"></li>
+              <li><span class="cateName">石化業</span><img src="publicData/ph17.jpg"></li>
+              <li><span class="cateName">製造業</span><img src="publicData/ph04.jpg"></li>
+              <li><span class="cateName">旅遊業</span><img src="publicData/ph13.jpg"></li>
+              <li class="selected"><span class="cateName">餐飲業</span><img src="publicData/ph21.jpg"></li>
+              <li><span class="cateName">金融業</span><img src="publicData/ph03.jpg"></li>
+              <li><span class="cateName">航太業</span><img src="publicData/ph05.jpg"></li>
+              <li><span class="cateName">科技資訊業</span><img src="publicData/ph14.jpg"></li>
+              <li><span class="cateName">韌體製造業</span><img src="publicData/ph23.jpg"></li>
             </ul>
-          </div>
-        </section>
-        <section class="slideInBlock">
-          <div class="category">
             <ul>
-              <li><span class="cateName">農產品</span><img src="publicData/ph01.jpg"></li>
-              <li><span class="cateName">運輸</span><img src="publicData/ph02.jpg"></li>
-              <li class="selected"><span class="cateName">美妝</span><img src="publicData/ph03.jpg"></li>
-              <li><span class="cateName">寵物</span><img src="publicData/ph04.jpg"></li>
+              <li><span class="cateName">13 xxx 業</span><img src="publicData/ph03.jpg"></li>
+              <li><span class="cateName">14 xxx 業</span><img src="publicData/ph02.jpg"></li>
+              <li><span class="cateName">15 xxx 業</span><img src="publicData/ph01.jpg"></li>
+              <li><span class="cateName">16 xxx 業</span><img src="publicData/ph01.jpg"></li>
+              <li><span class="cateName">17 xxx 業</span><img src="publicData/ph01.jpg"></li>
+              <li><span class="cateName">18 xxx 業</span><img src="publicData/ph01.jpg"></li>
+            </ul>
+            <div class="warning">已選 5 個</div>
+          </section>
+        </div>
+        <div class="slideInBlock">
+          <div class="checkGrid hrShift">
+            <ul>
+              <li><span class="cateName">農產品</span><img src="publicData/ph03.jpg"></li>
+              <li><span class="cateName">運輸</span><img src="publicData/ph22.jpg"></li>
+              <li class="selected"><span class="cateName">美妝</span><img src="publicData/ph15.jpg"></li>
+              <li><span class="cateName">寵物</span><img src="publicData/ph12.jpg"></li>
               <li><span class="cateName">機械</span><img src="publicData/ph05.jpg"></li>
-              <li><span class="cateName">建築</span><img src="publicData/ph06.jpg"></li>
+              <li><span class="cateName">建築</span><img src="publicData/ph20.jpg"></li>
               <li><span class="cateName">旅遊</span><img src="publicData/ph01.jpg"></li>
               <li><span class="cateName">烘焙</span><img src="publicData/ph09.jpg"></li>
               <li><span class="cateName">經濟</span><img src="publicData/ph08.jpg"></li>
-              <li><span class="cateName">海洋生態</span><img src="publicData/ph10.jpg"></li>
+              <li><span class="cateName">海洋生態</span><img src="publicData/ph16.jpg"></li>
               <li><span class="cateName">綠能</span><img src="publicData/ph07.jpg"></li>
               <li><span class="cateName">AI</span><img src="publicData/ph12.jpg"></li>
-              <li><span class="cateName">xxx</span><img src="publicData/ph13.jpg"></li>
-              <li><span class="cateName">xxx</span><img src="publicData/ph14.jpg"></li>
-              <li><span class="cateName">xxx</span><img src="publicData/ph15.jpg"></li>
-              <li><span class="cateName">xxx</span><img src="publicData/ph15.jpg"></li>
-              <li><span class="cateName">xxx</span><img src="publicData/ph15.jpg"></li>
-              <li><span class="cateName">xxx</span><img src="publicData/ph15.jpg"></li>
             </ul>
+            <ul>
+              <li><span class="cateName">13</span><img src="publicData/ph13.jpg"></li>
+              <li><span class="cateName">14</span><img src="publicData/ph13.jpg"></li>
+              <li><span class="cateName">15</span><img src="publicData/ph13.jpg"></li>
+              <li><span class="cateName">16</span><img src="publicData/ph13.jpg"></li>
+            </ul>
+            <div class="warning">最多 5 個</div>
           </div>
 
-        </section>
+        </div>
       </div>
     </div>
 

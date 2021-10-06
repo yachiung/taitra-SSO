@@ -1,105 +1,89 @@
 .areaSelectSet{
-  background: paleturquoise;
-padding: 5px;
-  .selected{
-    margin: 5px 0; padding: 0 6em 0 0;
-    background: #fff; border-radius: 4px;
-    position: relative;
+  padding:8px 12px;
 
-    .pool{
-      display: block; min-height: 3em;
+  .areaSelected{
+    position: relative;
+    margin: .5em auto 1.5em; padding:6px;
+    border-radius: 8px; 
+    // border: 1px solid $borderColor;
+    background-color: $grayLight;
+    p{
+      padding: 10px 48px 10px 8px; margin: 0; line-height: 1.5;
+      // border-radius: 5px 5px 2px 2px; background: #fff;
+      border-bottom: 3px solid $borderColor;
+      em{ font-style: normal; font-weight: bold; margin: 0 3px;}
     }
     .count{
-      position: absolute; right: 56px; top: 50%; margin-top: -.9em;
-      display: inline-block; text-align: center;
-      font-weight: bold; box-shadow: #ccc 0 0 0 1px; border-radius: 4px;
-      height: 1.8em;line-height: 1.8em; min-width:1.8em; padding: 0 .4em; 
+      display: inline-block; text-align: center; vertical-align: middle;
+      font-weight: bold; font-size: 1.4em;
+      margin: auto 5px; height: 1.3em; line-height: 1.1;
+      color: $importantColor;
     }
-
-    button.icon_del{
-      position: absolute; right: 5px; top: 50%;
-      margin-top: -1.25em;
+    
+    .pool{
+      display: block; min-height: 1em;
+      overflow: hidden;
+      padding: 8px 0 0; margin: 0;
+      .one{
+        position: relative;
+        float: left; height: 2.2em; line-height: 2.2;
+        margin: 4px 4px 0 0; padding: 0 34px 0 5px;
+        background: #fff; border-radius: 5px;
+        .icon_del{
+          position: absolute;  right: 5px; top: 50%;
+          transform: scale(.6); margin-top: -22px; margin-right: -10px;
+          cursor: pointer;
+        }
+      }
+    }
+    &>button.icon_del{
+      position: absolute; right: 6px; top: 6px; z-index: 1;
+      &::before{content: attr(title); white-space: nowrap;
+        position: absolute; top: 0; bottom: 0;left: 0;
+        text-align: left;
+        color: $fontColorDark; width: 0; overflow: hidden;
+      }
+      &:hover{ 
+        width: 5.2em;
+      }
     }
   }
 
 
   .areaSearch{
-     margin: 5px 0;
+     margin: 15px 0 8px;
      background: #fff; border-radius: 4px;
      display: flex; flex-flow: row nowrap;
+     box-shadow: $borderColor 0 0 0 1px;
+     border-radius: 2em;
 
      input[type="text"]{
-       border: none;
-       flex:1 1 60%;
-     }
-     button{
-       flex:0 0 3em; width: 3em;
-     }
+      flex:1 1 60%; 
+      border: none;border-radius: 2em;
+      &:focus{ box-shadow: none;}
+    }
+    .icon_search{
+      flex:0 0 auto; margin: 5px;
+      
+    }
   }
 }
 
+// 地區選單
 .areaList{
+  max-height: 60vh;
+  overflow-y: auto;  padding: 5px;
+  box-shadow: $borderColor 0 0 0 1px; border-radius: 8px;
   label{ display: block; min-height: 2em; line-height: 1.5;
-    border: 1px solid transparent;
+    border: 1px solid transparent; border-radius: 4px;
     padding: .4em 5px; margin: 5px 0 0 1.5em;
-    &:hover{border-color: #fff;}
-
-
+    &:hover{border-color: $borderColor;}
     &.all{ margin-left: 0; font-weight: bold;}
   }
-
-
   .group{
-    padding: .5em 0;
+    padding: 0;
     &+.group{margin-top: 1em;
-      border-top: 1px dashed #999;
-    }
-  }
-}
-
-
-button[class^="icon_"]{
-  background-color: transparent;
-   width: 2.5em; height: 2.5em; padding: 0;
-   border-radius: 50%;
-}
-
-
-
-// ------------------
-// 偏好議題
-.category{
-  ul{ list-style: none; padding: 0;margin: 0; text-align: center;}
-  li{
-    position: relative;
-    float: left; width: 33.33%; margin: 15px 0; padding: 0;
-    // outline: 1px dashed pink;
-
-    &::after{
-      display: none;
-      content: ''; position: absolute; left: 50%; bottom: 50%;z-index: 9;
-      width: 30px; height: 16px; margin: auto auto -10px -15px;
-      border: 4px solid #fff; border-top: none; border-right: none;
-      transform: rotate(-45deg);      
-    }
-    &::before{
-      display: none;
-      content: ''; position: absolute; left: 50%; bottom: 6px;
-      background-color: #0008;border-radius: 50%;
-      width: 24vw; height: 24vw; margin-left: -12vw;
-      z-index: 8;
-    }
-    
-    img{
-      display: block; position: relative; margin: 6px auto;
-      width: 24vw; height: 24vw; object-fit: cover; border-radius: 50%;
-    }
-
-    &.selected{
-      img{
-        box-shadow: #fff 0 0 0 2px, #d00 0 0 0 5px;
-      }
-      &::before, &::after{display: block;}
+      border-top: 1px dashed $borderColor;
     }
   }
 }
