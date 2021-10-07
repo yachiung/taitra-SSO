@@ -140,10 +140,12 @@ $(function(){
 
     _tabItem.click(function(){
       $(this).addClass('now').siblings().removeClass('now');
-
       i = $(this).index();
+      
       _movingBg.animate({ left: (100/tabItemLength)*i + '%' }, 300);
-      _blockList.animate({ left: (-100*i) + '%'}, 400) });
+      _blockList.animate({ left: (-100*i) + '%'}, 400);
+    });
+    
   })
 
 
@@ -152,41 +154,52 @@ $(function(){
   // 關注產業、偏好議題
   $('.checkGrid').each(function(){
     let _this = $(this);
-    let _item = _this.find('li');
-    let count = _item.filter('.selected').length;
+    let _item = _this.find('.grid>li');
+    let checkCount = _item.filter('.selected').length;
     let _warning = _this.find('.warning');
-    let total = _item.length;
-    const breakNumber = 12;
     const countMax = 5;
 
     _item.click( function(){
-      let _this = $(this);
-      if (count < countMax ){
-        if( _this.hasClass('selected') ){
+      let _thisItem = $(this);
+      if (checkCount < countMax ){
+        if( _thisItem.hasClass('selected') ){
           $(this).removeClass('selected');
-          count --; 
+          checkCount --; 
         } else {
           $(this).addClass('selected');
-          count ++;
+          checkCount ++;
         }
       } else {
-        if( _this.hasClass('selected') ){
+        if( _thisItem.hasClass('selected') ){
           $(this).removeClass('selected');
-          count --;
+          checkCount --;
           _warning.stop(true, false).fadeOut(200);
         } else {
-          _warning.css({
-            left: _this.position().left,
-            top: _this.position().top
+          _warning.stop(true, false).fadeIn(200).delay(2000).fadeOut(600).css({
+            left: _thisItem.position().left,
+            top: _thisItem.position().top
           });
-          _warning.stop(true, false).fadeIn(200).delay(2000).fadeOut(600);
         }
       }
     })
+  })
 
-    console.log(total);
 
+  // 換頁
+  $('.shiftShow').each(function(){
+    let _this = $(this);
+    let _shiftList = _this.find('.shiftList');
+    let length = _this.find('.grid').length;
+    let _indecator = _this.find('.shiftIndicator li');
+    let i = 0;
 
+    _shiftList.width(100*length + "%");
+
+    _indecator.click(function(){
+      i = $(this).index();
+      $(this).addClass('now').siblings().removeClass('now');
+      _shiftList.animate({ left: (-100*i) + '%'}, 400);
+    })
   })
 
 

@@ -116,6 +116,16 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
 //   }
 // }
 
+// 提示訊息，沒有圖示
+.warning{
+  display: none;
+  position: absolute; z-index: 99;
+  padding:.3em .5em; border-radius: 6px;
+  background-color:  $msgHint; color: #fff; 
+  line-height: 1.5; font-size: .9em;
+  margin:1.2em 0 0;
+}
+
 // 錯誤、提示、警告...訊息
 .msg, .msgBlock {
   position: relative;
