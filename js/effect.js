@@ -126,7 +126,7 @@ $(function(){
     let _tabItem = _tabItems.find('li');
     let tabItemLength = _tabItem.length;
     let i = _tabItem.filter('.now').index();
-    let _blockList = _this.find('.blockList');
+    let _slideList = _this.find('.slideList');
 
     _tabItems.append('<span class="movingBg"></span>'); //頁籤移動背景
     let _movingBg = _tabItems.find('.movingBg');
@@ -143,9 +143,8 @@ $(function(){
       i = $(this).index();
       
       _movingBg.animate({ left: (100/tabItemLength)*i + '%' }, 300);
-      _blockList.animate({ left: (-100*i) + '%'}, 400);
+      _slideList.animate({ left: (-100*i) + '%'}, 400);
     });
-    
   })
 
 
@@ -161,7 +160,7 @@ $(function(){
 
     _item.click( function(){
       let _thisItem = $(this);
-      if (checkCount < countMax ){
+      if ( checkCount < countMax ){
         if( _thisItem.hasClass('selected') ){
           $(this).removeClass('selected');
           checkCount --; 
@@ -185,13 +184,24 @@ $(function(){
   })
 
 
-  // 換頁
+  // 左右滑動換頁
   $('.shiftShow').each(function(){
     let _this = $(this);
     let _shiftList = _this.find('.shiftList');
-    let length = _this.find('.grid').length;
-    let _indecator = _this.find('.shiftIndicator li');
+    let length = _this.find('.shiftBox').length;
     let i = 0;
+
+    // const dotsClassName = 'shiftIndicator'; //點點的 class name
+    let _dotLi = '';
+    _shiftList.after('<div class="shiftIndicator"><ol></ol></div>');
+    let indiList = _this.find('.shiftIndicator>ol');
+    for (let n=0; n< length ; n++) {
+      _dotLi += '<li></li>'
+    }
+    indiList.append(_dotLi);
+
+    let _indecator = indiList.find('li');
+    _indecator.eq(i).addClass('now')
 
     _shiftList.width(100*length + "%");
 
