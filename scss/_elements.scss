@@ -252,6 +252,8 @@ body>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
     border-radius: 0;
     width: 2.2em; height: 2.2em; padding: 0; margin: 5px 1px; text-align: center;
   }
+
+  &+.btnDv{border: none;}
 }
 
 // 驗證時間倒數
