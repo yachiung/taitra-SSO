@@ -100,7 +100,7 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
   }
   span{display: inline-block; z-index: 3; position: relative;
     padding: 0;font-size: 1em;
-    width: 2em; height: 2em; line-height: 2em; border-radius: 50%;
+    width: 2.4em; height: 2.4em; line-height: 2.4em; border-radius: 50%;
     background: $bodyBgc; box-shadow: $borderColor 0 0 0 2px;
   }
 }
@@ -139,6 +139,9 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
   &.hint::before{ background-color: $msgHint;}
   &.correct::before{ background-color: $msgSafe;}
   &.question::before{ background-color: $msgQuestion;}
+
+
+  .bigger{font-size: 1.2em;}
 }
 .msg{
   line-height: 1.8; font-size: 1rem;
@@ -212,29 +215,29 @@ h2.blockHeader{ font-size: 1.5em; margin: 0 0 1em; font-weight: normal;}
   }
 }
 
-.style2 .msgBlock{
+// .style2 .msgBlock{
   
-  &.error{ border-color: #FD396E; }
-  &.correct{ border-color: #1f8de1; }
-  &.hint{ border-color: #FF6541; }
-  &.question{ border-color: $msgQuestion; }
+//   &.error{ border-color: #FD396E; }
+//   &.correct{ border-color: #1f8de1; }
+//   &.hint{ border-color: #FF6541; }
+//   &.question{ border-color: $msgQuestion; }
 
-  &.error::before{ background-color: transparent;
-    background-image:url(../images/icon_msg.svg), linear-gradient(to bottom, #F02A76, #F96B87);
-    background-repeat: no-repeat;
-    background-position: center 7px, 0 0;
-    background-size: 30px, 100%;
-  }
-  &.hint::before{ background-color: transparent;
-    background-image:url(../images/icon_msg.svg), linear-gradient(to bottom, #FF6541, #ffa800);
-    background-repeat: no-repeat;
-    background-position: center -68px, 0 0;
-    background-size: 30px, 100%;
-  }
+//   &.error::before{ background-color: transparent;
+//     background-image:url(../images/icon_msg.svg), linear-gradient(to bottom, #F02A76, #F96B87);
+//     background-repeat: no-repeat;
+//     background-position: center 7px, 0 0;
+//     background-size: 30px, 100%;
+//   }
+//   &.hint::before{ background-color: transparent;
+//     background-image:url(../images/icon_msg.svg), linear-gradient(to bottom, #FF6541, #ffa800);
+//     background-repeat: no-repeat;
+//     background-position: center -68px, 0 0;
+//     background-size: 30px, 100%;
+//   }
 
-}
+// }
 
-body>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
+.main>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
 .webHeader+.msgBlock{ margin-top: 4vw;}
 
 // 我不是機器人
@@ -258,15 +261,13 @@ body>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
 
 // 驗證時間倒數
 .countDown{
-  // border: 2px solid $borderColorLight;
-  // text-align: center;
-  // border-radius: 4px;
+  padding: 2px 0 2px .5em;
   time{
     display: inline-block; vertical-align: middle;
     font-size: 1.5em;
     padding: 0 .3em; margin: 0 5px;
     background: #000; color: #fff;
-     border-radius: 4px;
+    border-radius: 4px;
   }
 }
 
