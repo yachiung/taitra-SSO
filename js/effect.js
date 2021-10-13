@@ -158,7 +158,7 @@ $(function(){
     let _warning = _this.find('.warning');
     const countMax = 5;
 
-    _item.click( function(){
+    _item.click( function(e){
       let _thisItem = $(this);
       if ( checkCount < countMax ){
         if( _thisItem.hasClass('selected') ){
@@ -175,8 +175,8 @@ $(function(){
           _warning.stop(true, false).fadeOut(200);
         } else {
           _warning.stop(true, false).fadeIn(200).delay(2000).fadeOut(600).css({
-            left: _thisItem.position().left,
-            top: _thisItem.position().top
+            left: e.clientX,
+            top: e.clientY
           });
         }
       }
