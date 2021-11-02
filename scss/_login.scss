@@ -1,16 +1,15 @@
 // 會員登入
 .loginHere{
-  @extend %mainSection; font-size: 1.15em;
+  font-size: 1.15em; padding: 4em 0 5em;
+  width: 84%; margin: 0 auto; max-width: 420px;
 
-  .blockHeader{margin:0 auto; text-align: center; color: $primaryColor; font-weight: bold;}
+  h2{margin:0 auto; text-align: center; color: $primaryColor;}
 
-  .btnDv{
-    margin: 1.5em 0 0; border: none;
-  }
+  .btnDv{ margin:0 auto; border: none; }
 
   .keepAndForget{
-    display: flex;
-    justify-content: space-between;
+    display: flex; justify-content: space-between;
+    margin: 1em 0 0;
     .singleCheck{ height: 2.8;line-height: 2.7;}
   }
   .singleCheck{font-size: 1rem;}
@@ -20,46 +19,51 @@
     text-align: center;
     margin: 1.5em auto .5em;
   }
-}
-
-.formRow{
-  position: relative; padding: .6em 0; margin: 3px 0;
-  label{
-    margin: 0; padding: 0 .7em;
-    position: absolute; top:1.65em; left: 4px;
-    height: 1.6em; line-height: 1.6; border-radius: 1em;
-    transition: .3s;
-    &.shift{ 
-      top: 0; transform: scale(.85);
-      background: $borderColorDark; color: $fontInvert;
-      &.error{ background-color: $msgError;}
+  
+  .formRow{
+    position: relative; padding: .6em 0 .3em; margin: 3px 0;
+    label{
+      margin: 0; padding: 0 .7em;
+      position: absolute; top:1.65em; left: 4px;
+      height: 1.6em; line-height: 1.6; border-radius: 1em;
+      transition: .3s;
+      &.shift{ 
+        top: 0; transform: scale(.85);
+        background: $borderColorDark; color: $fontInvert;
+        &.error{ background-color: $msgError;}
+      }
+    }
+  
+    input[type="text"], input[type="password"], input[type="email"]{
+      width: 100%; height: 3.2em;
+      margin: 5px 0;
+      border-radius: 2em; padding: 0 1em;
+      background:$grayLight; border-color:$grayLight;
+      &:focus{background-color: #fff;border-color:#fff;}
+    }
+  
+    &.pw{
+      position: relative;
+      input{ padding-right: 54px;}
+      .viewIcon{ position: absolute; right: 6px; top: 1.1em; }
     }
   }
-
-  input[type="text"], input[type="password"], input[type="email"]{
-    width: 100%; height: 3.2em;
-    margin: 5px 0;
-    border-radius: 2em; padding: 0 1em;
-    background:$grayLight; border-color:$grayLight;
-    &:focus{background-color: #fff;border-color:#fff;}
-  }
-
-  &.pw{
-    position: relative;
-    input{ padding-right: 54px;}
-    .viewIcon{ position: absolute; right: 6px; top: 1.1em; }
-  }
 }
 
 
 
+// ****************************************** //
+//                 sideBoard                  //
+// ****************************************** //
+// 側邊有底圖的文字訊息
 .sideBoard{
-  font-size: 1.15em;
-  @extend %mainSection;
-  background-color: #f5f2ea;
-  h2{color: $primaryColor; line-height: 1.3; margin: 0 0 .5em;}
+  background-color: #f5f2ea; padding: 3em 0 2em;
+  h2{color: $primaryColor; line-height: 1.3; margin: 0 0 .3em;}
+  article, .contact, .linkBtn{
+    width: 84%; margin: 0 auto; max-width: 400px;
+  }
   article{
-    padding: 30px; line-height: 1.7;
+    padding: 0 30px 2em; line-height: 1.7;
     p{margin: 0;padding: 0;}
     ul{ margin: 0; padding: 0; display: inline;}
     li{
@@ -74,7 +78,7 @@
 
   .contact{
     line-height: 1.7;
-    padding: 2em 30px 1.5em; margin: 0;
+    padding: 2em 30px 1.4em;
     box-shadow: #0002 0 0 20px;border-radius: 16px;
     h3{margin: 0 0 .1em; line-height: 1.2;}
   }
@@ -87,7 +91,11 @@
   @media screen and (min-width: $wwNormal){
     background: url(../images/hero.jpg) no-repeat center center;
     background-size: cover;
-    padding-top: 8em;
+
+
+    position: fixed; left: 0; top: 0; width: 50vw; height: 100vh;
+    display: flex; flex-flow: column nowrap;
+    justify-content: flex-end;
 
     .contact{
       background-color: #fffb; border: none;
@@ -96,15 +104,64 @@
   }
 }
 
-@media screen and (min-width: $wwNormal){
-  .row.c2{
+// ****************************************** //
+//                 loginLayout                  //
+// ****************************************** //
+// 登入頁兩欄排版
+.loginLayout{
+
+  .webHeader{
+    padding-left: 10px; padding-right: 10px;
+    h1{display: none;}
+
+  }
+
+  .col1 .webFooter{
+    display: none;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    
     display: flex; flex-flow: row nowrap;
-    .sideBoard, .loginHere{
+
+    .webHeader{ // 版頭放在登入頁右欄時
+      padding:0 10px;
+      h1{display: none;}
+
+      hgroup{
+        flex: 1 1 20%;
+      }
+      .topLinks{ 
+        flex: 0 1 80%; right: 10px;
+        li { margin:0 0 0 1em;
+          a{
+            padding:.1em 0 0 .4em;
+          }
+        }
+      }
+  
+    }
+
+    .col1, .col2{
       flex: 0 0 50%;
     }
-    .loginHere{
-      order: 2;
+    .col1{ order: 2;
+      .webFooter{
+        display: block; text-align: center;
+        .links{ margin: 1.2em auto 0; text-align: center;}
+      }
     }
-  
+  }
+
+  @media screen and (min-width: $wwNormal + 200){
+    .webHeader{
+      .topLinks{ 
+        li {
+          margin-left: 1.8em;
+          a {padding: .1em 0 0 .8em;}
+        }
+
+      }
+    }
   }
 }
