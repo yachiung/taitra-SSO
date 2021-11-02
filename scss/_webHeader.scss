@@ -1,0 +1,89 @@
+// 頁頭
+.webHeader{
+  position: relative;
+  border-bottom: 1px solid $borderColorLight;
+  padding: 0 4vw;
+  display: flex; flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  hgroup{ padding: 4px 0;
+    h1{ display: none; }
+    img{
+      float: left; height: 48px; margin: 0;
+      &+img{margin-left: 5px;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    hgroup{
+      flex:1 0 50%; height: 64px;
+      h1{
+        display: block;margin: 0; padding: 0 0 0 8px;
+        font-size: 1.6em;overflow: hidden;
+        height: 56px; line-height: 56px;
+      }
+      img{height: 100%;}
+    }
+    .topLinks{
+      flex:1 1 50%; width: auto;
+    }
+  }
+}
+
+
+
+.topLinks{
+  list-style: none; margin:0; padding: 0; line-height: 1.1;
+  // position: absolute; right: 4vw; top: 7px;
+  font-size: .85em; font-weight: bold;
+  // white-space: nowrap;
+  li{
+    margin:3px 0; position: relative;
+    white-space: nowrap;
+    // outline: 1px solid red;
+    br{ display: none;}
+
+    &:last-child{margin-right: 0;}
+
+    &::before{
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; height: 100%; background-color: $primaryColor;
+    }
+    a{
+      display: block; 
+      text-align: left;
+      text-decoration: none; color: $fontColor; 
+      padding:.1em 0 0 .8em; 
+      transition: .2s;
+  
+      &:hover{border-color: $linkColor; color: $linkColor}
+    }
+  }
+  @media screen and (min-width: $wwNormal){
+    display: flex; flex-flow: row nowrap;
+    justify-content: flex-end; line-height: 1.2;
+    li{
+      margin: 0 1.8em 0 0; 
+      height: 2.4em;
+      br{display: block;}
+
+      &:last-child{margin-right: 0;}
+
+      &::before{
+        position: static;
+        content: ''; display: inline-block;vertical-align: middle;
+        width: 3px; height: 100%; background-color: $primaryColor;
+      }
+      a{
+        display: inline-block; vertical-align: middle;
+        text-align: left;
+        text-decoration: none; color: $fontColor; 
+        padding:.1em 0 0 .8em; 
+        transition: .2s;
+    
+        &:hover{border-color: $linkColor; color: $linkColor}
+      }
+    }
+
+  }
+}

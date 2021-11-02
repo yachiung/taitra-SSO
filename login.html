@@ -15,59 +15,101 @@
 </head>
 <body>
   <header class="webHeader">
-    <h1><img src="images/TAITRA_Official_Trademark.svg" alt="外貿協會 TAITRA"></h1>
+    <hgroup>
+      <img src="images/TAITRA_logo.svg" alt="外貿協會 TAITRA">
+      <img src="images/icon-TaiwanTradeShows-100X100.png" alt="">
+      <h1>外貿協會會員服務</h1>
+    </hgroup>
     <ul class="topLinks">
-      <li><a href="x">English</a></li>
+      <li><a href="x">English version for<br> Taiwanese suppliers</a></li>
+      <li><a href="x">English version for<br> Foreign buyer</a></li>
+      <li><a href="x">關於 Taitra</a></li>
+      
       <!-- <li><a href="x">常見問題</a></li> -->
     </ul>
   </header>
 
+
+
+
+
+
   <div class="main">
 
 
-    <section class="msgBlock error">
+    <section class="msgBlock error" style="display: none">
       <p>登入失敗。 <br>
         查無匹配的電子信箱與密碼，請確認輸入的電子信箱與密碼是否有誤，或請再試一次。
       </p>
     </section>
 
-    <section class="loginHere">
-      <h2 class="blockHeader">會員登入</h2>
-      <form action="">
-        <div class="formRow shiftLabel">
-          <label for="">電子信箱</label>
-          <input type="email">
+    <div class="row c2">
+  
+      <section class="loginHere">
+        <h2 class="blockHeader">會員登入</h2>
+        <form action="">
+          <div class="formRow shiftLabel">
+            <label for="">電子信箱</label>
+            <input type="email">
+          </div>
+          <div class="formRow pw shiftLabel">
+            <label for="">密碼</label>
+            <input type="password">
+            <span class="viewIcon">顯示密碼</span>
+          </div>
+          <div class="keepAndForget">
+            <label class="singleCheck"><input type="checkbox">記住我的帳號</label>
+            <span class="linkBtn"><a href="x.html">忘記密碼？</a></span>
+          </div>
+          <div class="btnDv">
+            <input type="button" value="登入">
+          </div>
+        </form>
+  
+        <div class="links">
+          <!-- <span class="linkBtn"><a href="x.html">忘記密碼？</a></span> -->
+          我還不是會員 <span class="linkBtn"><a href="register.html">註冊</a></span>
         </div>
-        <div class="formRow pw shiftLabel">
-          <label for="">密碼</label>
-          <input type="password">
-          <span class="viewIcon">顯示密碼</span>
+
+        <div class="hr"><span>或</span></div>
+
+        <section class="otherLogin">
+          <h3>選擇以下方式登入</h3>
+          <ul>
+            <li class="facebook"><a href="x">FACEBOOK</a></li>
+            <li class="google"><a href="x">GOOGLE</a></li>
+            <li class="twitter"><a href="x">TWITTER</a></li>
+            <li class="linkedin"><a href="x">LINKEDIN</a></li>
+          </ul>
+        </section>
+      </section>
+      <section class="sideBoard">
+        <article class="text">
+          <h2>一組帳密<br>暢行外貿協會服務</h2>
+          <p>註冊成為外貿協會會員，即可使用以下服務：</p>
+          <ul>
+            <li>台灣經貿網</li>
+            <li>採購洽談會</li>
+            <li>研討會及拓銷團活動報名</li>
+            <li>台灣國際專業展</li>
+          </ul>
+        </article>
+        <div class="contact">
+          <h3>客服窗口</h3>
+          <p>台北國際自行車展覽會
+            <br>曹小姐: <a href="tel:+886-2-27255200">02-27255200</a> 分機 2221
+            <br>Email: <a href="mailto:tc@taitra.org.tw">tc@taitra.org.tw</a>
+          </p>
         </div>
-        <label class="singleCheck"><input type="checkbox">記住我的帳號</label>
-        <div class="btnDv">
-          <input type="button" value="登入">
-        </div>
-      </form>
+        <span class="linkBtn solid"><a href="x.html">更多問題</a></span>
+      </section>
 
-      <div class="links">
-        <span class="linkBtn"><a href="x.html">忘記密碼？</a></span>
-        <div>我還不是會員 <span class="linkBtn"><a href="register.html">註冊</a></span></div>
-      </div>
-    </section>
+    </div>
 
-    <div class="hr"><span>或</span></div>
 
-    <section class="otherLogin">
-      <h2 class="blockHeader">選擇以下方式登入</h2>
-      <ul>
-        <li class="facebook"><a href="x">FACEBOOK</a></li>
-        <li class="google"><a href="x">GOOGLE</a></li>
-        <li class="twitter"><a href="x">TWITTER</a></li>
-        <li class="linkedin"><a href="x">LINKEDIN</a></li>
-      </ul>
-    </section>
 
-    <section class="faq">
+
+    <section class="faq" style="display: none">
       <h2 class="blockHeader">常見問題</h2>
         <ul>
         <li><a href="x"><span class="qNumber">Q1</span> 登入被鎖住怎麼辦？</a></li>
@@ -77,7 +119,7 @@
       <div class="more"><a href="x">更多</a></div>
     </section>
 
-    <section class="otherSites">
+    <section class="otherSites"  style="display: none">
       <div><a href="xxx" target="_blank">
         <img src="publicData/site1.jpg" alt="商情資訊">
         <p>商情資訊</p>
@@ -126,7 +168,7 @@
     <p>地址：台北市基隆路一段333號國貿大樓5-7樓</p>
     <p>電話：886-2-2725-5200</p>
     <ul class="links">
-      <li><a href="mailto:ourmail@company.com.tw">若有疑問請：聯絡我們</a></li>
+      <li><a href="mailto:ourmail@company.com.tw">與我們聯絡</a></li>
       <li><a href="x">隱私權政策</a></li>
     </ul>
   </footer>

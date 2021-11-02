@@ -2,14 +2,22 @@
 .loginHere{
   @extend %mainSection; font-size: 1.15em;
 
-  .blockHeader{margin-bottom: 0;}
+  .blockHeader{margin:0 auto; text-align: center; color: $primaryColor; font-weight: bold;}
 
   .btnDv{
     margin: 1.5em 0 0; border: none;
   }
 
+  .keepAndForget{
+    display: flex;
+    justify-content: space-between;
+    .singleCheck{ height: 2.8;line-height: 2.7;}
+  }
+  .singleCheck{font-size: 1rem;}
+
+
   .links{
-    display: flex; justify-content: space-between;
+    text-align: center;
     margin: 1.5em auto .5em;
   }
 }
@@ -31,7 +39,9 @@
   input[type="text"], input[type="password"], input[type="email"]{
     width: 100%; height: 3.2em;
     margin: 5px 0;
-    border-radius: 12px; padding: 0 1em;
+    border-radius: 2em; padding: 0 1em;
+    background:$grayLight; border-color:$grayLight;
+    &:focus{background-color: #fff;border-color:#fff;}
   }
 
   &.pw{
@@ -39,15 +49,62 @@
     input{ padding-right: 54px;}
     .viewIcon{ position: absolute; right: 6px; top: 1.1em; }
   }
-  .singleCheck{font-size: 1rem;}
 }
-.style2 .formRow{
-  label.shift{
-    background-image: linear-gradient(-15deg,#0957b6 -10%, #14d0de 120%);
-    &.error{
-      background-image: linear-gradient(-15deg,#e61163 , #fe707e );
-      // linear-gradient(to bottom, #F02A76, #F96B87);
 
+
+
+.sideBoard{
+  font-size: 1.15em;
+  @extend %mainSection;
+  background-color: #f5f2ea;
+  h2{color: $primaryColor; line-height: 1.3; margin: 0 0 .5em;}
+  article{
+    padding: 30px; line-height: 1.7;
+    p{margin: 0;padding: 0;}
+    ul{ margin: 0; padding: 0; display: inline;}
+    li{
+      margin: 0; padding: 0;
+      display: inline; font-weight: bold;
+      &::after{content: '、';}
+      &:last-child{
+        &::after{display: none;}
+      }
     }
+  }
+
+  .contact{
+    line-height: 1.7;
+    padding: 2em 30px 1.5em; margin: 0;
+    box-shadow: #0002 0 0 20px;border-radius: 16px;
+    h3{margin: 0 0 .1em; line-height: 1.2;}
+  }
+
+  .linkBtn{
+    display: block;
+    margin: 30px auto;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    background: url(../images/hero.jpg) no-repeat center center;
+    background-size: cover;
+    padding-top: 8em;
+
+    .contact{
+      background-color: #fffb; border: none;
+    }
+
+  }
+}
+
+@media screen and (min-width: $wwNormal){
+  .row.c2{
+    display: flex; flex-flow: row nowrap;
+    .sideBoard, .loginHere{
+      flex: 0 0 50%;
+    }
+    .loginHere{
+      order: 2;
+    }
+  
   }
 }
