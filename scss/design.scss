@@ -1,14 +1,15 @@
+// $ $ $ $ $ $ $ $ $ $ $ $ //
 $wwSlim: 500px;
 $wwMedium: 700px;
 $wwNormal: 1000px;
-$wwWide: 1200px;
-
-// ////////////////////////////////////////////////////////////
+$wwWide: 1400px;
+// $ $ $ $ $ $ $ $ $ $ $ $ //
 
 @import "_colorScheme";
 @import "_default";
 @import "_webHeader"; // 網站標題區
 @import "_form"; // 表單元件預設樣式
+@import "_formLayout"; // 表單元件預設樣式
 @import "_btnDv"; // 表單送出按鈕群
 @import "_elements"; //元件、模組
 @import "_login"; // 會員登入

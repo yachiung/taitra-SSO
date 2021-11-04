@@ -1,9 +1,14 @@
 // 會員登入
 .loginHere{
-  font-size: 1.15em; padding: 4em 0 5em;
+  font-size: 1.15em; padding: 5px 0 60px;
   width: 84%; margin: 0 auto; max-width: 420px;
+  // outline: 1px solid red;
+  h1.logos{
+    text-align: center; margin:50px 0 10px;
+    img{display: inline-block; width: auto; height: 80px;}
+  }
 
-  h2{margin:0 auto; text-align: center; color: $primaryColor;}
+  h2{margin:0 auto; text-align: center; color: $fontColorDark;}
 
   .btnDv{ margin:0 auto; border: none; }
 
@@ -19,7 +24,13 @@
     text-align: center;
     margin: 1.5em auto .5em;
   }
-  
+
+  .btnDv{
+    button, input[type="button"]{ height: 3.2em;
+      &:only-child{width: 100%;}
+    }
+  }
+
   .formRow{
     position: relative; padding: .6em 0 .3em; margin: 3px 0;
     label{
@@ -48,7 +59,14 @@
       .viewIcon{ position: absolute; right: 6px; top: 1.1em; }
     }
   }
+
+  @media screen and (min-width: $wwNormal){
+    h1.logos{
+      img{height: 90px;}
+    }
+  }
 }
+
 
 
 
@@ -84,8 +102,9 @@
   }
 
   .linkBtn{
-    display: block;
+    display: block; 
     margin: 30px auto;
+    a{height: 3em; line-height: 3;}
   }
 
   @media screen and (min-width: $wwNormal){
@@ -116,31 +135,17 @@
 
   }
 
-  .col1 .webFooter{
-    display: none;
-  }
+  .topLinks{ margin: 5px auto; width: 92vw; }
+
+  .col1 .webFooter{display: none;}
 
   @media screen and (min-width: $wwNormal){
     
     display: flex; flex-flow: row nowrap;
 
-    .webHeader{ // 版頭放在登入頁右欄時
-      padding:0 10px;
-      h1{display: none;}
-
-      hgroup{
-        flex: 1 1 20%;
-      }
-      .topLinks{ 
-        flex: 0 1 80%; right: 10px;
-        li { margin:0 0 0 1em;
-          a{
-            padding:.1em 0 0 .4em;
-          }
-        }
-      }
+    .topLinks{ width: 96%; }
   
-    }
+
 
     .col1, .col2{
       flex: 0 0 50%;

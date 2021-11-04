@@ -4,8 +4,8 @@
   box-sizing: border-box;
   height: 3em;
   line-height: 3em;
-  padding: 0 .8em;
-  margin: 3px;
+  padding: 0 9px;
+  margin: 0;
   border-radius: 6px;
   vertical-align: middle;
   font-size: inherit;
@@ -18,13 +18,6 @@
   &.error{border-color:transparent;box-shadow: $msgError 0 0 0 2px;}
 }
 
-// .style2 {
-//   %textInput{
-//     &:hover{border-color: #176fb3;}
-//     &:focus{border-color:transparent;box-shadow: #176fb3 0 0 0 2px;outline: none;}
-//     &.error{border-color:transparent;box-shadow: #e61163 0 0 0 2px;}
-//   }
-// }
 
 // 下拉選單樣式
 %selectStyle {
@@ -33,18 +26,19 @@
   height: 3em;
   line-height: 3em;
   padding: 0 32px 0 .8em;
-  margin: 3px;
+  margin: 0;
   border: 1px solid $borderColor;
   vertical-align: middle;
   font-size: inherit;
-  background: #fff url(../images/selectBg.png) no-repeat right 1.2em;
+  background: #fff url(../images/selectArrow.svg) no-repeat top .9em right 5px;
   background-size: 20px auto;
-  border-radius: 4px;
-
+  border-radius: 6px;
   &:hover{border-color: $borderColorDark;}
   &:focus{border-color: $btnBg1;box-shadow: $btnBg1 0 0 0 1px;outline: none;}
-
 }
+
+
+
 // 顏色
 $disabled-color: #666;
 
@@ -71,7 +65,10 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-input[type="week"] { @extend %textInput; }
+input[type="week"] { @extend %textInput; 
+
+  &.full{ width: 100%;}
+}
 
 // 表單中，直接帶入的值
 .knownValue{ @extend %textInput;  border: none; }
@@ -81,6 +78,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   @extend %selectStyle;
+
+  &.full{width: 100%;}
 }
 
 // 按鈕樣式
@@ -121,20 +120,6 @@ input[type="button"] {
   }
 }
 
-// .style2{
-//   button,
-//   input[type="submit"],
-//   input[type="reset"],
-//   input[type="button"] {
-//     background-image:linear-gradient( #1ad8ed -20%, #1872bb);
-//     border-color: #fff;
-//     &:hover{
-//       // border-color: #1ad8ed;
-//       box-shadow: #1872bb 0 0 0 2px;
-//       background-image:linear-gradient( to top, #1ad8ed -60%, #1872bb);
-//     }
-//   }
-// }
 
 textarea {
   @extend %textInput;
@@ -222,12 +207,13 @@ input[type="submit"][disabled]:focus {
 // fieldset
 fieldset {
   border: 1px solid $borderColorLight; border-radius: 8px;
+  padding: 0; margin: 0;
   &+fieldset {
     margin-top: 1em;
   }
   legend {
     font-weight: normal; font-size: 1.4em; 
-    padding: 9px .8em 8px; margin: 0 0 .5em; line-height: 1.1;
+    padding: 9px .8em 8px; margin: 0 0 .5em .8em; line-height: 1.1;
     border: 2px solid $borderColorLight;
     border-radius: 2em;
   }
@@ -242,7 +228,7 @@ fieldset {
 // 必填欄位星號 //
 .required{
   text-decoration: none;color: $importantColor ;
-  font-size: 1.3em;line-height: .6; margin-right: 3px;
+  font-size: 1.1em;line-height: .6; margin-right: 3px;
 }
 
 // 單獨存在的 checkbox //
@@ -256,6 +242,9 @@ label.singleCheck{
   line-height: 1.8;
   .singleCheck{ position: absolute; left: 0; top: 1em;}
   a{display: inline-block;}
+
+  border: 1px dashed $borderColor; border-radius: 6px;
+  margin: 1em auto;
 }
 
 
@@ -347,11 +336,6 @@ label.singleCheck{
   }
 }
 
-.formA fieldset .duration{
-  width:calc(86vw - 4px);
-}
-
-
 // 地址組 //
 .addressSet{
   display: flex; flex-flow: row wrap;
@@ -363,11 +347,67 @@ label.singleCheck{
     input[type="text"] {flex: 1 1 60%}
   }
 }
-.formLayout td .addressSet{
-  margin: 0 2px;
-  @media screen and (min-width: $wwNormal){
-    width: calc(90% + 6px); margin: 0;
+
+// 密碼組，input 後面接顯示、隱藏圖示 //
+.pw{
+  position: relative;
+  .viewIcon{position: absolute; right: 2px; top: -1px;}
+  input{ width: 100%;}
+}
+
+// 密碼組，第一次輸入＋確認。左右並排//
+/* 
+.pwSet{
+  display: flex;
+  
+  .pwFirst, .pwConfirm{
+    flex:0 1 calc(50% - 3px);
+    position: relative;
+    .viewIcon{
+      position: absolute; right: 2px; top: -1px;
+    }
+    input[type="password"], input[type="text"]{
+      padding-right: 52px; width:100%;
+    }
   }
+  .pwConfirm{margin-left: 6px;}
+}
+ */
+
+
+// 統一編號＋公司名稱
+.compNameSet{ display: flex;
+  input:first-child{ flex:0 0 8em;width: 8em;  }
+  input:last-child{ flex: 1 1 auto;margin-left: 6px;}
+}
+
+// 中文姓名＋稱謂＋英文姓名
+/* 
+.nameSet{ display: flex;
+  input:first-child{ flex: 1 1 20%; width: 20%; }
+  input:last-child{ flex: 1 1 auto; }
+  select{ flex: 0 0 6em; width: 6em; margin: 0 6px; }
+}
+ */
+// 中文姓名＋稱謂＋英文姓名
+.enNameSet{
+  display: flex;
+  select{flex: 0 0 6em; width: 6em;}
+  input{ flex: 1 1 auto; margin-left: 6px;}
+}
+
+// 國碼＋手機號碼
+.mobileSet{
+  display: flex;
+  select{flex: 0 0 6em; width: 6em;}
+  input{ flex: 1 1 auto; margin-left: 6px;}
+}
+
+.formLayout td{
+  // &>.pwSet, &>.nameSet,
+  // &>.compNameSet, &>.enNameSet, &>.mobileSet, &>.pw,
+  // &>.pwRules
+  // {width: 96%;}
 }
 
 

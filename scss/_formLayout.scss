@@ -1,0 +1,35 @@
+.formLayout{
+  border-collapse: collapse; line-height: 1.3;
+  padding: 0; margin: 0 auto;
+  // tr{border-bottom: 1px solid #eee;}
+  td{padding: 5px 0; }
+  td:nth-child(odd){
+    width: 9em; padding: 1.2em .8em 0 0; 
+    vertical-align: top; text-align: right;
+  }
+
+  
+  @media screen and (max-width: $wwNormal - 1){
+    display: block; width: auto;
+    // outline: 1px solid pink;
+    tbody{ display: block; }
+    tr, td{ display: block; width: 100%;}
+
+    td{
+      &:nth-child(odd){ text-align: left; width: 100%; }
+    }
+  }
+}
+
+
+.formA{
+  @extend %outerWidth;
+  margin: 1em auto 5em; padding: 0;
+
+  .formLayout{ margin: 10px auto; width: 94%; }
+
+  @media screen and (min-width: $wwNormal){
+    .formLayout{ width: 90%;}
+  }
+
+}

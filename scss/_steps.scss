@@ -1,9 +1,11 @@
 .steps{
+ 
   padding: 1.5em 0 .8em; margin:0; text-align: center;
   overflow: hidden;
   ul, ol{
     display: flex; justify-content: space-between;
-    list-style: none; margin: 0 -2vw; padding: 0; line-height: 1.1;
+    list-style: none; margin: 0 auto; padding: 0; line-height: 1.1;
+    @extend %outerWidth;
     &>li{
       flex: 1 1 30%;
       position: relative; padding: 22px 0 0;
@@ -19,15 +21,21 @@
       }
       &::after{
         content: ''; position: absolute; top: 0; left: 50%;
-        width: 10px;height: 10px;margin-left: -5px; border-radius: 50%;
+        // width: 10px;height: 10px;
+        width: 16px;height: 16px;margin-left: -8px; top: -4px; border-radius: 50%;
         box-shadow: $borderColor 0 0 0 4px; background: #fff;
       }
       &.now{
         &::after{
           background: $secondaryColor;
-          box-shadow: $secondaryColor 0 0 0 5px inset, 
-          $secondaryColor 0 0 0 1px, $bodyBgc 0 0 0 4px, 
-          $borderColor 0 0 0 8px;
+          // box-shadow: $secondaryColor 0 0 0 5px inset, 
+          // $secondaryColor 0 0 0 1px, $bodyBgc 0 0 0 4px, 
+          // $borderColor 0 0 0 8px;
+
+          background-image: linear-gradient(135deg,#f73485, #722d90 80%);
+          box-shadow: $bodyBgc 0 0 0 3px, 
+          $borderColor 0 0 0 7px;
+  
         }
       }
     }
@@ -40,7 +48,7 @@
   }
 }
 
-.style2 .steps{
+.steps{
   ul, ol{
     &>li{
       &.now::after{

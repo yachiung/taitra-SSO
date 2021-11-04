@@ -1,6 +1,23 @@
 // 區塊標題
 h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 
+.pageHeader {
+  margin: 20px;
+  display: flex; flex-flow: row wrap;
+  align-items: flex-end; justify-content: space-between;
+  h2{ margin: 0; flex: 1 1 auto; font-weight: normal;
+    .hintIcon{ vertical-align: middle; transform: scale(.82); margin-top: -2px;}
+  }
+  .singleCheck { flex: 0 0 auto; margin-left: 1.5em; 
+    color: $fontColorLight; font-size: .95em;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: 92vw; margin:20px auto 40px;
+  }
+
+}
+
 // 顯示密碼（圖示）
 .viewIcon{
   position: relative;
@@ -65,14 +82,14 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 .linkBtn { display: inline-block;
   &>a {
     display: block; text-align: center; text-decoration: none;outline: none;
-    height: 2.8em; line-height: 2.7; border-radius: 2em;
+    height: 3em; line-height: 3; border-radius: 2em;
     padding: 0 1em; margin: 3px;
-    border: 1px solid $borderColor;
-    color: $fontColor; background: $bodyBgc;
+    border: 1px solid $linkColor;
+    color: $linkColor; background: $bodyBgc;
     transition: .2s; 
     &:hover, &:focus {
       border-color: #fff;
-      box-shadow: $borderColorDark 0 0 0 2px;
+      box-shadow: $linkColor 0 0 0 2px;
     }
   }
   &.solid{
@@ -88,17 +105,7 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
     }
   }
 }
-// .style2{
-//   .linkBtn>a{
-//     border-color: #176fb3;
-//     color: #176fb3;
-//     &:hover, &:focus {
-//       border-color: #fff;
-//       box-shadow: #176fb3 0 0 0 2px;
-//     }
 
-//   }
-// }
 
 // （中間有字的）分隔線
 .hr{
@@ -119,14 +126,14 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 
 
 // 一整塊的錯誤訊息（待刪除）
-// .warning{
-//   padding: 1em 4vw; background: #d33; color: #fff;
-//   line-height: 1.8;
-//   p{margin:1em 0;
-//     &:first-child{margin-top: 0;}
-//     &:last-child{margin-bottom: 0;}
-//   }
-// }
+/* .warning{
+  padding: 1em 4vw; background: #d33; color: #fff;
+  line-height: 1.8;
+  p{margin:1em 0;
+    &:first-child{margin-top: 0;}
+    &:last-child{margin-bottom: 0;}
+  }
+} */
 
 // 提示訊息，位置跟隨游標，沒有圖示
 .warning{
@@ -143,7 +150,7 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 }
 
 // 錯誤、提示、警告...訊息
-.msg, .msgBlock {
+.msg, .msgBlock, .hintIcon {
   position: relative;
   &::before{
     content: ''; position: absolute;
@@ -155,7 +162,6 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
   &.hint::before{ background-color: $msgHint;}
   &.correct::before{ background-color: $msgSafe;}
   &.question::before{ background-color: $msgQuestion;}
-
 
   .bigger{font-size: 1.2em;}
 }
@@ -185,8 +191,7 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
   padding: 22px 12px; margin: 2em auto;
   min-height: 68px;
   line-height: 1.8; font-size: 1rem;
-  border: 1px solid $msgQuestion;
-  border-left-width: 4px;
+  border: 1px solid $msgQuestion; border-radius: 8px;
   &.error{ border-color: $msgError; }
   &.correct{ border-color: $msgSafe; }
   &.hint{ border-color: $msgHint; }
@@ -214,22 +219,55 @@ h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
   .btnDv{border: none;}
 
 }
-.style2 {
-  .msg, .msgBlock {
- 
-    &.error::before{ background-color: #FD396E;}
-    &.hint::before{ background-color: #ff9a41;}
-    &.correct::before{ background-color: #1f8de1;}
-    &.question::before{ background-color: #888;}
+
+// 單獨存在的圖示
+.hintIcon{
+  display: inline-block; padding: 0; margin: auto;
+  // border: 1px solid $msgQuestion;
+  width: 44px; height: 44px; cursor: pointer;
+
+  &.error:hover::before{ background-color:darken( $msgError, 15%);}
+  &.hint:hover::before{ background-color:darken( $msgHint, 15%);}
+  &.correct:hover::before{ background-color:darken( $msgSafe, 15%);}
+  &.question:hover::before{ background-color:darken( $msgQuestion, 15%);}
+
+
+  &::before{
+    display: block;
+    width: 100%; height: 100%; left: 0; top: 0;
+    background-size:  30px;
   }
-  .msg{
-    &.error{ color: #FD396E;}
-    &.hint{ color: #ff9a41;}
-    &.correct{ color: #1f8de1;}
-    &.question{ color: #888;}
   
-  }
+  &.error{ border-color: $msgError; }
+  &.correct{ border-color: $msgSafe; }
+  &.hint{ border-color: $msgHint; }
+  &.question{ border-color: $msgQuestion; }
+
+  &.error::before{ background-position: center 7px;}
+  &.correct::before{ background-position: center -30px;}
+  &.hint::before{ background-position: center -68px;}
+  &.question::before{ background-position: center -105px;}
+
 }
+
+
+
+// .style2 {
+//   .msg, .msgBlock {
+ 
+//     &.error::before{ background-color: #FD396E;}
+//     &.hint::before{ background-color: #ff9a41;}
+//     &.correct::before{ background-color: #1f8de1;}
+//     &.question::before{ background-color: #888;}
+//   }
+//   .msg{
+//     &.error{ color: #FD396E;}
+//     &.hint{ color: #ff9a41;}
+//     &.correct{ color: #1f8de1;}
+//     &.question{ color: #888;}
+  
+//   }
+// }
 
 // .style2 .msgBlock{
   
