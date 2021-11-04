@@ -10,7 +10,6 @@
   @media screen and (min-width: $wwNormal){
     max-width: $wwNormal;
   }
-
 }
 // % % % % % % % % % % % % //
 
@@ -22,6 +21,11 @@ body{
   font-size: 1em;
 
   display: flex; flex-direction: column; // 把 footer 推到頁面和 viewport 最下方
+
+  &.noScroll{
+    overflow: hidden; overflow-y:hidden;
+  }
+
 }
 a{ color: $linkColor;}
 
@@ -38,7 +42,7 @@ h6{font-size: 1em;}
 // 頁尾
 .webFooter{
   flex-shrink: 0;
-  padding: 1.5em 30px;
+  padding: 1.5em 3vw;
   line-height: 1.5; width: 100%;
   border-top: 1px solid $borderColorLight;
   text-align: center;
@@ -48,7 +52,7 @@ h6{font-size: 1em;}
     color: $linkColor; text-decoration: none;
     border-bottom: 1px solid $linkColor;
   }
-  p{display: inline-block; margin: .3em 1em;}
+  p{display: inline-block; margin: .3em 0;}
 
 
   ul{list-style: none; margin:0; padding: 0; line-height: 1.3;}

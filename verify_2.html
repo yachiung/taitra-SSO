@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>驗證-信箱_預設SSO 【外貿協會 TAITRA SSO】</title>
+  <title>驗證-手機1_輸入 【外貿協會 TAITRA SSO】</title>
 
   <link rel="stylesheet" href="slick/slick.css">
   <link rel="stylesheet" href="css/design.css">
@@ -45,32 +45,23 @@
 
 
     <section class="verify">
-      <h3>信箱驗證</h3>
-      <p>此服務需驗證電子信箱，我們已將驗證碼發送到你的電子信箱，請先進行驗證以取得更多服務。</p>
-      <p class="countDown">驗證碼有效時間倒數<time>14:21</time></p>
+      <h3>手機驗證</h3>
+      <p>請輸入您想要綁定的手機號碼，我們將發送驗證碼到該手機。</p>
       <section class="msgBlock hint">
-        <p>驗證碼已發送到: <em>sammi.hong@hyweb.com.tw</em></p>
-        <p>請確認驗證代碼: <em class="bigger">ITHA</em></p>
+        <p>僅提供國內手機進行簡訊驗證</p>
       </section>
-      <div class="verifCode">
-        <h4>請輸入驗證碼</h4>
-        <input type="text" value="3" readonly></input>
-        <input type="text" value="2" readonly></input>
-        <input type="text" value="7" readonly></input>
-        <input type="text"></input>
-        <input type="text"></input>
-        <input type="text"></input>
+      <div class="verifPhone">
+        <h4>聯絡手機</h4>
+        <div class="mobileSet">
+          <span class="knownValue">+886</span>
+          <input type="text"></input>
+        </div>
+        <div class="msg correct"></div>
+        <div class="msg error">手機號碼格式錯誤</div>
       </div>
       <div class="btnDv">
-        <input type="submit" value="驗證"  class="showLightbox" data-id="msg-2">
+        <input type="submit" value="發送驗證碼" class="showLightbox" data-id="msg-2">
       </div>
-      <section class="msgBlock hint">
-        <p>沒有收到驗證碼? 
-          <a class="showLightbox" data-id="msg-3">重寄驗證信</a>，或選擇
-          <a class="showLightbox" data-id="msg-4">手機驗證</a>
-        </p>
-        <p>未收到驗證碼? 請使用<em>「會員註冊信箱」</em><a href="mailto:service@mail.com">聯絡客服</a></p>
-      </section>
     </section>
 
   </div>
@@ -86,13 +77,12 @@
       <li><a href="x">隱私權政策</a></li>
     </ul>
   </footer>
-  
 
 
 
 
   <!-- 燈箱 -->
-  <section class="lightbox message" data-id="msg-1">
+  <section class="message lightbox" data-id="msg-1">
     <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
     <h2>註冊成為公司會員享有更多服務</h2>
     <p>為整合外貿協會服務，原台灣經貿網、採購洽談會、研討會報名網站等會員將統一更名為外貿協會會員，即日起可使用一組帳密登入上述網站服務。</p>
@@ -100,34 +90,14 @@
 
   <section class="lightbox message" data-id="msg-2">
     <section class="msgBlock correct">
-      <h2>驗證成功</h2>
-      <p>3 秒後繼續註冊流程</p>
-    </section>
-    <div class="btnDv">
-      <button class="hideLightbox">確定</button>
-    </div>
-  </section>
-
-  <section class="lightbox message" data-id="msg-3">
-    <section class="msgBlock correct">
       <h2>寄送成功</h2>
-      <p>我們已傳送驗證碼到 <em>sammi.hong@hyweb.com.tw</em></p>
+      <p>我們已傳送驗證碼到 <em>0987654321</em></p>
     </section>
     <div class="btnDv">
       <button class="hideLightbox">好的</button>
     </div>
   </section>
 
-  <section class="lightbox message" data-id="msg-4">
-    <section class="msgBlock hint">
-      <h2>只提供臺灣手機簡訊驗證</h2>
-      <p>確定改手機簡訊驗證?</p>
-    </section>
-    <div class="btnDv">
-      <button>確定</button>
-      <button class="type2 hideLightbox">取消</button>
-    </div>
-  </section>
 
 </body>
 </html>

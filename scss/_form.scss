@@ -39,8 +39,6 @@
 
 
 
-// 顏色
-$disabled-color: #666;
 
 ////////// 表單元件基本樣式 //////////
 form {margin: 0;padding: 0;}
@@ -168,7 +166,7 @@ input[disabled]:hover,
 input[disabled]:focus {
   background-color: $gray;
   border-color: $borderColorLight;
-  color: $disabled-color;
+  color: $grayDark;
   box-shadow: none;
 }
 
@@ -197,9 +195,8 @@ button[disabled]:hover,
 input[type="submit"][disabled]:hover,
 button[disabled]:focus,
 input[type="submit"][disabled]:focus {
-  background-color: #ddd;
-  color: #888;
-  border-radius: 4px;
+  background-color: $grayLight;
+  color: darken($grayLight, 25%);
   box-shadow: none;
   cursor: default;
 }
@@ -214,7 +211,7 @@ fieldset {
   legend {
     font-weight: normal; font-size: 1.4em; 
     padding: 9px .8em 8px; margin: 0 0 .5em .8em; line-height: 1.1;
-    border: 2px solid $borderColorLight;
+    border: 2px solid $borderColor;
     border-radius: 2em;
   }
 
@@ -399,16 +396,16 @@ label.singleCheck{
 // 國碼＋手機號碼
 .mobileSet{
   display: flex;
-  select{flex: 0 0 6em; width: 6em;}
+  select, .ncode{flex: 0 0 6em; width: 6em;}
   input{ flex: 1 1 auto; margin-left: 6px;}
 }
 
-.formLayout td{
-  // &>.pwSet, &>.nameSet,
-  // &>.compNameSet, &>.enNameSet, &>.mobileSet, &>.pw,
-  // &>.pwRules
-  // {width: 96%;}
-}
+// .formLayout td{
+//   // &>.pwSet, &>.nameSet,
+//   // &>.compNameSet, &>.enNameSet, &>.mobileSet, &>.pw,
+//   // &>.pwRules
+//   // {width: 96%;}
+// }
 
 
 
@@ -438,6 +435,3 @@ label.singleCheck{
 
 
 
-.verify{
-  @extend %mainSection;
-}

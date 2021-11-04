@@ -213,5 +213,49 @@ $(function(){
   })
 
 
+  // 燈箱 --- 
+  var _showLightbox =  $('.showLightbox');
+  var _lightbox = $('.lightbox');
+  var _hideLightbox = _lightbox.find('.hideLightbox');
+  var _lightboxNow;
+
+  _lightbox.before('<div class="cover"></div>');
+  var _cover = $('.cover');
+  
+  _showLightbox.click(function(e){
+    let boxID = $(this).attr('data-id');
+    // if ($(this).is('a')) {
+    //   e.prevantDefault();
+    // }
+    _lightboxNow = _lightbox.filter( function(){ return $(this).attr('data-id') === boxID} );
+    _lightboxNow.stop(true, false).fadeIn(speed).addClass('show');
+    _lightboxNow.prev(_cover).fadeIn(speed);
+    _body.addClass('noScroll');
+  })
+
+  _hideLightbox.click(function(){
+    let _targetLbx = $(this).parents('.lightbox');
+    _targetLbx.stop(true, false).fadeOut(speed,
+      function(){
+        _targetLbx.removeClass('show');
+      }
+    );
+    _targetLbx.prev(_cover).fadeOut(speed);
+    _body.removeClass('noScroll');
+  })
+
+  _cover.click(function(){
+    let _targetLbx = $(this).next('.lightbox');
+    $(this).fadeOut(speed);
+    _targetLbx.fadeOut(speed,
+      function(){
+        _targetLbx.removeClass('show');
+      }
+    );
+    _body.removeClass('noScroll');
+  })
+  
+
+
 
 })
