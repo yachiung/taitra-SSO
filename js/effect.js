@@ -97,16 +97,19 @@ $(function(){
   })
 
   // 常見問題開合
-  var _qaList = $('.qaList');
-  _qaList.each(function(){
-    let _q = $(this).find('.q');
+  $('.qaList').each(function(){
+    let _qaList = $(this);
+    let _q = _qaList.find('.q');
     
     _q.click(function(){
       let _a = $(this).next('.a');
       let _qaPair = $(this).parent('li');
+
+      _qaList.find('.show').removeClass('show').find('.a').slideUp(400);
+
       if( _a.is(':hidden') ){
         _a.slideDown(400);
-        _qaPair.addClass('show');
+        _qaPair.addClass('show').siblings().removeClass('show');
       } else {
         _a.slideUp(400);
         _qaPair.removeClass('show');

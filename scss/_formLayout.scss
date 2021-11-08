@@ -23,7 +23,7 @@
 
 
 .formA{
-  @extend %outerWidth;
+  @extend %outerSection;
   margin: 1em auto 5em; padding: 0;
 
   .formLayout{ margin: 10px auto; width: 94%; }

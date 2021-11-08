@@ -1,14 +1,16 @@
 // % % % % % % % % % % % % //
-%mainSection{
-  padding: 2.5em 4vw; margin: 0 auto;
-}
-%outerWidth{
-  width: 94vw; margin-left: auto; margin-right: auto;
+// %mainSection{
+//   padding: 2.5em 4vw; margin: 0 auto;
+//   max-width: $wwNormal;
+//   @media screen and (min-width: $wwSlim){
+//     width: 92vw;
+//   }
+// }
+%outerSection{
+  width: 94vw; margin:0 auto;
+  max-width: $wwNormal;
   @media screen and (min-width: $wwSlim){
     width: 92vw;
-  }
-  @media screen and (min-width: $wwNormal){
-    max-width: $wwNormal;
   }
 }
 // % % % % % % % % % % % % //

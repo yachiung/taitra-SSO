@@ -1,6 +1,6 @@
 // 常見問題
 .faq{
-  @extend %mainSection;
+  @extend %outerSection;
   padding-top: 2.5em; padding-bottom: 2.5em;
   background: $grayLight;
   ul{list-style: none; margin: 0 0 0 -5px; padding: 0; line-height: 1.5;}
