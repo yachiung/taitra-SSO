@@ -3,7 +3,8 @@
   --ih : 2.8em;
 
   width:100vw ; margin: 0 auto; padding:4vw;
-  box-shadow: $borderColorLight 0 0 0 1px;
+
+  // box-shadow: $borderColorDark 0 0 0 1px inset;
   background: $grayLight;
 
   .tabItems{
@@ -12,7 +13,10 @@
     border: 4px solid #fff;
     background: $bodyBgc;
     border-radius: var(--ih);
-    margin:0 12px -1.6em;
+
+    margin:0 auto -1.6em; width: 94%;
+    max-width:calc( #{$wwNormal}*.94);
+
     ul{
       display: flex;
       list-style: none; margin: 0; padding:0; text-align: center;
@@ -38,6 +42,9 @@
     position: relative;overflow: hidden;
     width: 100%; margin: 0 auto;
     border-radius: 12px;
+
+    max-width: $wwNormal;
+
   }
   
   .slideList{
@@ -57,6 +64,7 @@
 
 // 多一步驟，把握更多商機
 .slogan{
+  @extend %outerSection;
   margin: 0 auto 1.5em; padding:1.2em 3vw .8em;
   background: #f7ef95; border-radius: 12px;
   box-shadow: #fff 0 0 0 3px;

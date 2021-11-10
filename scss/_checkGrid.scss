@@ -1,17 +1,19 @@
 // 矩陣式勾選項目（偏好議題、關注產業）
 .checkGrid{
   position: relative;
-  padding:8px 12px;
+  padding:8px 12px; margin: 0 auto;
 
   ul.grid{
     position: relative;
-    list-style: none; padding: 0;margin: 0; text-align: center;
-    overflow: hidden;
+    list-style: none; padding: 0;margin: 0 auto; text-align: center;
+    // overflow: hidden;
+    display: flex; flex-flow: row wrap;
     &>li{
-      position: relative;
-      float: left; width: 33.33%; margin: 15px 0; padding: 0;
+      position: relative; margin: 15px 0; padding: 0;
+      flex:0 0 33.33%;
+      // float: left; width: 33.33%; 
       cursor: pointer;  
-      &::after{
+      &::after{// checked 打勾
         display: none;
         content: ''; position: absolute; left: 50%; bottom: 50%;z-index: 9;
         width: 30px; height: 16px; margin: auto auto -12px -15px;
@@ -19,21 +21,32 @@
         transform: rotate(-45deg);      
       }
       &::before{
-        display: none;
-        content: ''; position: absolute; left: 50%; bottom: 6px;
-        background-color: #0006;border-radius: 50%;
-        width: 24vw; height: 24vw; margin-left: -12vw;
-        z-index: 8;
+        display: none; content: ''; z-index: 8;
+        position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px;
+        background-color: #0008; border-radius: 50%;
+        width: 24vw; height: 24vw; 
+        // margin-left: -12vw;
+        max-width: 180px; max-height: 180px;        
       }
       
       img{
-        display: block; position: relative; margin: 6px auto;
+        display: block; position: relative; margin: 8px auto;
         width: 24vw; height: 24vw; object-fit: cover; border-radius: 50%;
+        max-width: 180px; max-height: 180px;
       }
   
       &.selected{
         img{box-shadow: #fff 0 0 0 2px, #000 0 0 0 6px;}
         &::before, &::after{display: block;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    ul.grid{
+      li{
+        flex:0 0 25%;
+        img, &::before{ width: 20vw; height: 20vw;}
       }
     }
   }

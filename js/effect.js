@@ -131,6 +131,8 @@ $(function(){
     let i = _tabItem.filter('.now').index();
     let _slideList = _this.find('.slideList');
 
+    _slideList.css({ left: (-100*i) + '%'}, 400);
+
     _tabItems.append('<span class="movingBg"></span>'); //頁籤移動背景
     let _movingBg = _tabItems.find('.movingBg');
 
