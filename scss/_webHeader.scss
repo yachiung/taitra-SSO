@@ -15,17 +15,18 @@
       &+img{margin-left: 5px;}
     }
   }
-  .topLinks{position: absolute; right: 3vw; top: 0;}
+  .topLinks{position: absolute; right: 3vw; top: 50%; transform: translateY(-50%);}
 
   @media screen and (min-width: $wwNormal){
     padding: 0 4vw;
+    padding: 0 calc( 50vw - #{$wwNormal}*.5);
     .hgroup{
       height: 64px;
       h1{ display: block; height: 56px; line-height: 56px;}
       img{height: 100%;}
     }
 
-    .topLinks{right: 4vw;}
+    .topLinks{right: calc( 50vw - #{$wwNormal}*.5);}
   }
 }
 
@@ -34,7 +35,7 @@
 
 // 版頭右上連結
 .topLinks{
-  list-style: none; margin:8px auto; padding: 0;
+  list-style: none; margin:0 auto; padding: 0;
   overflow: hidden; font-size: .85em;
   text-align: right;
   li { display: inline-block; margin: 2px; padding: 0; text-align: center;

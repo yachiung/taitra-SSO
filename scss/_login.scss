@@ -1,28 +1,30 @@
 // 會員登入
 .loginHere{
   font-size: 1.15em; padding: 5px 0 60px;
-  width: 84%; margin: 0 auto; max-width: 420px;
+  width: 88%; margin: 0 auto; max-width: 420px;
   // outline: 1px solid red;
   h1.logos{
-    text-align: center; margin:50px 0 10px;
+    text-align: center; margin:20px 0 15px;
     img{display: inline-block; width: auto; height: 80px;}
   }
 
-  h2{margin:0 auto; text-align: center; color: $fontColorDark;}
+  h2{margin:0 auto 0; text-align: center; color: $fontColorDark;}
 
   .btnDv{ margin:0 auto; border: none; }
 
-  .keepAndForget{
-    display: flex; justify-content: space-between;
-    margin: 1em 0 0;
-    .singleCheck{ height: 2.8;line-height: 2.7;}
+  .keepAndForget{ margin:0 .6em;
+    .singleCheck{ height: 1;}
   }
   .singleCheck{font-size: 1rem;}
 
 
   .links{
-    text-align: center;
-    margin: 1.5em auto .5em;
+    margin: .5em .6em;  overflow: hidden;
+    a{display: inline-block;}
+    p{ float: left; margin: 0; 
+      a{ margin-left: .3em;}
+    }
+    .forget{ float: right;}
   }
 
   .btnDv{
@@ -31,8 +33,10 @@
     }
   }
 
+  .hr{ margin: 30px auto;}
+
   .formRow{
-    position: relative; padding: .6em 0 5px; margin: 20px 0 0;
+    position: relative; padding: .6em 0 1px; margin: 3px 0 0;
     label{
       margin: 0; padding: 0 .7em;
       position: absolute; top:1.65em; left: 4px;
@@ -83,17 +87,21 @@
 // ****************************************** //
 // 側邊有底圖的文字訊息
 .sideBoard{
-  background-color: #0F2E49; padding: 3em 0 1em;
-  color: #fff;
-  h2{ line-height: 1.3; margin: 0 0 .3em; 
-    color: #ffec19;
-    text-shadow: #0006 1px 2px 2px;
+  padding: 3em;
+  background-color: #ddf1f5;
+  box-shadow: #0234 0 0 60px inset;
+
+  // background-color: $grayLight; 
+  // color: #fff;
+  h2{ line-height: 1.3; margin: 0 0 .5em; 
+    // color: #ffec19;
+    text-shadow: #0003 1px 2px 2px;
   }
-  article, .contact, .linkBtn{
+  .words, .freeLand{
     width: 84%; margin: 0 auto; max-width: 400px;
   }
-  article{
-    padding: 0 30px 2em; line-height: 1.7;
+  .words{
+    padding: 0 20px 2em; line-height: 1.7;
     p{margin: 0;padding: 0;}
     ul{ margin: 0; padding: 0; display: inline;}
     li{
@@ -106,34 +114,62 @@
     }
   }
 
-  .contact{
-    line-height: 1.7;
-    padding: 2em 30px 1.4em;
-    background-color: #6cf1;
-    box-shadow: #0004 0 0 20px;border-radius: 16px;
+
+  // 「常見問題」或「聯絡窗口」
+  .freeLand{
+    position: relative;
+    line-height: 1.7; padding:20px;
+    background-color: #fff9;
+    box-shadow: #0234 0 0 20px; border-radius: 16px;
     h3{margin: 0 0 .1em; line-height: 1.2;}
-    a{color: #7ee6fe;}
+    // a{color: #7ee6fe;}
+  
+    .more{
+      position: absolute;right: 20px; top: 20px;
+    }
+  
+    // 登入頁常見問題
+    .faq{ margin:1em 0 0; padding: 0; list-style: none; line-height: 1.5;
+      li{
+        position: relative;
+        margin: 1em 0 .2em; padding: 0;
+        a{ display: block; text-decoration: none;
+          padding: 0 0 .1em 2em;
+          transition: .2s;
+          color: $fontColor;
+          border-bottom: 1px dashed $borderColor;
+          &:hover{
+            border-bottom: 1px solid $borderColorDark;
+            color: $fontColorDark;
+          }
+        }
+        .qNumber{
+          position: absolute;left: 3px; top: 0;text-align: center;
+          width: 2em; height: 1.5em; line-height: 1.5; margin: 0 5px 0 0;
+          border-radius: 1.5em;
+          &::after{content: '．';}
+        }
+      }
+    }
+  
   }
 
-  .linkBtn{
-    display: block; 
-    margin: 30px auto;
-    a{height: 3.4em; line-height: 3.4; background-color: #00A6B7;}
-  }
+  // .linkBtn{
+  //   display: block; 
+  //   margin: 30px auto;
+  //   a{height: 3.4em; line-height: 3.4; background-color: #00A6B7; border: none;}
+  // }
 
   @media screen and (min-width: $wwNormal){
     // background: url(../images/hero.jpg) no-repeat center center;
-    background: url(../images/loginBg.png) no-repeat center center;
-    background-size: cover;
+    // background: url(../images/loginBg.png) no-repeat center center;
+    // background-size: cover;
 
 
     position: fixed; left: 0; top: 0; width: 50vw; height: 100vh;
     display: flex; flex-flow: column nowrap;
-    justify-content: flex-end;
+    justify-content: center;
 
-    .contact{
-      background-color: #6cf1; border: none;
-    }
 
   }
 }
@@ -144,14 +180,12 @@
 // 登入頁兩欄排版
 .loginLayout{
 
-  .webHeader{
-    padding-left: 10px; padding-right: 10px;
-    h1{display: none;}
+  // .webHeader{
+  //   padding-left: 10px; padding-right: 10px;
+  //   h1{display: none;}
+  // }
 
-  }
-
-  .topLinks{ margin: 5px auto; width: 92vw; }
-
+  // .topLinks{ margin: 5px auto; width: 92vw; }
   .col1 .webFooter{display: none;}
 
   @media screen and (min-width: $wwNormal){
@@ -173,15 +207,15 @@
     }
   }
 
-  @media screen and (min-width: $wwNormal + 200){
-    .webHeader{
-      .topLinks{ 
-        li {
-          margin-left: 1.8em;
-          a {padding: .1em 0 0 .8em;}
-        }
+  // @media screen and (min-width: $wwNormal + 200){
+  //   .webHeader{
+  //     .topLinks{ 
+  //       li {
+  //         margin-left: 1.8em;
+  //         a {padding: .1em 0 0 .8em;}
+  //       }
 
-      }
-    }
-  }
+  //     }
+  //   }
+  // }
 }

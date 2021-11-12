@@ -1,0 +1,78 @@
+// 輸入驗證碼
+.verify{
+  @extend %outerSection; padding-top: 1.2em;
+  h3{margin: 0; padding: 0; line-height: 1;}
+  // border: 1px solid red;
+  line-height: 1.8;
+
+  em {
+    display: inline-block; margin: 0 5px;
+    font-size: 1.2em;
+    // color: $importantColor;
+    color: $fontColorDark;
+  }
+
+  .clo2{text-align: center;}
+
+
+  .veriMsg{
+    padding:15px 10px;
+    // outline: 1px solid red;
+    h3{margin-bottom: 0;}
+  }
+  .vcodeInput{
+    text-align: center; padding: 15px 10px;
+    border-radius: 8px;
+    box-shadow: $shadow 0 0 16px;
+    p:first-child{
+      margin-top: 0;
+      em{display: inline-block; font-size: 1.3em;}
+    }
+    .verifCode{
+      border-top: 1px solid $borderColorLight; 
+      padding-top: .6em;
+      h4{margin: 0 0 .2em;}
+    }
+    .btnDv{padding-top: .5em;}
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    .veriMsg{
+      padding: 1.5em 50px 15px 0;
+    }
+  }
+}
+
+
+.verifCode{
+  text-align: center;
+  input{ 
+    font-size: 1.4em; font-weight: bold;
+    border-radius: 1.2em;
+    width: 2.3em; height: 2.3em; padding: 0; margin: 5px 0; text-align: center;
+    &:read-only{
+      color: $fontColorLight;
+      border-color: $borderColorLight;
+      border-style: solid; cursor: default;
+    }
+  }  
+}
+.verifPhone{
+  max-width: 28em; margin: 20px auto;
+  .msg.correct{ float: right; margin: -2.2em 3px 0 0;}
+  .msg.error{ margin: 5px 0 0 4em;}
+}
+
+
+// 驗證時間倒數
+.countDown{
+  margin-top: 1.8em;
+  time{
+    display: inline-block; vertical-align: middle;
+    font-size: 1.4em; line-height: 1.4; vertical-align: center;
+    padding: 0; margin: -.18em 5px 0;
+    color: $fontColorDark; font-weight: bold;
+    // border-radius: 4px;
+  }
+}

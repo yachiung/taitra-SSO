@@ -1,11 +1,11 @@
 .steps{
- 
-  padding: 1em 0 .8em; margin:0 auto; text-align: center;
-  overflow: hidden;
+  padding: 1em 0 .5em; margin:0 auto; text-align: center;
+  // overflow: hidden;
+  // @extend %outerSection;
   ul, ol{
     display: flex; justify-content: space-between;
     list-style: none; margin: 0 auto; padding: 0; line-height: 1.1;
-    @extend %outerSection;
+    width: 80%;
     &>li{
       flex: 1 1 30%;
       position: relative; padding: 22px 0 0;
@@ -21,21 +21,14 @@
       }
       &::after{
         content: ''; position: absolute; top: 0; left: 50%;
-        // width: 10px;height: 10px;
-        width: 16px;height: 16px;margin-left: -8px; top: -4px; border-radius: 50%;
+        width: 10px; height: 10px; margin-left: -5px; top: 0; border-radius: 50%;
         box-shadow: $borderColor 0 0 0 4px; background: #fff;
       }
       &.now{
         &::after{
-          background: $secondaryColor;
-          // box-shadow: $secondaryColor 0 0 0 5px inset, 
-          // $secondaryColor 0 0 0 1px, $bodyBgc 0 0 0 4px, 
-          // $borderColor 0 0 0 8px;
-
-          background-image: linear-gradient(135deg,#f73485, #722d90 80%);
-          box-shadow: $bodyBgc 0 0 0 3px, 
-          $borderColor 0 0 0 7px;
-  
+          width: 12px; height: 12px; margin-left: -10px; top: -1px;
+          background: $borderColorDark;
+          box-shadow: $bodyBgc 0 0 0 2px, $borderColor 0 0 0 6px;
         }
       }
     }
@@ -43,21 +36,21 @@
 
 
   &.fixed{
-    position: fixed; top: 0; right: 0; left: 0; z-index: 999;
+    position: fixed; top: 0; right: 0; left: 0; z-index: 999; 
+    margin: 0; 
     background-color: $bodyBgc; box-shadow: $shadow 0 2px 6px;
   }
-}
 
-.steps{
-  ul, ol{
-    &>li{
-      &.now::after{
-        width: 16px;height: 16px; top: -4px;
-        background-image: linear-gradient(135deg,#f73485, #722d90 80%);
-        box-shadow: $bodyBgc 0 0 0 3px, 
-        $borderColor 0 0 0 7px;
 
-      }
-    }
+  @media screen and (min-width: $wwMedium){
+    ul, ol{ width: 86%;max-width: 600px;}
+
   }
+}
+.pageHeader + .steps{
+  margin-top: -5px;
+ @media screen and (min-width: $wwNormal){
+   margin-top: -10px;
+ }
+
 }

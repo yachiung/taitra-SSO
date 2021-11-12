@@ -1,17 +1,10 @@
 // % % % % % % % % % % % % //
-// %mainSection{
-//   padding: 2.5em 4vw; margin: 0 auto;
-//   max-width: $wwNormal;
-//   @media screen and (min-width: $wwSlim){
-//     width: 92vw;
-//   }
-// }
 %outerSection{
   width: 94vw; margin:0 auto;
   max-width: $wwNormal;
-  @media screen and (min-width: $wwSlim){
-    width: 92vw;
-  }
+  // @media screen and (min-width: $wwSlim){
+  //   width: 92vw;
+  // }
 }
 // % % % % % % % % % % % % //
 
@@ -19,18 +12,21 @@
 html, body{height: 100%;}
 body{
   padding: 0; margin: 0;
-  *{box-sizing: border-box;}
-  font-size: 1em;
-
+  font-family:'微軟正黑體', Helvetica, Arial, sans-serif;
+  font-size: 1em; color: $fontColor;
+  
   display: flex; flex-direction: column; // 把 footer 推到頁面和 viewport 最下方
-
+  
   &.noScroll{
     overflow: hidden; overflow-y:hidden;
   }
-
+  
+  *{box-sizing: border-box;}
 }
 a{ color: $linkColor;}
+em{font-weight: bold; font-style: normal;}
 
+h1, h2, h3, h4, h5,h6{color: $fontColorDark;}
 h2{ font-size: 1.6em;}
 h3{ font-size: 1.4em;}
 h4{ font-size: 1.2em;}
@@ -87,6 +83,21 @@ h6{font-size: 1em;}
 @media screen and (min-width: $wwNormal){
   .loginLayout + .webFooter {
     display: none;
+  }
+}
+
+
+
+.colx2{
+  @media screen and (min-width: $wwNormal){
+    display: flex; justify-content: space-between;
+    .clo1{
+      flex:1 1 50%;
+    }
+    .clo2{
+      flex:1 1 50%;
+    }
+
   }
 }
 

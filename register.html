@@ -17,14 +17,13 @@
   <header class="webHeader">
     <div class="hgroup">
       <img src="images/TAITRA_logo.svg" alt="外貿協會 TAITRA">
-      <!-- <img src="images/icon-TaiwanTradeShows-100X100.png" alt=""> -->
-      <img src="images/logo.png" alt="Taiwantrade">
-      <h1>外貿協會會員服務</h1>
+      <!-- <img src="images/logo.png" alt="Taiwantrade"> -->
+      <h1>外貿協會會員</h1>
     </div>
 
     <ul class="topLinks">
-      <li><a href="x">English for Taiwan suppliers</a></li>
-      <li class="disk"><a href="x">EN</a></li>
+      <li><a href="x">Foreign Company</a></li>
+      <!-- <li class="disk"><a href="x">EN</a></li> -->
     </ul>
 
   </header>
@@ -32,8 +31,8 @@
   <div class="main">
 
     <div class="pageHeader">
-      <h2>加入台灣公司會員<span class="hintIcon question showLightbox" data-id="msg-1"></span></h2>
-      <button class="switch">加入個人會員</button>
+      <h2>加入台灣公司會員<span class="hintIcon hint showLightbox" data-id="msg-1"></span></h2>
+      <!-- <button class="switch">加入個人會員</button> -->
       <!-- <label class="singleCheck"><input type="checkbox"></label> -->
     </div>
 
@@ -61,7 +60,7 @@
                   <input type="password" placeholder="請輸入密碼" required>
                   <span class="viewIcon">顯示密碼</span>
                 </div>
-                <div class="pwRules">
+                <div class="pwRules" style="display: none">
                   <p>密碼設定必須符合以下規則（5擇4）</p>
                   <ul>
                     <li class="check">密碼長度1~8字元（必要條件）</li>
@@ -88,9 +87,10 @@
         <fieldset>
           <legend>聯絡資訊</legend>
           <table class="formLayout">
-            <tr>
+            <tr class="company">
               <td><abbr class="required" title="必填欄位">*</abbr>公司</td>
               <td>
+                <label class="signalCheck"><input type="checkbox">以個人身分加入會員</label>
                 <div class="compNameSet">
                   <input type="text" placeholder="統一編號">
                   <input type="text" readonly placeholder="公司名稱">
@@ -99,9 +99,7 @@
             </tr>
             <tr>
               <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
-              <td>
-                <input class="full" type="text" placeholder="請輸入中文姓名">
-              </td>
+              <td><input class="full" type="text" placeholder="請輸入中文姓名"></td>
             </tr>
             <tr>
               <td><abbr class="required" title="必填欄位">*</abbr>英文姓名</td>
@@ -119,7 +117,7 @@
               </td>
             </tr>
 
-            <tr>
+            <!-- <tr>
               <td><abbr class="required" title="必填欄位">*</abbr>國別</td>
               <td>
                 <select class="full">
@@ -382,7 +380,8 @@
                   <option value="476">Zimbabwe - 辛巴威</option>
                 </select>
               </td>
-            </tr>
+            </tr> -->
+
             <tr>
               <td>手機號碼</td>
               <td>
@@ -416,11 +415,10 @@
               </td>
             </tr>
           </table>
-
         </fieldset>
 
         <div class="agreeCheck">
-          <label class="singleCheck"><input type="checkbox"></label>我同意且遵守
+          <input type="checkbox">我同意且遵守
           <a href="x">個人資料保護聲明</a>、<a href="x">免責聲明</a> 和 <a href="x">隱私權政策</a>
         </div>
 
@@ -428,9 +426,9 @@
           <img src="images/Recaptcha_anchor@2x.gif">
         </div>
 
-        <div class="msgBlock hint">
-          請使用最新版本的Google Chrome、Firefox、Safari及 Microsoft Edge瀏覽器，以獲得最佳瀏覽體驗及順利註冊。
-        </div>
+        <!-- <div class="msgBlock question">
+          請使用最新版本的Google Chrome、Firefox、Safari及 Microsoft Edge 瀏覽器，以獲得最佳瀏覽體驗及順利註冊。
+        </div> -->
 
         <div class="btnDv">
           <input type="button" value="下一步">

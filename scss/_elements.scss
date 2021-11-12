@@ -2,22 +2,35 @@
 // h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 
 .pageHeader {
-  @extend %outerSection; margin-top: 10px; margin-bottom: 20px;
+  @extend %outerSection; margin-top: 10px; margin-bottom: 10px;
+  padding: 0;
   display: flex; flex-flow: row wrap;
-  align-items: flex-end; justify-content: space-between;
+  align-items: center; justify-content: space-between;
   h2{ 
     margin: 0; flex: 1 1 auto; font-weight: normal;
-    .hintIcon{ vertical-align: middle; transform: scale(.8); margin-top: -4px;}
+    .hintIcon{ vertical-align: middle; margin-top: -4px;
+      &::before{background-color: $msgQuestion;}
+      &:hover, &:focus{
+        &::before{background-color: darken($msgQuestion, 15%);}
+      }
+    }
   }
-  button.switch { flex: 0 0 auto; margin-left: .3em; 
-    color: $fontColor; font-size: .95rem; height: 2.5em; line-height: 2.4;
-    background-color: transparent; padding: 0 .5em;
-    border-color: transparent;
-    box-shadow: $borderColor 0 0 0 1px;
+  button.switch { flex: 0 0 auto; position: relative;
+    color: $fontColor; font-size: .95rem; height: 1.5em; line-height: 1.5;
+    background-color: transparent;
+    padding: 0; border-radius: 0; margin: 0;
+    border: none;
+
+    &::after{ content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background-color: $borderColor;}
+
+    // box-shadow: $borderColor 0 0 0 1px;
+    &:hover, &:focus{ box-shadow: none;
+      &::after{background-color: $borderColorDark; height: 2px;}
+    }
   }
 
   @media screen and (min-width: $wwNormal){
-    width: 92vw; margin:20px auto 40px;
+    width: 92vw; margin:15px auto;
   }
 
 }
@@ -77,33 +90,25 @@
   }
 }
 // more
-.more{
-  overflow: hidden; padding: 5px;
-  a{ float: right; height: 2.4em; line-height: 2.4;
-    position: relative;
-    padding: 0 2em 0 .8em; text-decoration: none;
-    border-radius: 1.5em;
-    transition: .2s;
-    box-shadow: $borderColor 0 0 0 1px;
-    background: $bodyBgc; color: $fontColor;
+// .more{
+//   overflow: hidden; padding: 5px;
+//   a{ float: right; height: 2.4em; line-height: 2.4;
+//     position: relative;
+//     padding: 0 2em 0 .8em; text-decoration: none;
+//     border-radius: 1.5em;
+//     transition: .2s;
+//     box-shadow: $borderColor 0 0 0 1px;
+//     background: $bodyBgc; color: $fontColor;
   
-    &::after{content: ''; position: absolute; top: 50%; right: .9em;
-      width: 8px; height: 8px;  margin-top: -5px;
-      border: 2px solid $borderColorDark; border-bottom: none; border-left: none;
-      transform: rotate(45deg);
-    }
-    &:hover{box-shadow: #fff 0 0 0 1px, $borderColorDark 0 0 0 3px; }
-  }
-}
+//     &::after{content: ''; position: absolute; top: 50%; right: .9em;
+//       width: 8px; height: 8px;  margin-top: -5px;
+//       border: 2px solid $borderColorDark; border-bottom: none; border-left: none;
+//       transform: rotate(45deg);
+//     }
+//     &:hover{box-shadow: #fff 0 0 0 1px, $borderColorDark 0 0 0 3px; }
+//   }
+// }
 
-.style2 .more{
-  a{
-    box-shadow: #18b39c 0 0 0 1px; color: #176fb3;
-    &::after{ border-color:#18b39c ;}
-    &:hover{box-shadow: #fff 0 0 0 1px, #18b39c 0 0 0 3px; }
-  }
-
-}
 
 // 連結，像 button 樣式
 .linkBtn { display: inline-block;
@@ -136,7 +141,7 @@
 
 // （中間有字的）分隔線
 .hr{
-  margin: 3em auto; position: relative;
+  margin: 0 auto; position: relative;
   text-align: center; 
   &::before{
     content: '';
@@ -198,14 +203,14 @@
   margin: 1px auto 5px;
 
   &::before{
-    left: 4px; top:.15em;
+    left: 4px; top:.1em;
     width: 1.5em; height: 1.5em;
     background-size: 16px;
   }
   &.error::before{ background-position: center 4px;}
-  &.correct::before{ background-position: center -16px;}
-  &.hint::before{ background-position: center -36px;}
-  &.question::before{ background-position: center -56px;}
+  &.correct::before{ background-position: center -36px;}
+  &.hint::before{ background-position: center -76px;}
+  &.question::before{ background-position: center -116px;}
 
   &.error{ color: $msgError;}
   &.hint{ color: $msgHint;}
@@ -216,8 +221,8 @@
 .msgBlock{
   @extend %outerSection;
   display: block;
-  padding: 22px 12px; margin: 2em auto;
-  min-height: 68px;
+  padding: 12px; margin: 2em auto;
+  min-height: 50px;
   line-height: 1.8; font-size: 1rem;
   border: 1px solid $msgQuestion; border-radius: 8px;
   &.error{ border-color: $msgError;}
@@ -226,17 +231,17 @@
   &.question{ border-color: $msgQuestion;}
 
   &::before{ 
-    width: 44px; height: 44px; left: 12px; top: 12px;
-    background-size:  30px;
+    width: 30px; height: 30px; left: 10px; top: 10px;
+    background-size: 16px;
   }
   &.error, &.hint, &.correct, &.question{
-    padding-left: 4.5em;
+    padding-left: 48px;
   }
 
   &.error::before{ background-position: center 7px;}
-  &.correct::before{ background-position: center -30px;}
-  &.hint::before{ background-position: center -68px;}
-  &.question::before{ background-position: center -105px;}
+  &.correct::before{ background-position: center -33px;}
+  &.hint::before{ background-position: center -73px;}
+  &.question::before{ background-position: center -113px;}
 
   h3{margin: -7px 0 .5em;}
   p{margin: 0;
@@ -262,7 +267,7 @@
 .hintIcon{
   display: inline-block; padding: 0; margin: auto;
   // border: 1px solid $msgQuestion;
-  width: 44px; height: 44px; cursor: pointer;
+  width: 30px; height: 30px; cursor: pointer;
 
   &.error:hover::before{ background-color:darken( $msgError, 15%);}
   &.hint:hover::before{ background-color:darken( $msgHint, 15%);}
@@ -273,7 +278,7 @@
   &::before{
     display: block;
     width: 100%; height: 100%; left: 0; top: 0;
-    background-size:  30px;
+    background-size: 16px;
   }
   
   &.error{ border-color: $msgError; }
@@ -282,61 +287,69 @@
   &.question{ border-color: $msgQuestion; }
 
   &.error::before{ background-position: center 7px;}
-  &.correct::before{ background-position: center -30px;}
-  &.hint::before{ background-position: center -68px;}
-  &.question::before{ background-position: center -105px;}
+  &.correct::before{ background-position: center -33px;}
+  &.hint::before{ background-position: center -73px;}
+  &.question::before{ background-position: center -113px;}
 
 }
 
 
-// .main>.msgBlock{ margin-left: 4vw; margin-right: 4vw;}
 .webHeader+.msgBlock{ margin-top: 4vw;}
 
 // 我不是機器人
 .recaptcha{
-  margin: 1em auto;
+  margin: 1em auto 0;
   img{display: block; width: 100%; max-width: 308px; margin: 0 auto;}
 }
 
 
-// 輸入驗證碼
-.verify{
-  @extend %outerSection; padding-top: 1.2em;
-  h3{margin: 0; padding: 0; line-height: 1;}
-  // border: 1px solid red;
-  line-height: 1.8;
-}
-h4{margin: 0 0 .2em;}
-.verifCode{
-  text-align: center;
-  input{ 
-    font-size: 1.4em; font-weight: bold;
-    border-radius: 1.2em;
-    width: 2.3em; height: 2.3em; padding: 0; margin: 5px 0; text-align: center;
-    &:read-only{
-      color: $fontColorLight;
-      border-color: $borderColorLight;
-      border-style: solid; cursor: default;
-    }
-  }  
-}
-.verifPhone{
-  .msg.correct{ float: right; margin: -2.4em 3px 0 0;}
-  .msg.error{ margin: 5px 0 0 4em;}
-}
+// // 輸入驗證碼
+// .verify{
+//   @extend %outerSection; padding-top: 1.2em;
+//   h3{margin: 0; padding: 0; line-height: 1;}
+//   // border: 1px solid red;
+//   line-height: 1.8;
+
+//   em {
+//     display: inline-block;
+//     margin: 0 5px;
+//     font-style: normal;font-size: 1.2em;font-weight: bold;
+//     color: $importantColor;
+//     color: $fontColorDark;
+//   }
+
+//   .clo2{text-align: center;}
+//   h4{margin: 0 0 .2em;}
+// }
+// .verifCode{
+//   text-align: center;
+//   input{ 
+//     font-size: 1.4em; font-weight: bold;
+//     border-radius: 1.2em;
+//     width: 2.3em; height: 2.3em; padding: 0; margin: 5px 0; text-align: center;
+//     &:read-only{
+//       color: $fontColorLight;
+//       border-color: $borderColorLight;
+//       border-style: solid; cursor: default;
+//     }
+//   }  
+// }
+// .verifPhone{
+//   .msg.correct{ float: right; margin: -2.4em 3px 0 0;}
+//   .msg.error{ margin: 5px 0 0 4em;}
+// }
 
 
-// 驗證時間倒數
-.countDown{
-  // padding: 2px 0 2px 0;
-  time{
-    display: inline-block; vertical-align: middle;
-    font-size: 1.5em;
-    padding: 0 .5em; margin: 0 5px;
-    background: $importantColor; color: $fontInvert;
-    border-radius: 4px;
-  }
-}
+// // 驗證時間倒數
+// .countDown{
+//   time{
+//     display: inline-block; vertical-align: middle;
+//     font-size: 1.4em; line-height: 1.4; vertical-align: center;
+//     padding: 0; margin: -.18em 5px 0;
+//     color: $fontColorDark; font-weight: bold;
+//     // border-radius: 4px;
+//   }
+// }
 
 
 
