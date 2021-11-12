@@ -154,18 +154,8 @@
   
   }
 
-  // .linkBtn{
-  //   display: block; 
-  //   margin: 30px auto;
-  //   a{height: 3.4em; line-height: 3.4; background-color: #00A6B7; border: none;}
-  // }
 
   @media screen and (min-width: $wwNormal){
-    // background: url(../images/hero.jpg) no-repeat center center;
-    // background: url(../images/loginBg.png) no-repeat center center;
-    // background-size: cover;
-
-
     position: fixed; left: 0; top: 0; width: 50vw; height: 100vh;
     display: flex; flex-flow: column nowrap;
     justify-content: center;
@@ -180,12 +170,6 @@
 // 登入頁兩欄排版
 .loginLayout{
 
-  // .webHeader{
-  //   padding-left: 10px; padding-right: 10px;
-  //   h1{display: none;}
-  // }
-
-  // .topLinks{ margin: 5px auto; width: 92vw; }
   .col1 .webFooter{display: none;}
 
   @media screen and (min-width: $wwNormal){
@@ -207,15 +191,5 @@
     }
   }
 
-  // @media screen and (min-width: $wwNormal + 200){
-  //   .webHeader{
-  //     .topLinks{ 
-  //       li {
-  //         margin-left: 1.8em;
-  //         a {padding: .1em 0 0 .8em;}
-  //       }
 
-  //     }
-  //   }
-  // }
 }
