@@ -247,8 +247,8 @@ $(function(){
     //   e.prevantDefault();
     // }
     _lightboxNow = _lightbox.filter( function(){ return $(this).attr('data-id') === boxID} );
-    _lightboxNow.stop(true, false).fadeIn(speed).addClass('show');
-    _lightboxNow.prev(_cover).fadeIn(speed);
+    _lightboxNow.stop(true, false).fadeIn(speedFaster).addClass('show');
+    _lightboxNow.prev(_cover).fadeIn(speedFaster);
     _body.addClass('noScroll');
   })
 

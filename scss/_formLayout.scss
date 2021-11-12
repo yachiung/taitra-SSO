@@ -10,10 +10,10 @@
 
   // <tr class="company">，為了處理個人會員checkbox
   .company { 
-    td{ position: relative; padding-top: 1.6em;
+    td{ position: relative; padding-top: 1.7em;
       &:nth-child(odd){padding-top: 2.4em;}
     }
-    .signalCheck{
+    .singleCheck{
       position: absolute; right: 0; top: 0;
     }
   }
@@ -39,11 +39,8 @@
       td{ position: static ; padding-top: 4px;
         &:nth-child(odd){ padding-top: 1em;}
       }
-      .signalCheck{
-        position: absolute; right: 0; top: 1em;
-      }
+      .singleCheck{ position: absolute; right: 0; top: .7em; }
     }
-
     td{
       &:nth-child(odd){ text-align: left; width: 100%; }
     }
@@ -92,12 +89,11 @@
         &::before{ width: 6px;}
         &+.formLayout{margin-top: 10px;}
       }
-      
     }
   }
 
   @media screen and (min-width: $wwNormal){
-    padding:10px 0 ;box-shadow: $shadow 0 2px 8px;
+    padding:10px 0 ;box-shadow: #0002 0 0 8px; border-radius: 16px;
     .formLayout + .agreeCheck,
     fieldset + .agreeCheck {width: calc(70% - 6em); transform: translateX(3em);}
 

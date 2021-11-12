@@ -49,8 +49,10 @@
 }
 .pageHeader + .steps{
   margin-top: -5px;
+  &.fixed{ margin-top: 0;}
  @media screen and (min-width: $wwNormal){
    margin-top: -10px;
+   &.fixed{ margin-top: 0;}
  }
 
 }

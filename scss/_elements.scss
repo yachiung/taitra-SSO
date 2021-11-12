@@ -2,32 +2,31 @@
 // h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 
 .pageHeader {
-  @extend %outerSection; margin-top: 10px; margin-bottom: 10px;
-  padding: 0;
+  @extend %outerSection; margin-top: 10px; margin-bottom: 10px; padding: 0;
   display: flex; flex-flow: row wrap;
   align-items: center; justify-content: space-between;
   h2{ 
     margin: 0; flex: 1 1 auto; font-weight: normal;
-    .hintIcon{ vertical-align: middle; margin-top: -4px;
+    .hintIcon{ vertical-align: middle; margin-top: -4px; margin-left: 4px;
       &::before{background-color: $msgQuestion;}
       &:hover, &:focus{
         &::before{background-color: darken($msgQuestion, 15%);}
       }
     }
   }
-  button.switch { flex: 0 0 auto; position: relative;
-    color: $fontColor; font-size: .95rem; height: 1.5em; line-height: 1.5;
-    background-color: transparent;
-    padding: 0; border-radius: 0; margin: 0;
-    border: none;
+  // button.switch { flex: 0 0 auto; position: relative;
+  //   color: $fontColor; font-size: .95rem; height: 1.5em; line-height: 1.5;
+  //   background-color: transparent;
+  //   padding: 0; border-radius: 0; margin: 0;
+  //   border: none;
 
-    &::after{ content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background-color: $borderColor;}
+  //   &::after{ content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background-color: $borderColor;}
 
-    // box-shadow: $borderColor 0 0 0 1px;
-    &:hover, &:focus{ box-shadow: none;
-      &::after{background-color: $borderColorDark; height: 2px;}
-    }
-  }
+  //   // box-shadow: $borderColor 0 0 0 1px;
+  //   &:hover, &:focus{ box-shadow: none;
+  //     &::after{background-color: $borderColorDark; height: 2px;}
+  //   }
+  // }
 
   @media screen and (min-width: $wwNormal){
     width: 92vw; margin:15px auto;
@@ -38,21 +37,20 @@
 // 關閉圖示
 .closeThis{
   a{
-    position: relative; display: block; width: 46px; height: 46px;
-    background-color: #4448; border-radius: 50%; 
+    position: relative; display: block; width: 44px; height: 44px;
+    border-radius: 8px; 
     cursor: pointer; transition: .2s;
-
     &::before, &::after{
       content: ''; position: absolute; top: 50%; left: 50%;
       width: 24px; height: 2px; margin: -1px auto auto -12px;
-      background: #fff;
+      background-color: $borderColor;
     }
     &::before{ transform: rotate(45deg);}
     &::after{transform: rotate(135deg);}
   
     &:hover{
-      background-color: #444;
-      transform: scale(1.1);
+      background-color: $grayLight;
+      &::before, &::after{ background-color:$borderColorDark}
     }
 
   }

@@ -163,7 +163,7 @@ textarea[disabled]:focus,
 input[disabled],
 input[disabled]:hover,
 input[disabled]:focus {
-  background-color: $gray;
+  background-color: lighten($gray, 8%);
   border-color: $borderColorLight;
   color: $grayDark;
   box-shadow: none;
@@ -176,9 +176,11 @@ textarea[readonly]:focus,
 input[readonly],
 input[readonly]:hover,
 input[readonly]:focus {
-  background-color: lighten($gray, 8);
+  background-color: lighten($gray, 15%);
   border-color: $borderColor;
   box-shadow: none;
+  color:$fontColorLight;
+  // color: lighten($fontColorLight, 15%);
 }
 select[disabled],
 input[disabled] {
