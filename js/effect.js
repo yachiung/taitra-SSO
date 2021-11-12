@@ -99,22 +99,36 @@ $(function(){
   // 常見問題開合
   $('.qaList').each(function(){
     let _qaList = $(this);
-    let _q = _qaList.find('.q');
-    
+    let _ctrlBtn = _qaList.find('.ctrlBtn');
+    let _qaItems = _qaList.find('li');
+    let _a = _qaItems.find('.a');
+    let _q = _qaItems.find('.q');
+    const textOpen = _ctrlBtn.text();
+    const textClose = _ctrlBtn.attr('data-altitle');
+
     _q.click(function(){
-      let _a = $(this).next('.a');
-      let _qaPair = $(this).parent('li');
-
-      _qaList.find('.show').removeClass('show').find('.a').slideUp(400);
-
-      if( _a.is(':hidden') ){
-        _a.slideDown(400);
-        _qaPair.addClass('show').siblings().removeClass('show');
+      _thisQ = $(this);
+      if ( _thisQ.parent().hasClass('show')) {
+        _thisQ.next().slideUp(400);
+        _thisQ.parent().removeClass('show');
       } else {
-        _a.slideUp(400);
-        _qaPair.removeClass('show');
+        _thisQ.next().slideDown(400);
+        _thisQ.parent().addClass('show');
       }
     })
+  
+    _ctrlBtn.click(function(){
+      if($(this).hasClass('closeAll')) {
+        _a.slideUp(400);
+        _qaItems.removeClass('show');
+        $(this).removeClass('closeAll').text(textOpen);
+      } else {
+        _a.slideDown(400);
+        _qaItems.addClass('show');
+        $(this).addClass('closeAll').text(textClose);
+      }
+    })
+
   })
 
 
