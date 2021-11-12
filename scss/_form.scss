@@ -103,17 +103,16 @@ input[type="button"] {
   }
 }
 .button{
-  display: inline-block; vertical-align: middle;
+  display: inline-block; vertical-align: middle;margin: 3px;
   &>a{
     display: block;box-sizing: border-box;
     text-decoration: none; text-align: center; white-space: nowrap;
-    height: 3em; line-height: 3em;
-    padding: 0 1em; margin: 3px;
+    height: 3em; line-height: 3em; padding: 0 1em; 
     outline: none; transition: .2s;
     border: 1px solid $btnBg1;
     background-color: $bodyBgc; color: $primaryColor;
     &:hover {
-      box-shadow: $btnBg2 0 0 0 1px;
+      box-shadow: $btnBg2 0 0 0 2px; border-color: $btnBg2;
     }
   }
 }

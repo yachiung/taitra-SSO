@@ -1,18 +1,17 @@
 // 表單送出按鈕群 //////////
 .btnDv{
-  display: flex; justify-content: center;
+  display: flex; justify-content: center; align-items: center;
   clear:both; text-align:center;
   margin:0 auto;padding: 1em 0;
   input[type="button"],input[type="submit"],input[type="reset"], button {
-    flex:0 1 45%;
-    margin: 3px; min-width: 6em; height: 3em;border-radius: 2em;
+    flex:0 1 48%; border-radius: 2em;margin-left: 5px; margin-right: 5px;
   }
   .button{ 
-    margin: 4px; flex:1 1 45%;
-    &>a{ display: block; margin: 0; min-width: 6em; height: 3.5em;border-radius: 2em;}
+    flex:0 1 48%; margin-left: 5px; margin-right: 5px;
+    &>a{ display: block; height: 3em;border-radius: 2em;}
   }
   input[type="button"], input[type="submit"], input[type="reset"], button,
-  .button>a {
+  .button {
     &:only-child{min-width: 12em;}
   }
 

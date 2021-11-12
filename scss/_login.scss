@@ -10,7 +10,7 @@
 
   h2{margin:0 auto 0; text-align: center; color: $fontColorDark;}
 
-  .btnDv{ margin:0 auto; border: none; }
+  .btnDv{ margin:0 auto; border: none;}
 
   .keepAndForget{ margin:0 .6em;
     .singleCheck{ height: 1;}
@@ -28,7 +28,7 @@
   }
 
   .btnDv{
-    button, input[type="button"]{ height: 3.2em;
+    button, input[type="button"], .button>a{ height: 3.2em;
       &:only-child{width: 100%;}
     }
   }
@@ -68,8 +68,6 @@
     &+.msg{
       display: block; margin: 0 auto 20px;
     }
-
-
   }
 
   @media screen and (min-width: $wwNormal){
@@ -77,7 +75,9 @@
       img{height: 90px;}
     }
   }
+
 }
+
 
 
 
