@@ -1,7 +1,5 @@
 .steps{
   padding: 1em 0 .5em; margin:0 auto; text-align: center;
-  // overflow: hidden;
-  // @extend %outerSection;
   ul, ol{
     display: flex; justify-content: space-between;
     list-style: none; margin: 0 auto; padding: 0; line-height: 1.1;
@@ -26,7 +24,7 @@
       }
       &.now{
         &::after{
-          width: 12px; height: 12px; margin-left: -10px; top: -1px;
+          width: 12px; height: 12px; margin-left: -6px; top: -1px;
           background: $borderColorDark;
           box-shadow: $bodyBgc 0 0 0 2px, $borderColor 0 0 0 6px;
         }

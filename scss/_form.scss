@@ -367,9 +367,9 @@ label.singleCheck{
   input:first-child{ flex: 1 1 auto; width: 100%; margin-bottom:5px; }
   input:last-child{ flex: 1 1 auto; }
   select{ flex: 0 0 5em; width: 5em; margin-right:5px; }
-  @media screen and (min-width: $wwMedium){
+  @media screen and (min-width: $wwSlim){
     flex-wrap: nowrap;
-    input:first-child{ flex: 0 1 25%; width: 25%; margin: 0; }
+    input:first-child{ flex: 0 1 28%; width: 28%; margin: 0; }
     input:last-child{ flex: 1 1 auto;}
     select{ margin: 0 5px; }
 
