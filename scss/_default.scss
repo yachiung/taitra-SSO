@@ -95,7 +95,7 @@ h6{font-size: 1em;}
 
 .colx2{
   @media screen and (min-width: $wwNormal){
-    display: flex; justify-content: space-between;
+    display: flex; justify-content: center;
     .clo1{
       flex:1 1 50%;
     }

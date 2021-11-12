@@ -12,7 +12,10 @@
     color: $fontColorDark;
   }
 
+
   .clo2{text-align: center;}
+
+
 
 
   .veriMsg{
@@ -41,6 +44,12 @@
     .veriMsg{
       padding: 1.5em 50px 15px 0;
     }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    // .veriMsg{
+    //   text-align: right;
+    // }
   }
 }
 
