@@ -20,7 +20,6 @@
 
   .veriMsg{
     padding:15px 10px;
-    // outline: 1px solid red;
     h3{margin-bottom: 0;}
   }
   .vcodeInput{
@@ -47,9 +46,11 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    // .veriMsg{
-    //   text-align: right;
-    // }
+
+    .veriMsg.phone{
+      text-align: right;
+    }
+
   }
 }
 
