@@ -88,7 +88,7 @@
 // 側邊有底圖的文字訊息
 .sideBoard{
   padding: 3em;
-  background-color: #ddf1f5;
+  // background-color: #ddf1f5;
   background-color: #076891;
   color: #fff;
   box-shadow: #0234 0 0 60px inset;
@@ -163,7 +163,7 @@
     display: flex; flex-flow: column nowrap;
     justify-content: center;
 
-    background: url(../images/loginBg.png) no-repeat center center;
+    background:#076891 url(../images/loginBg.png) no-repeat center center;
     background-size: cover;
 
     .words{margin-top: 90px;}
