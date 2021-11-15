@@ -89,12 +89,15 @@
 .sideBoard{
   padding: 3em;
   background-color: #ddf1f5;
+  background-color: #076891;
+  color: #fff;
   box-shadow: #0234 0 0 60px inset;
 
   // background-color: $grayLight; 
   // color: #fff;
   h2{ line-height: 1.3; margin: 0 0 .5em; 
     // color: #ffec19;
+    color: #fee41c;
     text-shadow: #0003 1px 2px 2px;
   }
   .words, .freeLand{
@@ -119,8 +122,8 @@
   .freeLand{
     position: relative;
     line-height: 1.7; padding:20px;
-    background-color: #fff9;
-    box-shadow: #0234 0 0 20px; border-radius: 16px;
+    background-color: #fffb;
+    box-shadow: #0006 0 0 20px; border-radius: 16px;
     h3{margin: 0 0 .1em; line-height: 1.2;}
     // a{color: #7ee6fe;}
   
@@ -137,9 +140,9 @@
           padding: 0 0 .1em 2em;
           transition: .2s;
           color: $fontColor;
-          border-bottom: 1px dashed $borderColor;
+          border-bottom: 1px dashed $borderColorDark;
           &:hover{
-            border-bottom: 1px solid $borderColorDark;
+            border-bottom: 1px solid $borderColorDark;;
             color: $fontColorDark;
           }
         }
@@ -160,6 +163,11 @@
     display: flex; flex-flow: column nowrap;
     justify-content: center;
 
+    background: url(../images/loginBg.png) no-repeat center center;
+    background-size: cover;
+
+    .words{margin-top: 90px;}
+  
 
   }
 }
