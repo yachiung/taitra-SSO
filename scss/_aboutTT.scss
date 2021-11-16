@@ -20,6 +20,22 @@
     }
   }
 
+  .trems{
+    list-style: cjk-decimal;
+    padding: 0 0 0 2em; ;line-height: 1.8;
+    p{margin: 1em 0; line-height: inherit;}
+    &>li{
+      margin: 2em 0 0;
+      &>ol{
+        list-style: decimal;
+        padding: 0 0 0 1.5em; line-height: inherit;
+        li{
+          margin: 1em 0 0;
+        }
+      }
+    }
+  }
+
   .beTTmemb{
     text-align: center;
   }

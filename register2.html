@@ -32,8 +32,6 @@
 
     <div class="pageHeader">
       <h2>加入台灣公司會員<span class="hintIcon hint showLightbox" data-id="msg-1"></span></h2>
-      <!-- <button class="switch">加入個人會員</button> -->
-      <!-- <label class="singleCheck"><input type="checkbox"></label> -->
     </div>
 
     <section class="steps">
@@ -46,102 +44,34 @@
 
     <section class="formA">
       <form action="">
-        <fieldset>
-          <legend>帳號</legend>
+        <!-- <fieldset> -->
+          <!-- <legend>帳號</legend> -->
           <table class="formLayout">
             <tr>
               <td><abbr class="required" title="必填欄位">*</abbr>電子信箱</td>
-              <td><input class="full" type="email" value="sammi.hong@hyweb.com.tw" required></td>
-            </tr>
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>密碼</td>
-              <td>
-                <div class="pw">
-                  <input type="password" placeholder="請輸入密碼" required>
-                  <span class="viewIcon">顯示密碼</span>
-                </div>
-                <div class="pwRules" style="display: none">
-                  <p>密碼設定必須符合以下規則（5擇4）</p>
-                  <ul>
-                    <li class="check">密碼長度1~8字元（必要條件）</li>
-                    <li>至少一個英文大寫字元，例如A,B,C</li>
-                    <li class="check">至少一個英文小寫字元，例如a,b,c</li>
-                    <li class="check">至少一個數字，例如1,2,3</li>
-                    <li class="check">至少一個特殊符號，例如@,#,$</li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>確認密碼</td>
-              <td>
-                <div class="pw">
-                  <input type="password" placeholder="請再次確認密碼" required>
-                  <span class="viewIcon">顯示密碼</span>
-                </div>
-              </td>
+              <td><input class="full" type="email" value="sammi.hong@hyweb.com.tw" readonly></td>
             </tr>
           </table>
-        </fieldset>
+        <!-- </fieldset> -->
 
-        <fieldset>
-          <legend>聯絡資訊</legend>
+        <!-- <fieldset> -->
+          <!-- <legend>聯絡資訊</legend> -->
           <table class="formLayout">
             <tr class="company">
               <td><abbr class="required" title="必填欄位">*</abbr>公司</td>
               <td>
-                <label class="singleCheck showLightbox" data-id="msg-2"><input type="checkbox" checked>以個人身分加入會員</label>
+                <label class="singleCheck showLightbox" data-id="msg-2"><input type="checkbox">以個人身分加入會員</label>
                 <div class="compNameSet">
-                  <input type="text" placeholder="統一編號" required>
-                  <input type="text" readonly placeholder="公司名稱" required>
+                  <input type="text" placeholder="統一編號">
+                  <input type="text" placeholder="公司全名" required>
                 </div>
               </td>
             </tr>
 
             <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
-              <td>
-                <div class="nameSet">
-                  <input type="text" placeholder="請輸入中文姓名" required>
-                  <select name="" id="">
-                    <option value="">稱謂</option>
-                    <option value="">Mr.</option>
-                    <option value="">Mrs.</option>
-                    <option value="">Ms.</option>
-                    <option value="">Miss</option>
-                  </select>
-                  <input type="text" placeholder="Your English Name" required>
-                </div>
-              </td>
-            </tr>
-            
-            <!-- 中、英姓名和稱謂合併為一行 
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
-              <td><input class="full" type="text" placeholder="請輸入中文姓名"></td>
-            </tr>
-
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>英文姓名</td>
-              <td>
-                <div class="enNameSet">
-                  <select name="" id="">
-                    <option value="">稱謂</option>
-                    <option value="">Mr.</option>
-                    <option value="">Mrs.</option>
-                    <option value="">Ms.</option>
-                    <option value="">Miss</option>
-                  </select>
-                  <input type="text" placeholder="Your English Name">
-                </div>
-              </td>
-            </tr>
-           -->
-
-            <!-- <tr>
               <td><abbr class="required" title="必填欄位">*</abbr>國別</td>
               <td>
-                <select class="full">
+                <select class="full" required>
                   <option value="">*請選擇*</option>
                   <option value="586">Afghanistan - 阿富汗</option>
                   <option value="692">Albania - 阿爾巴尼亞</option>
@@ -401,8 +331,25 @@
                   <option value="476">Zimbabwe - 辛巴威</option>
                 </select>
               </td>
-            </tr> -->
+            </tr>
 
+
+            <tr>
+              <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
+              <td>
+                <div class="nameSet">
+                  <input type="text" placeholder="請輸入中文姓名" required>
+                  <select name="" id="">
+                    <option value="">稱謂</option>
+                    <option value="">Mr.</option>
+                    <option value="">Mrs.</option>
+                    <option value="">Ms.</option>
+                    <option value="">Miss</option>
+                  </select>
+                  <input type="text" placeholder="Your English Name" required>
+                </div>
+              </td>
+            </tr>
             <tr>
               <td>手機號碼</td>
               <td>
@@ -445,7 +392,7 @@
               </td>
             </tr>
           </table>
-        </fieldset>
+        <!-- </fieldset> -->
 
         <div class="agreeCheck">
           <input type="checkbox">我同意且遵守
@@ -455,10 +402,6 @@
         <div class="recaptcha">
           <img src="images/Recaptcha_anchor@2x.gif">
         </div>
-
-        <!-- <div class="msgBlock question">
-          請使用最新版本的Google Chrome、Firefox、Safari及 Microsoft Edge 瀏覽器，以獲得最佳瀏覽體驗及順利註冊。
-        </div> -->
 
         <div class="btnDv">
           <input type="submit" value="下一步">

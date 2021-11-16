@@ -8,7 +8,7 @@
   }
   .button{ 
     flex:0 1 48%; margin-left: 5px; margin-right: 5px;
-    &>a{ display: block; height: 3em;border-radius: 2em;}
+    &>a{ display: block; height: 3em;border-radius: 2em; text-decoration: none;}
   }
   input[type="button"], input[type="submit"], input[type="reset"], button,
   .button {
