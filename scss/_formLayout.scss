@@ -101,6 +101,21 @@
     fieldset {
       legend{margin:10px 0 0;}
     }
+
+
+    &.eng{
+
+      .formLayout, .agreeCheck, .msgBlock{width: 80%; max-width: none;}
+      .formLayout{
+        td{
+          &:nth-child(odd){ width: 10em; }
+        }
+      }
+      .formLayout + .agreeCheck,
+      fieldset + .agreeCheck {width: calc(80% - 10em);transform: translateX(5em);
+      }
+  
+    }
   }
 
 }

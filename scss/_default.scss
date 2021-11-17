@@ -39,9 +39,9 @@ h6{font-size: 1em;}
 
 // 頁尾
 .webFooter{
-  flex-shrink: 0;
-  padding: 1.5em 3vw;
-  line-height: 1.5; width: 100%;
+  flex-shrink: 0; 
+  padding: 1.5em 3vw; width: 100%;
+  font-size: .92em; line-height: 1.5; 
   border-top: 1px solid $borderColorLight;
   text-align: center;
   // background-color: $footerBgc; color: $fontInvert;
@@ -52,7 +52,7 @@ h6{font-size: 1em;}
     color: $linkColor; text-decoration: none;
     border-bottom: 1px solid $linkColor;
   }
-  p{display: inline-block; margin: .3em 0;}
+  p{ margin: .3em 0;}
 
 
   ul{list-style: none; margin:0; padding: 0; line-height: 1.3;}
@@ -67,18 +67,20 @@ h6{font-size: 1em;}
     }
   }
 
+  @media screen and (min-width: $wwMedium){
+    p{ margin: 0;display: inline-block;
+      &+p{margin-left: 1.5em;}
+    }
+  }
+
   @media screen and (min-width: $wwNormal){
    
-    .ftContent{ max-width: $wwNormal; display: flex;}
-
-    p{ margin: 0;
-      &+p{margin-left: 2em;}
-    }
+    .ftContent{ max-width: $wwNormal; display: flex; text-align: left;}
 
     .links{
       margin: 0 0 0 2em;
       text-align: right;
-      flex: 1 1 30%;
+      flex: 1 1 10%;
     }
   }
 }

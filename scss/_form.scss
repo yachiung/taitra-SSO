@@ -15,7 +15,10 @@
   &:hover{border-color: $borderColorDark;}
   &:focus{border-color:transparent;box-shadow: $borderColorDark 0 0 0 2px;outline: none;}
 
-  &.error{border-color:transparent;box-shadow: $msgError 0 0 0 2px;}
+  // 提示應填未填或填寫格式錯誤
+  &.alert{border-color:$msgError; 
+    &:focus{border-color:transparent;}
+  }
 }
 
 
@@ -35,6 +38,11 @@
   border-radius: 6px;
   &:hover{border-color: $borderColorDark;}
   &:focus{border-color: $borderColorDark;box-shadow: $borderColorDark 0 0 0 1px;outline: none;}
+
+  // 提示應填未填或填寫格式錯誤
+  &.alert{border-color:$msgError;
+    &:focus{border-color:transparent;}
+  }
 }
 
 
@@ -381,6 +389,8 @@ label.singleCheck{
   display: flex;
   select{flex: 0 0 6em; width: 6em;}
   input{ flex: 1 1 auto; margin-left: 6px;}
+
+  &~.msg{ margin-left: 6.8em;}
 }
 
 // 國碼＋手機號碼
@@ -390,6 +400,11 @@ label.singleCheck{
   input{ flex: 1 1 auto; margin-left: 5px;}
 }
 
+// 公司地址
+.comAddrSet{
+  input + input{margin-top: 5px;}
+
+}
 // .formLayout td{
 //   // &>.pwSet, &>.nameSet,
 //   // &>.compNameSet, &>.enNameSet, &>.mobileSet, &>.pw,

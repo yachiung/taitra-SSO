@@ -196,19 +196,19 @@
   .bigger{font-size: 1.2em;}
 }
 .msg{
-  line-height: 1.8; font-size: 1rem;
-  padding-left: 2em;
+  line-height: 1.8; font-size: .95rem;
+  padding-left: 27px;
   margin: 1px auto 5px;
 
   &::before{
-    left: 4px; top:.1em;
-    width: 1.5em; height: 1.5em;
-    background-size: 16px;
+    left: 4px; top:50%;
+    width: 20px; height: 20px; margin-top: -10px;
+    background-size: 12px;
   }
   &.error::before{ background-position: center 4px;}
-  &.correct::before{ background-position: center -36px;}
-  &.hint::before{ background-position: center -76px;}
-  &.question::before{ background-position: center -116px;}
+  &.correct::before{ background-position: center -26px;}
+  &.hint::before{ background-position: center -56px;}
+  &.question::before{ background-position: center -86px;}
 
   &.error{ color: $msgError;}
   &.hint{ color: $msgHint;}
