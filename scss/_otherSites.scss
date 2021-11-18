@@ -2,6 +2,7 @@
 .otherSites{
   position: relative;
   margin: 1em auto; padding: 0 50px;
+  // width: 100%;
   .slick-slide{
     margin: 5px 2px; text-align: center;
     a{
@@ -41,9 +42,5 @@
     &.slick-next{ right: 0;
       &::before {margin-left: -9px; transform: rotate(135deg);}
     }
-  }
-
-  @media screen and (min-width: $wwMedium){
-    width: 94vw;
   }
 }
