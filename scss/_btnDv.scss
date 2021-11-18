@@ -17,8 +17,8 @@
 
   @media screen and (min-width: $wwNormal){
     input[type="button"], input[type="submit"], input[type="reset"], button, .button {
-      width: auto; flex-basis: auto; min-width: 15em;
-      &:only-child{flex: 0 0 auto; width: auto;}
+      width: auto; flex-basis: auto; min-width: 8em;
+      &:only-child{flex: 0 0 auto; width: auto;min-width: 15em;}
     }  
   }
 }

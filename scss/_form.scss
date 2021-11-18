@@ -89,7 +89,7 @@ select {
 }
 
 // 按鈕樣式
-// .button>a,
+.button>a,
 button,
 input[type="submit"],
 input[type="reset"],
@@ -122,15 +122,12 @@ input[type="button"] {
 }
 .button{
   display: inline-block; vertical-align: middle;margin: 3px;
-  &>a{
-    display: block;box-sizing: border-box;
-    text-decoration: none; text-align: center; white-space: nowrap;
-    height: 3em; line-height: 3em; padding: 0 1em; 
-    outline: none; transition: .2s;
-    border: 1px solid $btnBg1;
-    background-color: $bodyBgc; color: $primaryColor;
-    &:hover {
-      box-shadow: $btnBg2 0 0 0 2px; border-color: $btnBg2;
+  &.hollow>a{
+    background-color:transparent;
+    color: $btnBg1;
+    box-shadow: $btnBg1 0 0 0 2px inset;
+    &:hover{
+      box-shadow: transparent 0 0 0 0 inset, $btnBg2 0 0 0 3px;
     }
   }
 }

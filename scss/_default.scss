@@ -90,20 +90,13 @@ h6{font-size: 1em;}
   .loginLayout + .webFooter {
     display: none;
   }
-
 }
-
-
 
 .colx2{
   @media screen and (min-width: $wwNormal){
     display: flex; justify-content: center;
-    .clo1{
-      flex:1 1 50%;
-    }
-    .clo2{
-      flex:1 1 50%;
-    }
+    .clo1{flex:1 1 50%;}
+    .clo2{flex:1 1 50%;}
   }
 }
 
