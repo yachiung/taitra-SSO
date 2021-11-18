@@ -342,6 +342,9 @@ label.singleCheck{
   position: relative;
   .viewIcon{position: absolute; right: 2px; top: -1px;}
   input{ width: 100%;}
+  .symbol{
+    position: absolute; right: 44px; top:50%; transform: translateY(-50%);
+  }
 }
 
 // 密碼組，第一次輸入＋確認。左右並排//
@@ -371,16 +374,23 @@ label.singleCheck{
 }
 
 // 中文姓名＋稱謂＋英文姓名
-.nameSet{ display: flex; flex-wrap: wrap;
+.nameSet{ display: flex; flex-wrap: wrap; 
   input:first-child{ flex: 1 1 auto; width: 100%; margin-bottom:5px; }
-  input:last-child{ flex: 1 1 auto; }
+  select+input, input:last-child{ flex: 1 1 calc(100% - 5em - 7px); }
   select{ flex: 0 0 5em; width: 5em; margin-right:5px; }
   @media screen and (min-width: $wwSlim){
     flex-wrap: nowrap;
     input:first-child{ flex: 0 1 28%; width: 28%; margin: 0; }
-    input:last-child{ flex: 1 1 auto;}
-    select{ margin: 0 5px; }
+    select+input, input:last-child{ flex: 1 1 auto;}
+    select{ margin: 0 5px;}
 
+    
+    &~.msg{
+      display: inline-block;
+      &.fromEname{ margin-left: calc(28% + 5em + 14px);}
+
+      & + .msg.fromEname{margin-left: 0; float: right; width: calc(72% - 5em - 14px);}
+    }
   }
 }
 
@@ -398,11 +408,15 @@ label.singleCheck{
   display: flex;
   select, .ncode{flex: 0 0 6em; width: 6em;}
   input{ flex: 1 1 auto; margin-left: 5px;}
+
+  &+.msg{
+    margin-left: 6.5em;
+  }
 }
 
 // 公司地址
 .comAddrSet{
-  input + input{margin-top: 5px;}
+  input + input{margin-top: 4px;}
 
 }
 // .formLayout td{

@@ -49,9 +49,7 @@
           <table class="formLayout">
             <tr>
               <td><abbr class="required" title="必填欄位">*</abbr>電子信箱</td>
-              <td><input class="full" type="email" value="sammi.hong@hyweb.com.tw" readonly>
-                <!-- <div class="msg error">信箱已被使用</div> -->
-              </td>
+              <td><input class="full" type="email" value="sammi.hong@hyweb.com.tw" readonly></td>
             </tr>
           </table>
         <!-- </fieldset> -->
@@ -65,8 +63,10 @@
                 <label class="singleCheck showLightbox" data-id="msg-2"><input type="checkbox">以個人身分加入會員</label>
                 <div class="compNameSet">
                   <input type="text" placeholder="統一編號">
-                  <input type="text" placeholder="公司全名" required>
+                  <input type="text" placeholder="公司全名" readonly>
                 </div>
+                <!-- <div class="msg error" style="display: none">統一編號格式錯誤</div> -->
+                <div class="msg error" style="display: none">請輸入統一編號(必填)</div>
               </td>
             </tr>
 
@@ -350,10 +350,14 @@
                   </select>
                   <input type="text" placeholder="Your English Name" required>
                 </div>
+                <!-- <div class="msg error" style="display: none">請輸入中文字</div> -->
+                <div class="msg error" style="display: none">請輸入中文姓名(必填)</div>
+                <!-- <div class="msg error fromEname" style="display: none">請輸入英文字</div> -->
+                <div class="msg error fromEname" style="display: none">請輸入英文姓名(必填)</div>
               </td>
             </tr>
             <tr>
-              <td>手機號碼</td>
+              <td>聯絡手機</td>
               <td>
                 <div class="mobileSet">
                   <select name="" id="">
@@ -371,7 +375,8 @@
                   </select>
                   <input type="text" placeholder="請輸入手機號碼">
                 </div>
-
+                 <div class="msg error" style="display: none">手機號碼格式錯誤(09XXXXXXXX)</div>
+                 <!-- <div class="msg error" style="display: none">請輸入聯絡手機(必填)</div> -->
               </td>
             </tr>
             <tr>
@@ -391,6 +396,7 @@
                   <option value="">教育傳播類</option>
                   <option value="">其他專業類</option>
                 </select>
+                <div class="msg error" style="display: none">請選擇職務類型(必填)</div>
               </td>
             </tr>
           </table>
@@ -406,9 +412,29 @@
         </div>
 
         <div class="btnDv">
-          <input type="submit" value="下一步">
+          <input type="button" value="下一步">
         </div>
       </form>
+
+      <!-- 以下為 gui 測試用，套版時請刪除 -->
+      <!-- *********************************************************** -->
+      <span class="showMsgError" style="color: #aaa; cursor:pointer">＊檢視錯誤訊息</span>
+      <span class="showLightbox" data-id="msg-3"  style="color: #aaa; cursor:pointer">＊檢視瀏覽器版本燈箱</span>
+      <script>
+
+        var _errorMsg =$('.msg');
+        $('.showMsgError').click(function(){
+          _errorMsg.toggle();
+          _errorMsg.prev('input, select').toggleClass('alert');
+          _errorMsg.prev('div').not('.nameSet, .compNameSet, .mobileSet').children('input, select').toggleClass('alert');
+          _errorMsg.prev('.nameSet, .mobileSet').children('input').toggleClass('alert');
+          _errorMsg.prev('.compNameSet').children('input').first().toggleClass('alert');
+        })
+
+      </script>
+      <!-- *********************************************************** -->
+      <!--  gui 測試結束  -->
+
     </section>
   </div>
 
@@ -441,6 +467,16 @@
     <p>個人身分無法報名參加買賣商機媒合等洽談會，無法參觀虛擬展會。</p>
     <div class="btnDv">
       <button type="button" class="hideLightbox">確定</button>
+    </div>
+  </section>
+
+  <section class="message lightbox" data-id="msg-3">
+    <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
+    <div class="msgBlock hint">
+      請使用最新版本的Google Chrome、Firefox、Safari及 Microsoft Edge 瀏覽器，以獲得最佳瀏覽體驗及順利註冊。
+    </div>
+    <div class="btnDv">
+      <button type="button" class="hideLightbox">好</button>
     </div>
   </section>
 

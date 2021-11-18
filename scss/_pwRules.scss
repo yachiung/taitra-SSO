@@ -2,12 +2,11 @@
 .pwRules{
   font-size: 1rem; line-height: 1.3;
   padding:1em 1em; margin: .5em 0; border-radius: 7px;
-  // background-color: #ecf6b3;
-  // box-shadow: $shadow2 6px 12px 16px -12px, $borderColorLight 0 0 0 1px inset;
-  // box-shadow: $borderColorLight 0 0 0 1px inset;
   background-color: lighten($grayLight, 5%);
-  p{margin: 0 0 1.2em; font-weight: bold;}
-  ul, ol{list-style: none; margin: 0 0 0 .5em; padding: 0;}
+  p{margin: 0 0 .8em; font-weight: bold;}
+  ul, ol{list-style: none; margin: 0 0 0 .2em; padding: 0;
+    &+p{ margin-top: 1.5em;}
+  }
   li{
     position: relative;
     margin: 0 0 1em; padding: 0 0 0 1.6em;
@@ -28,11 +27,3 @@
     }
   }
 }
-// .msg + .pwRules{ margin-left: 2em;}
-
-// .style2 .pwRules{
-//   background-image: linear-gradient(170deg, #fcf699 0%, #ffd200 180%);
-//   li.check{
-//     &::before{ background-color: #55b105; border-color: #55b105;}
-//   }
-// }

@@ -261,8 +261,11 @@
   }
 
 }
+.webHeader+.msgBlock{ margin-top: 4vw;}
 
-// 單獨存在的圖示
+
+
+// 單獨存在的圖示（白色符號，不同背景色）
 .hintIcon{
   display: inline-block; padding: 0; margin: auto;
   // border: 1px solid $msgQuestion;
@@ -293,7 +296,29 @@
 }
 
 
-.webHeader+.msgBlock{ margin-top: 4vw;}
+// 單獨存在的圖示（透明背景）
+.symbol{
+  position: relative; display: inline-block; 
+  padding: 0; margin: auto; width: 32px; height: 32px;
+
+  &::before{
+    content: ''; position: absolute;
+    background: url(../images/icon_msg.svg) no-repeat center 0;
+  }
+
+  &::before{
+    display: block;
+    width: 100%; height: 100%; left: 0; top: 0;
+    background-size:24px;
+  }
+
+  &.error::before{ background-position: center -237px;}
+  &.correct::before{ background-position: center -297px;}
+  &.hint::before{ background-position: center -357px;}
+  &.question::before{ background-position: center -417px;}
+
+}
+
 
 // 我不是機器人
 .recaptcha{

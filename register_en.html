@@ -50,7 +50,7 @@
               <td><abbr class="required" title="required">*</abbr>Email</td>
               <td><input class="full" type="email" value="sammi.hong@hyweb.com.tw" required>
                 <div class="msg error" style="display: none">This email is taken.</div>
-                <div class="msg error" style="display: none">Please enter the Email (required).</div>
+                <!-- <div class="msg error" style="display: none">Please enter the Email (required).</div> -->
               </td>
             </tr>
             <tr>
@@ -59,6 +59,7 @@
                 <div class="pw">
                   <input type="password" placeholder="Password" required>
                   <span class="viewIcon">show password</span>
+                  <span class="symbol correct"></span><!-- 密碼符合規則時出現此元件 -->
                 </div>
                 <div class="msg error" style="display: none">Please enter the Password (required).</div>
                 <div class="pwRules" style="display: none">
@@ -84,7 +85,7 @@
                   <span class="viewIcon">show password</span>
                 </div>
                 <div class="msg error" style="display: none">Password and confirm password don't match</div>
-                <div class="msg error" style="display: none">Please Confirm the Password (required)</div>
+                <!-- <div class="msg error" style="display: none">Please Confirm the Password (required)</div> -->
               </td>
             </tr>
           </table>
@@ -425,11 +426,10 @@
                   </select>
                   <input type="text" placeholder="Name" required>
                 </div>
-                <div class="msg error" style="display: none">Please enter your name (required)</div>
+                <!-- <div class="msg error" style="display: none">Please enter your name (required)</div> -->
                 <div class="msg error" style="display: none">Please enter English characters</div>
               </td>
             </tr>
-            
 
             <tr>
               <td>Mobile</td>
@@ -453,6 +453,7 @@
 
               </td>
             </tr>
+
             <tr>
               <td><abbr class="required" title="required">*</abbr>Job Function</td>
               <td>
