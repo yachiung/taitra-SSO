@@ -98,16 +98,26 @@ input[type="button"] {
   box-sizing: border-box;
   height: 3em; line-height: 3em;
   padding: 0 1em; margin: 3px;
-  border: 1px solid $btnBg1;
+  // border: 1px solid $btnBg1;
+  border: none;
   background-color: $btnBg1; color: $btnColor;
   vertical-align: middle;
   border-radius: 6px; cursor: pointer; 
   outline: none; transition: .2s;
   &:hover {
     background-color: $btnBg2;
-    border-color: $btnBg2;
-    box-shadow: $btnBg2 0 0 0 2px;
+    // border-color: $btnBg2;
+    box-shadow: $btnBg2 0 0 0 3px;
     color: $fontInvert;
+  }
+  &.hollow{
+    background-color:transparent;
+    color: $btnBg1;
+    box-shadow: $btnBg1 0 0 0 2px inset;
+
+    &:hover{
+      box-shadow: transparent 0 0 0 0 inset, $btnBg2 0 0 0 3px;
+    }
   }
 }
 .button{
