@@ -13,12 +13,10 @@
     td{ position: relative; padding-top: 1.7em;
       &:nth-child(odd){padding-top: 2.4em;}
     }
-    .singleCheck{
-      position: absolute; right: 0; top: 0;
-    }
+    .singleCheck{ position: absolute; right: 0; top: 0; }
+
   }
 
-  
   
   @media screen and (max-width: $wwNormal - 1){
     // outline: 1px solid pink;
@@ -46,6 +44,16 @@
     }
   }
 }
+
+// 處理小螢幕時「*Company Name」和「Sign up for individual membership」重疊問題
+@media screen and (max-width: $wwSlim - 1) {
+  .eng {
+    .formLayout .company {padding-top: 1.7em;} 
+  }
+}
+
+
+
 
 // formA /////////////////////////////////
 .formA{
