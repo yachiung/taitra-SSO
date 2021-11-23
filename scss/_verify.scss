@@ -13,7 +13,7 @@
   }
 
 
-  .clo2{text-align: center;}
+  .clo2{text-align: center;  }
 
 
 
@@ -34,6 +34,8 @@
       border-top: 1px solid $borderColorLight; 
       padding-top: .6em;
       h4{margin: 0 0 .2em;}
+      input{}
+      &~.msg{ margin: 5px auto; width: 22em; text-align-last: left;}
     }
     .btnDv{padding-top: .5em;}
   }
@@ -65,6 +67,9 @@
       color: $fontColorLight;
       border-color: $borderColorLight;
       border-style: solid; cursor: default;
+    }
+    &.alert{
+      color: $msgError;
     }
   }  
 }
