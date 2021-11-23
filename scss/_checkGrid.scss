@@ -7,11 +7,10 @@
     position: relative;
     list-style: none; padding: 0;margin: 0 auto; text-align: center;
     // overflow: hidden;
-    display: flex; flex-flow: row wrap;
+    display: flex; flex-flow: row wrap;align-content: flex-start;
     &>li{
+      flex:0 0 33.33%; 
       position: relative; margin: 15px 0; padding: 0;
-      flex:0 0 33.33%;
-      // float: left; width: 33.33%; 
       cursor: pointer;  
       &::after{// checked 打勾
         display: none;
@@ -25,8 +24,12 @@
         position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px;
         background-color: #0008; border-radius: 50%;
         width: 24vw; height: 24vw; 
-        // margin-left: -12vw;
         max-width: 180px; max-height: 180px;        
+      }
+
+      .cateName{
+        display: block; height: 1.5em;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       }
       
       img{
