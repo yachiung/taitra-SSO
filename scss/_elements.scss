@@ -315,8 +315,56 @@
   &.correct::before{ background-position: center -297px;}
   &.hint::before{ background-position: center -357px;}
   &.question::before{ background-position: center -417px;}
+}
+
+
+// 會員身份提示的預設問題
+.questions{
+  position: relative;
+  line-height: 1.7; 
+  margin: 2em auto 0; padding:20px 15px 15px;
+  // box-shadow: $borderColor 0 0 0 1px; 
+  border-radius: 12px;
+  background-color: $grayLight;
+
+  .more{
+    text-align: right; margin: 15px .6em 0;
+  }
+
+  // 問題列表
+  ol{ margin:0; padding:0; list-style: none; line-height: 1.5;
+    li{
+      margin: 4px 0 10px ; padding: 0;
+      a{ 
+        display: block; text-decoration: none;position: relative;
+        padding: .6em 1em .5em 3em; margin: 0;
+        transition: .2s;
+        color: $fontColorDark; background: #fff;
+        border-radius: 2em;
+        &:hover{
+          box-shadow: $borderColor 0 2px 6px 1px;
+          transform: translateY(-2px);
+          .qNumber{background-color: $secondaryColor;}
+        }
+      }
+      .qNumber{
+        position: absolute;left: 3px; top: 3px; bottom: 3px; text-align: center;
+        width: calc(2.6em - 6px);  line-height: 2.4;
+        border-radius: 1.5em;
+
+        background: $grayDark; color: #fff;
+        transition: .2s;
+        &::before{content: 'Q';}
+      }
+    }
+  }
+
+
+  &+.btnDv{border: none;}
 
 }
+
+
 
 
 // 我不是機器人
