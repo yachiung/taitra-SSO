@@ -362,6 +362,20 @@
               </td>
             </tr>
             <tr>
+              <td><abbr class="required" title="required">*</abbr>Company Address</td>
+              <td>
+                <div class="comAddrSet">
+                  <!-- <input class="full" type="text" placeholder="State/Province/City"> -->
+                  <select class="full" required>
+                    <option value="">State/Province/City</option>
+                    <option value="">... ... ...</option>
+                  </select>
+                  <input class="full" type="text" placeholder="Company Address">
+                </div>
+                <div class="msg error" style="display: none">Please enter company address (required)</div>
+              </td>
+            </tr>
+            <tr>
               <td><abbr class="required" title="required">*</abbr>Industry</td>
               <td>
                 <select class="full" required>
@@ -400,16 +414,6 @@
                   <option value="Influencing">Influencing</option>
                 </select>
                 <div class="msg error" style="display: none">Please select Industry (required)</div>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr class="required" title="required">*</abbr>Company Address</td>
-              <td>
-                <div class="comAddrSet">
-                  <input class="full" type="text" placeholder="State/Province/City">
-                  <input class="full" type="text" placeholder="Company Address">
-                </div>
-                <div class="msg error" style="display: none">Please enter company address (required)</div>
               </td>
             </tr>
 

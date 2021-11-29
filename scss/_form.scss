@@ -423,15 +423,9 @@ label.singleCheck{
 
 // 公司地址
 .comAddrSet{
-  input + input{margin-top: 4px;}
+  * + input{margin-top: 4px;}
 
 }
-// .formLayout td{
-//   // &>.pwSet, &>.nameSet,
-//   // &>.compNameSet, &>.enNameSet, &>.mobileSet, &>.pw,
-//   // &>.pwRules
-//   // {width: 96%;}
-// }
 
 
 
