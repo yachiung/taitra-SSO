@@ -38,52 +38,49 @@
       </ul>
     </section>
     <section class="verify">
-      <div class="colx2">
-        <div class="clo1 veriMsg phone">
-          <p>驗證碼已發送到 <em>0972123111</em></p>
-          <p class="countDown">驗證碼有效時間倒數<time>14:21</time></p>
-        </div>
-        <div class="clo2 vcodeInput">
-          <p>請確認驗證代碼: <em>ITHA</em></p>
-          <div class="verifCode">
-            <h4>請輸入驗證碼</h4>
-            <input type="text" value="3" readonly></input>
-            <input type="text" value="2" readonly></input>
-            <input type="text" value="7" readonly></input>
-            <input type="text" value="0" maxlength="1"></input>
-            <input type="text" value="" maxlength="1"></input>
-            <input type="text" value="" maxlength="1"></input>
+      <section class="formA">
+        <div class="">
+          <div class="clo1 veriMsg">
+            <h3>感謝註冊為外貿協會會員！</h3>
+            <p>驗證碼已發送到 <em>0972123111</em></p>
+            <div class="clo2 vcodeInput">
+              <p>請確認驗證代碼: <em>ITHA</em></p>
+              <div class="verifCode">
+                <h4>請輸入驗證碼</h4>
+                <input type="text" value="3" readonly></input>
+                <input type="text" value="2" readonly></input>
+                <input type="text" value="7" readonly></input>
+                <input type="text" maxlength="1"></input>
+                <input type="text" maxlength="1"></input>
+                <input type="text" maxlength="1"></input>
+              </div>
+              <div class="msg error" style="display: none">驗證碼錯誤，請重新輸入驗證碼</div>
+              <div class="btnDv">
+                <input type="submit" value="驗證" class="showLightbox" data-id="msg-2">
+              </div>
+            </div>
+            <p class="countDown">驗證碼有效時間：<time>14:21</time></p>
           </div>
-          <div class="msg error" style="display: none">驗證碼錯誤，請重新輸入驗證碼</div>
-          <div class="btnDv">
-            <input type="submit" value="驗證" class="showLightbox" data-id="msg-2">
-          </div>
-
         </div>
-      </div>
-      <section class="msgBlock hint">
-        <p>沒有收到驗證碼? <a class="showLightbox" data-id="msg-2">重新傳送驗證碼</a>或選擇<a href="x">信箱驗證</a></p>
-        <p>一直沒收到驗證碼? 請使用<em>「會員註冊信箱」</em><a href="mailto:service@mail.com">聯絡客服</a></p>
       </section>
-
+      <section class="msgBlock">
+        <p>沒有收到驗證碼? <a class="showLightbox" data-id="msg-3">重寄驗證信</a>，或選擇 <a class="showLightbox"
+            data-id="msg-4">手機驗證</a> ；未收到驗證碼? 請使用<em>「會員註冊信箱」</em><a href="mailto:service@mail.com">聯絡客服</a></p>
+      </section>
       <!-- 以下為 gui 測試用，套版時請刪除 -->
       <!-- *********************************************************** -->
       <span class="showMsgError" style="color: #aaa; cursor:pointer">＊檢視錯誤訊息</span>
       <script>
-        var _errorMsg =$('.msg');
-        $('.showMsgError').click(function(){
+        var _errorMsg = $('.msg');
+        $('.showMsgError').click(function () {
           _errorMsg.toggle();
           _errorMsg.prev('div').children('input').not('[readonly]').toggleClass('alert');
         })
       </script>
       <!-- *********************************************************** -->
       <!--  gui 測試結束  -->
-
     </section>
   </div>
-
-
-
   <footer class="webFooter">
     <div class="ftContent">
       <ul class="links">
@@ -93,7 +90,6 @@
       </ul>
     </div>
   </footer>
-
   <!-- 燈箱 -->
   <section class="message lightbox" data-id="msg-1">
     <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>

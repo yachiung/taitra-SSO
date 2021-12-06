@@ -1,270 +1,267 @@
 <!DOCTYPE html>
 <html lang="zh-Hans-TW">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>註冊 【外貿協會 TAITRA SSO】</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>註冊 【外貿協會 TAITRA SSO】</title>
 
-  <link rel="stylesheet" href="slick/slick.css">
-  <link rel="stylesheet" href="css/design.css">
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="slick/slick.min.js"></script>
-  <script src="js/effect.js"></script>
+        <link rel="stylesheet" href="slick/slick.css" />
+        <link rel="stylesheet" href="css/design.css" />
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="slick/slick.min.js"></script>
+        <script src="js/effect.js"></script>
+    </head>
+    <body>
+        <header class="webHeader">
+            <div class="hgroup">
+                <img src="images/TAITRA_logo.svg" alt="外貿協會 TAITRA" />
+                <!-- <img src="images/logo.png" alt="Taiwantrade"> -->
+                <h1>外貿協會會員</h1>
+            </div>
 
-</head>
-<body>
-  <header class="webHeader">
-    <div class="hgroup">
-      <img src="images/TAITRA_logo.svg" alt="外貿協會 TAITRA">
-      <!-- <img src="images/logo.png" alt="Taiwantrade"> -->
-      <h1>外貿協會會員</h1>
-    </div>
+            <ul class="topLinks">
+                <li lang="en"><a href="x">Foreign Company</a></li>
+                <!-- <li class="disk"><a href="x">EN</a></li> -->
+            </ul>
+        </header>
 
-    <ul class="topLinks">
-      <li lang="en"><a href="x">Foreign Company</a></li>
-      <!-- <li class="disk"><a href="x">EN</a></li> -->
-    </ul>
+        <div class="main">
+            <div class="pageHeader">
+                <h2>台灣業者加入會員<span class="hintIcon hint showLightbox" data-id="msg-1"></span></h2>
+                <!-- <button class="switch">加入個人會員</button> -->
+                <!-- <label class="singleCheck"><input type="checkbox"></label> -->
+            </div>
 
-  </header>
-  
-  <div class="main">
+            <section class="steps">
+                <ul>
+                    <li class="now">註冊</li>
+                    <li>驗證</li>
+                    <li>完成</li>
+                </ul>
+            </section>
 
-    <div class="pageHeader">
-      <h2>加入台灣公司會員<span class="hintIcon hint showLightbox" data-id="msg-1"></span></h2>
-      <!-- <button class="switch">加入個人會員</button> -->
-      <!-- <label class="singleCheck"><input type="checkbox"></label> -->
-    </div>
+            <section class="formA">
+                <form action="">
+                    <fieldset>
+                        <!-- <legend>帳號</legend> -->
+                        <table class="formLayout">
+                            <tr>
+                                <td><abbr class="required" title="必填欄位">*</abbr>電子信箱</td>
+                                <td>
+                                    <input class="full" type="email" value="sammi.hong@hyweb.com.tw" required />
+                                    <div class="msg error" style="display: none">信箱已被註冊</div>
+                                    <!-- <div class="msg error" style="display: none">請輸入電子郵件（必填）</div> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><abbr class="required" title="必填欄位">*</abbr>密碼</td>
+                                <td>
+                                    <div class="pw">
+                                        <input type="password" placeholder="請輸入密碼" required />
+                                        <span class="viewIcon">顯示密碼</span>
+                                        <span class="symbol correct"></span
+                                        ><!-- 密碼符合規則時出現此元件 -->
+                                    </div>
+                                    <div class="msg error" style="display: none">請輸入密碼（必填）</div>
+                                    <div class="pwRules" style="display: none">
+                                        <p>密碼必須符合以下規則：</p>
+                                        <ul>
+                                            <li class="check">密碼長度1~8字元</li>
+                                        </ul>
+                                        <p>密碼複雜度應包含：</p>
+                                        <ul>
+                                            <li class="check">至少一個英文大寫字元，例如A,B,C</li>
+                                            <li class="check">至少一個英文小寫字元，例如a,b,c</li>
+                                            <li>至少一個數字，例如1,2,3</li>
+                                            <li class="check">至少一個特殊符號，例如@,#,$</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><abbr class="required" title="必填欄位">*</abbr>確認密碼</td>
+                                <td>
+                                    <div class="pw">
+                                        <input type="password" placeholder="請再次確認密碼" required />
+                                        <span class="viewIcon">顯示密碼</span>
+                                        <!--<span class="hintIcon correct"></span> 密碼比對正確時出現此元件 -->
+                                    </div>
+                                    <div class="msg error" style="display: none">密碼輸入不一致</div>
+                                    <!-- <div class="msg error" style="display: none">請確認密碼（必填）</div> -->
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <hr />
+                    <fieldset>
+                        <!-- <legend>聯絡資訊</legend> -->
+                        <table class="formLayout">
+                            <tr class="company">
+                                <td><abbr class="required" title="必填欄位">*</abbr>公司</td>
+                                <td>
+                                    <label class="singleCheck showLightbox" data-id="msg-2"
+                                        ><input type="checkbox" checked />以個人身分加入會員</label
+                                    >
+                                    <div class="compNameSet">
+                                        <input type="text" placeholder="統一編號" required />
+                                        <input type="text" placeholder="公司全名" readonly />
+                                    </div>
+                                    <div class="msg error" style="display: none">統一編號格式錯誤</div>
+                                    <!-- <div class="msg error" style="display: none">輸入統一編號（必填）</div> -->
+                                </td>
+                            </tr>
 
-    <section class="steps">
-      <ul>
-        <li class="now">註冊</li>
-        <li>驗證</li>
-        <li>完成</li>
-      </ul>
-    </section>
+                            <tr>
+                                <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
+                                <td>
+                                    <div class="nameSet">
+                                        <input type="text" placeholder="請輸入中文姓名" required />
+                                        <select name="" id="">
+                                            <option value="">稱謂</option>
+                                            <option value="">Mr.</option>
+                                            <option value="">Mrs.</option>
+                                            <option value="">Ms.</option>
+                                            <option value="">Miss</option>
+                                        </select>
+                                        <input type="text" placeholder="Your English Name" required />
+                                    </div>
+                                    <div class="msg error" style="display: none">請輸入中文姓名（必填）</div>
+                                    <!-- <div class="msg error" style="display: none">請輸入中文字</div> -->
+                                    <!-- <div class="msg error fromEname">請輸入英文姓名（必填）</div> -->
+                                    <div class="msg error fromEname" style="display: none">請輸入英文字</div>
+                                </td>
+                            </tr>
 
-    <section class="formA">
-      <form action="">
-        <fieldset>
-          <legend>帳號</legend>
-          <table class="formLayout">
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>電子信箱</td>
-              <td><input class="full" type="email" value="sammi.hong@hyweb.com.tw" required>
-                <div class="msg error" style="display: none">信箱已被註冊</div>
-                <!-- <div class="msg error" style="display: none">請輸入電子郵件（必填）</div> -->
-              </td>
-            </tr>
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>密碼</td>
-              <td>
-                <div class="pw">
-                  <input type="password" placeholder="請輸入密碼" required>
-                  <span class="viewIcon">顯示密碼</span>
-                  <span class="symbol correct"></span><!-- 密碼符合規則時出現此元件 -->
-                </div>
-                <div class="msg error" style="display: none">請輸入密碼（必填）</div>
-                <div class="pwRules" style="display: none">
-                  <p>密碼必須符合以下規則：</p>
-                  <ul>
-                    <li class="check">密碼長度1~8字元</li>
-                  </ul>
-                  <p>密碼複雜度應包含：</p>
-                  <ul>
-                    <li class="check">至少一個英文大寫字元，例如A,B,C</li>
-                    <li class="check">至少一個英文小寫字元，例如a,b,c</li>
-                    <li>至少一個數字，例如1,2,3</li>
-                    <li class="check">至少一個特殊符號，例如@,#,$</li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>確認密碼</td>
-              <td>
-                <div class="pw">
-                  <input type="password" placeholder="請再次確認密碼" required>
-                  <span class="viewIcon">顯示密碼</span>
-                  <!--<span class="hintIcon correct"></span> 密碼比對正確時出現此元件 -->
-                </div>
-                <div class="msg error" style="display: none">密碼輸入不一致</div>
-                <!-- <div class="msg error" style="display: none">請確認密碼（必填）</div> -->
-              </td>
-            </tr>
-          </table>
-        </fieldset>
+                            <tr>
+                                <td><abbr class="required" title="必填欄位">*</abbr>聯絡手機</td>
+                                <td>
+                                    <div class="mobileSet">
+                                        <select required>
+                                            <option value="">國碼</option>
+                                            <option value="">62</option>
+                                            <option value="">63</option>
+                                            <option value="">66</option>
+                                            <option value="">81</option>
+                                            <option value="">82</option>
+                                            <option value="">86</option>
+                                            <option selected value="">886</option>
+                                            <option value="">977</option>
+                                            <option value="">972</option>
+                                            <option value="">...</option>
+                                        </select>
+                                        <input type="text" placeholder="請輸入手機號碼" />
+                                    </div>
+                                    <div class="msg error" style="display: none">請輸入聯絡手機（必填）</div>
+                                    <!-- <div class="msg error" style="display: none">手機號碼格式錯誤(09XXXXXXXX)</div> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><abbr class="required" title="必填欄位">*</abbr>職務類型</td>
+                                <td>
+                                    <select class="full" required>
+                                        <option value="">管理與財經</option>
+                                        <option value="">經營幕僚</option>
+                                        <option value="">人力資源</option>
+                                        <option value="">行政總務</option>
+                                        <option value="">法務智財</option>
+                                        <option value="">財會稅務</option>
+                                        <option value="">金融專業</option>
+                                        <option value="">行銷業務類</option>
+                                        <option value="">客服支援類</option>
+                                        <option value="">製造工程類</option>
+                                        <option value="">教育傳播類</option>
+                                        <option value="">其他專業類</option>
+                                    </select>
+                                    <div class="msg error" style="display: none">請選擇職務類型（必填）</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
 
-        <fieldset>
-          <legend>聯絡資訊</legend>
-          <table class="formLayout">
-            <tr class="company">
-              <td><abbr class="required" title="必填欄位">*</abbr>公司</td>
-              <td>
-                <label class="singleCheck showLightbox" data-id="msg-2"><input type="checkbox" checked>以個人身分加入會員</label>
-                <div class="compNameSet">
-                  <input type="text" placeholder="統一編號" required>
-                  <input type="text" placeholder="公司全名" readonly>
-                </div>
-                <div class="msg error" style="display: none">統一編號格式錯誤</div>
-                <!-- <div class="msg error" style="display: none">輸入統一編號（必填）</div> -->
-              </td>
-            </tr>
+                    <div class="agreeCheck">
+                        <input type="checkbox" />我同意且遵守 <a href="x">個人資料保護聲明</a>、<a href="x">免責聲明</a>
+                        和 <a href="x">隱私權政策</a>
+                    </div>
 
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>姓名</td>
-              <td>
-                <div class="nameSet">
-                  <input type="text" placeholder="請輸入中文姓名" required>
-                  <select name="" id="">
-                    <option value="">稱謂</option>
-                    <option value="">Mr.</option>
-                    <option value="">Mrs.</option>
-                    <option value="">Ms.</option>
-                    <option value="">Miss</option>
-                  </select>
-                  <input type="text" placeholder="Your English Name" required>
-                </div>
-                <div class="msg error" style="display: none">請輸入中文姓名（必填）</div>
-                <!-- <div class="msg error" style="display: none">請輸入中文字</div> -->
-                <!-- <div class="msg error fromEname">請輸入英文姓名（必填）</div> -->
-                <div class="msg error fromEname" style="display: none">請輸入英文字</div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>聯絡手機</td>
-              <td>
-                <div class="mobileSet">
-                  <select required>
-                    <option value="">國碼</option>
-                    <option value="">62</option>
-                    <option value="">63</option>
-                    <option value="">66</option>
-                    <option value="">81</option>
-                    <option value="">82</option>
-                    <option value="">86</option>
-                    <option selected value="">886</option>
-                    <option value="">977</option>
-                    <option value="">972</option>
-                    <option value="">...</option>
-                  </select>
-                  <input type="text" placeholder="請輸入手機號碼">
-                </div>
-                <div class="msg error" style="display: none">請輸入聯絡手機（必填）</div>
-                <!-- <div class="msg error" style="display: none">手機號碼格式錯誤(09XXXXXXXX)</div> -->
-              </td>
-            </tr>
-            <tr>
-              <td><abbr class="required" title="必填欄位">*</abbr>職務類型</td>
-              <td>
-                <select class="full" required>
-                  <option value="">管理與財經</option>
-                  <option value="">經營幕僚</option>
-                  <option value="">人力資源</option>
-                  <option value="">行政總務</option>
-                  <option value="">法務智財</option>
-                  <option value="">財會稅務</option>
-                  <option value="">金融專業</option>
-                  <option value="">行銷業務類</option>
-                  <option value="">客服支援類</option>
-                  <option value="">製造工程類</option>
-                  <option value="">教育傳播類</option>
-                  <option value="">其他專業類</option>
-                </select>
-                <div class="msg error" style="display: none">請選擇職務類型（必填）</div>
-              </td>
-            </tr>
-          </table>
-        </fieldset>
+                    <div class="recaptcha">
+                        <img src="images/Recaptcha_anchor@2x.gif" />
+                    </div>
 
-        <div class="agreeCheck">
-          <input type="checkbox">我同意且遵守
-          <a href="x">個人資料保護聲明</a>、<a href="x">免責聲明</a> 和 <a href="x">隱私權政策</a>
+                    <div class="btnDv">
+                        <input type="button" value="下一步" />
+                    </div>
+                </form>
+
+                <!-- 以下為 gui 測試用，套版時請刪除 -->
+                <!-- *********************************************************** -->
+                <span class="showMsgError" style="color: #aaa; cursor: pointer">＊檢視錯誤訊息</span>
+                <span class="showLightbox" data-id="msg-3" style="color: #aaa; cursor: pointer"
+                    >＊檢視瀏覽器版本燈箱</span
+                >
+                <script>
+                    var _errorMsg = $('.msg');
+                    $('.showMsgError').click(function () {
+                        _errorMsg.toggle();
+                        _errorMsg.prev('input, select').toggleClass('alert');
+                        _errorMsg
+                            .prev('div')
+                            .not('.nameSet, .compNameSet, .mobileSet')
+                            .children('input, select')
+                            .toggleClass('alert');
+                        _errorMsg.prev('.nameSet, .mobileSet').children('input').toggleClass('alert');
+                        _errorMsg.prev('.compNameSet').children('input').first().toggleClass('alert');
+                    });
+
+                    var _showPwRules = $('.pwRules').prevAll('.pw').find('input');
+                    _showPwRules.focusin(function () {
+                        $('.pwRules').slideDown(200);
+                    });
+                    _showPwRules.focusout(function () {
+                        $('.pwRules').slideUp(200);
+                    });
+                </script>
+                <!-- *********************************************************** -->
+                <!--  gui 測試結束  -->
+            </section>
         </div>
 
-        <div class="recaptcha">
-          <img src="images/Recaptcha_anchor@2x.gif">
-        </div>
+        <footer class="webFooter">
+            <div class="ftContent">
+                <ul class="links">
+                    <li><a href="mailto:ourmail@company.com.tw">與我們聯絡</a></li>
+                    <li><a href="x">隱私權政策</a></li>
+                    <li><a href="x">關於我們</a></li>
+                </ul>
+            </div>
+        </footer>
 
+        <!-- 燈箱 -->
+        <section class="message lightbox" data-id="msg-1">
+            <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
+            <h2>註冊成為公司會員享有更多服務</h2>
+            <p>
+                為整合外貿協會服務，原台灣經貿網、採購洽談會、研討會報名網站等會員將統一更名為外貿協會會員，即日起可使用一組帳密登入上述網站服務。
+            </p>
+        </section>
 
-        <div class="btnDv">
-          <input type="button" value="下一步">
-        </div>
-      </form>
+        <section class="message lightbox" data-id="msg-2">
+            <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
+            <!-- <h2>確定要以個人身分加入會員？</h2> -->
+            <h2 style="font-weight: normal">個人身分無法報名參加買賣商機媒合等洽談會，無法參觀虛擬展會。</h2>
+            <div class="btnDv">
+                <button type="button" class="hideLightbox">知道了</button>
+            </div>
+        </section>
 
-      <!-- 以下為 gui 測試用，套版時請刪除 -->
-      <!-- *********************************************************** -->
-      <span class="showMsgError" style="color: #aaa; cursor:pointer">＊檢視錯誤訊息</span>
-      <span class="showLightbox" data-id="msg-3"  style="color: #aaa; cursor:pointer">＊檢視瀏覽器版本燈箱</span>
-      <script>
-
-        var _errorMsg =$('.msg');
-        $('.showMsgError').click(function(){
-          _errorMsg.toggle();
-          _errorMsg.prev('input, select').toggleClass('alert');
-          _errorMsg.prev('div').not('.nameSet, .compNameSet, .mobileSet').children('input, select').toggleClass('alert');
-          _errorMsg.prev('.nameSet, .mobileSet').children('input').toggleClass('alert');
-          _errorMsg.prev('.compNameSet').children('input').first().toggleClass('alert');
-        })
-
-        var _showPwRules = $('.pwRules').prevAll('.pw').find('input');
-        _showPwRules.focusin(function(){
-          $('.pwRules').slideDown(200);
-        })
-        _showPwRules.focusout(function(){
-          $('.pwRules').slideUp(200);
-        })
-
-
-      </script>
-      <!-- *********************************************************** -->
-      <!--  gui 測試結束  -->
-
-    </section>
-  </div>
-
-
-
-  <footer class="webFooter">
-    <div class="ftContent">
-      <ul class="links">
-        <li><a href="mailto:ourmail@company.com.tw">與我們聯絡</a></li>
-        <li><a href="x">隱私權政策</a></li>
-<li><a href="x">關於我們</a></li>      </ul>
-    </div>
-  </footer>
-  
-
-
-
-  <!-- 燈箱 -->
-  <section class="message lightbox" data-id="msg-1">
-    <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
-    <h2>註冊成為公司會員享有更多服務</h2>
-    <p>為整合外貿協會服務，原台灣經貿網、採購洽談會、研討會報名網站等會員將統一更名為外貿協會會員，即日起可使用一組帳密登入上述網站服務。</p>
-  </section>
-
-  <section class="message lightbox" data-id="msg-2">
-    <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
-    <h2>確定要以個人身分加入會員？</h2>
-    <p>個人身分無法報名參加買賣商機媒合等洽談會，無法參觀虛擬展會。</p>
-    <div class="btnDv">
-      <button type="button" class="hideLightbox">確定</button>
-    </div>
-  </section>
-
-  <section class="message lightbox" data-id="msg-3">
-    <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
-    <div class="msgBlock hint">
-    請使用最新版本的Google Chrome、Firefox、Safari及 Microsoft Edge 瀏覽器，以獲得最佳瀏覽體驗及順利註冊。
-   </div>
-   <div class="btnDv">
-    <button type="button" class="hideLightbox">好</button>
-  </div>
-</section>
-
-
-
-</body>
+        <section class="message lightbox" data-id="msg-3">
+            <span class="closeThis"><a class="hideLightbox" title="關閉"></a></span>
+            <div class="msgBlock hint">
+                請使用最新版本的Google Chrome、Firefox、Safari及 Microsoft Edge 瀏覽器，以獲得最佳瀏覽體驗及順利註冊。
+            </div>
+            <div class="btnDv">
+                <button type="button" class="hideLightbox">好</button>
+            </div>
+        </section>
+    </body>
 </html>

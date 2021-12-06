@@ -6,45 +6,88 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>驗證信樣版</title>
+
+  <style>
+    body{margin: 0 3vw;font-family:Arial, Helvetica, sans-serif; font-size: 15px;}
+    a{color: #0770C1;}
+    button{background-color: #0770C1; color: #fff; border: none; cursor: pointer;transition: .2s;}
+    button:hover{box-shadow: #0770C1 0 0 0 2px;}
+    
+    table{
+      border-collapse:collapse; width:100%; border: none;
+      max-width: 880px; margin: 0 auto; line-height: 1.5;
+    }
+
+    .header{ margin: 20px auto 40px;border-collapse:collapse; border-bottom: 3px solid #bcc;}
+    .header h1{ font-weight: normal;font-size: 28px; margin: 0 0 6px; line-height: 1.2}
+    .header h2{ font-weight: normal;font-size: 20px; margin: 0; line-height: 1.2;}
+    .logo{ width: 80px}
+    .logo img{ display: block; width: 70px; height: auto; margin: 0 0 10px;}
+
+    .subject {margin: 20px auto; padding: 0 15px; max-width: 850px; line-height: 1.5;}
+    .subject p{ padding: 0; margin: 15px 0;}
+    .subject p.last{ margin-top: 50px; }
+    .greetings{ font-size: 18px; }
+    .subject b{display: inline-block;font-size:18px;}
+    .subject b em{ font-style: normal; color: #c22;}
+    .subject button{font-size: 1em; border: none; height: 2.4em; padding: 0 1em; margin: 0 10px; border-radius: 4px; background-color: #0770C1; color: #fff}
+
+    .fLinks { border-top: 1px solid #bcc; margin: 40px auto 0;}
+    .fLinks td {padding: 30px 10px;}
+    .linkBtn {display: inline-block; width: 10em; padding:8px 15px;color:#0770C1; border:1px solid #0770C1; border-radius: 5px; text-decoration: none; transition: .2s}
+    .linkBtn:hover{ box-shadow: #0770C1 0 0 0 2px; border-color: transparent;}
+
+    .footer{text-align: center; margin:60px -3vw 0; padding: 18px 0 15px;border-top: 1px solid #dae1e1; color: #666 }
+    .footer p{margin: 0;}
+
+    @media screen and (max-width: 700px){
+      .header{ margin-top: 15px;}
+      .logo{ width: 55px;}
+      .logo img{ display: block; width: 50px; height: auto; margin: 0 5px 5px 0;}
+      .header h1{ font-size: 22px; margin-bottom: 1px;}
+      .header h2{ font-size: 14px;}
+
+      .subject {padding: 0;}
+
+      .fLinks tr{ display: block}
+      .fLinks td{ display: block; width: auto; padding: 20px 0 0; text-align: left}
+      .fLinks td br {display: none}
+      .fLinks td a{ display: block}
+      .fLinks .linkBtn{ display: block; text-align: center; width: auto;}
+    }
+  </style>
+
 </head>
 
-<body style="margin: 0; font-family:Arial, Helvetica, sans-serif; font-size: 15px;">
-
-  <table border="0" cellpadding="0" cellspacing="0" width="94%" style="width:94%; margin: 20px auto 40px; border-collapse:collapse; border-bottom: 3px solid #bcc;">
+<body>
+  <table class="header" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-      <td style="width: 80px"><img src="images/TAITRA_logo.svg" alt="外貿協會 TAITRA" style=" display: block; width: 70px; height: auto; margin: 0 0 10px;"></td>
-      <td>
-        <h1 style="font-weight: normal;font-size: 28px; margin: 0 0 6px; line-height: 1.2">貿協註冊驗證信</h1>
-        <h2 style="font-weight: normal;font-size: 20px; margin: 0; line-height: 1.2;">TAITRA Membership Sign up Verification Code</h2>
+      <td class="logo"><img src="images/TAITRA_logo.svg" alt="外貿協會 TAITRA"></td>
+      <td class="text">
+        <h1>貿協註冊驗證信</h1>
+        <h2>TAITRA Membership Sign up Verification Code</h2>
       </td>
     </tr>
   </table>
 
-  <div style="margin: 20px auto; max-width: 94%; line-height: 1.5;">
-    <p style="padding: 0; margin: 15px 0; font-size: 18px;">XXX 你好，</p>
-    <p style="padding: 0; margin: 15px 0;">請確認核發代碼 (Issue Code)：<b style="display: inline-block;font-size:18px;">DAKT</b></p>
-    <p style="padding: 0; margin: 15px 0;">有效時間到 (Valid date)：<b style="display: inline-block;font-size:18px;">2021/10/22 16:23:34</b></p>
-    <p style="padding: 0; margin: 15px 0;">請點選
-      <button type="button" style="background-color: #0770C1; color: #fff; border: none; font-size: 1em; border: none; height: 2.4em; padding: 0 1em; margin: 0 10px; border-radius: 4px; cursor: pointer;transition: .2s;">驗證 verify</button>立即驗證，</p>
-    <p style="padding: 0; margin: 15px 0;">或輸入驗證碼 (Verification code)：<b style="display: inline-block;font-size:18px;">580<em style="font-style: normal; color: #c22;">091</em></b></p>
-    <p style="padding: 0; margin: 40px 0;">請於時效內輸入你的驗證碼，謝謝！</p>
+  <div class="subject">
+    <p class="greetings">XXX 你好，</p>
+    <p>請確認核發代碼 (Issue Code)：<b>DAKT</b></p>
+    <p>有效時間到 (Valid date)：<b>2021/10/22 16:23:34</b></p>
+    <p>請點選<button type="button">驗證 verify</button>立即驗證，</p>
+    <p>或輸入驗證碼 (Verification code)：<b>580<em>091</em></b></p>
+    <p class="last">請於時效內輸入你的驗證碼，謝謝！</p>
   </div>
 
-  <table border="0" cellpadding="0" cellspacing="0" width="94%" style="width: 94%; border-top: 1px solid #bcc; margin: 0 auto;">
+  <table class="fLinks" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-      <td valign="top" style="vertical-align: top;">
-        <p style=" line-height: 1.4; margin: 40px 0 0 0;">客服電話 Customer Service Hotline <a href="tel:886227255200" style="display: inline-block">886-2-2725-5200</a></p>
-        <p style=" line-height: 1.4; margin: 15px 0 0 0; ">客服信箱 Customer Service <a href="mailto:'aboutsso@taitra.org.tw'">aboutsso@taitra.org.tw</a></p>
-      </td>
-      <td align="right" valign="top" style="text-align: right; vertical-align: top;">
-        <a style="display: inline-block; white-space: nowrap; line-height: 1.6; margin: 40px 0 0 20px; padding:8px 15px;color:#0770C1; border:1px solid #0770C1; border-radius: 5px; text-decoration: none; text-align: center; transition: .2s;"
-        href="https://www.taitra.org.tw/" target="_blank">回 Taitra 官網 <br> Back to Taitra </a>
-      </td>
+      <td align="center" width="33%">客服電話<br> Customer Service Hotline<br> <a href="tel:886227255200">886-2-2725-5200</a></td>
+      <td align="center" width="33%">客服信箱<br> Customer Service<br> <a href="mailto:'aboutsso@taitra.org.tw'">aboutsso@taitra.org.tw</a></td>
+      <td align="center" width="33%"><a class="linkBtn" href="https://www.taitra.org.tw/" target="_blank">回 Taitra 官網<br> Back to Taitra </a></td>
     </tr>
   </table>
 
-
-  <div style="text-align: center; margin:40px -3vw 0; padding: 10px 0;border-top: 1px solid #dae1e1; color: #666">
+  <div class="footer">
     <p>© 中華民國對外貿易發展協會版權所有 TAITRA All Rights Reserved.</p>
   </div>
 </body>

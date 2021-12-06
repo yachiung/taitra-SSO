@@ -1,113 +1,172 @@
 // % % % % % % % % % % % % //
-%outerSection{
-  width: 94vw; margin:0 auto;
-  max-width: $wwNormal;
-  // @media screen and (min-width: $wwSlim){
-  //   width: 92vw;
-  // }
+%outerSection {
+    width: 94vw;
+    margin: 0 auto;
+    max-width: $wwNormal;
+    // @media screen and (min-width: $wwSlim){
+    //   width: 92vw;
+    // }
 }
 // % % % % % % % % % % % % //
 
-
-html, body{height: 100%;}
-body{
-  padding: 0; margin: 0;
-  font-family:'微軟正黑體', Helvetica, Arial, sans-serif;
-  font-size: 1em; color: $fontColor;
-  
-  display: flex; flex-direction: column; // 把 footer 推到頁面和 viewport 最下方
-  
-  &.noScroll{
-    overflow: hidden; overflow-y:hidden;
-  }
-  
-  *{box-sizing: border-box;}
+html,
+body {
+    height: 100%;
 }
-a{ color: $linkColor;}
-em{font-weight: bold; font-style: normal;}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: '微軟正黑體', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: $fontColor;
 
-h1, h2, h3, h4, h5,h6{color: $fontColorDark;}
-h2{ font-size: 1.6em;}
-h3{ font-size: 1.4em;}
-h4{ font-size: 1.2em;}
-h5{ font-size: 1.1em;}
-h6{font-size: 1em;}
+    display: flex;
+    flex-direction: column; // 把 footer 推到頁面和 viewport 最下方
 
-.main { // 主內容區，.webHeader之後，.webFooter之前
-  flex: 1 0 auto;
+    &.noScroll {
+        overflow: hidden;
+        overflow-y: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}
+a {
+    color: $linkColor;
+}
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $fontColorDark;
+}
+h2 {
+    font-size: 1.6em;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1.1em;
+}
+h6 {
+    font-size: 1em;
+}
+
+.main {
+    // 主內容區，.webHeader之後，.webFooter之前
+    flex: 1 0 auto;
+    background-color: #f8f8f9;
+    margin-top: 70px;
 }
 
 // 頁尾
-.webFooter{
-  flex-shrink: 0; 
-  padding: 1.5em 3vw; width: 100%;
-  font-size: .92em; line-height: 1.5; 
-  border-top: 1px solid $borderColorLight;
-  text-align: center;
-  .ftContent{ margin: 0 auto;}
+.webFooter {
+    flex-shrink: 0;
+    padding: 1em 3vw;
+    width: 100%;
+    font-size: 0.92em;
+    line-height: 1.5;
+    border-top: 1px solid $borderColorLight;
+    text-align: center;
 
-  a{
-    position: relative;
-    color: $fontColor; text-decoration: none;
-    padding-bottom: 1px;
-    &::before{
-      content: ''; position: absolute; left: 0; bottom: 0;right: 0;
-      height: 1px; background-color: $borderColor;
+    .ftContent {
+        margin: 0 auto;
     }
-  }
-  p{ margin: .3em 0;}
 
-
-  ul{list-style: none; margin:0; padding: 0; line-height: 1.3;}
-  .links{ overflow: hidden; margin: 0 auto;
-    li{
-      display: inline-block;
-      margin: 0; padding: 0;
-      &+li{ margin-left: 1.5em;}
-      a{display: block; 
-        &:hover{
-          color: $linkColor;
-          &::before{height: 2px; background-color: $linkColor;}
+    a {
+        position: relative;
+        color: $fontColor;
+        text-decoration: none;
+        padding-bottom: 1px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            background-color: $borderColor;
         }
-    
-      }
     }
-  }
+    p {
+        margin: 0.3em 0;
+    }
 
-  // @media screen and (min-width: $wwMedium){
-  //   p{ margin: 0;display: inline-block;
-  //     &+p{margin-left: 1.5em;}
-  //   }
-  // }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        line-height: 1.3;
+    }
+    .links {
+        overflow: hidden;
+        margin: 0 auto;
+        li {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            & + li {
+                margin-left: 1.5em;
+            }
+            a {
+                display: block;
+                &:hover {
+                    color: $linkColor;
+                    &::before {
+                        height: 2px;
+                        background-color: $linkColor;
+                    }
+                }
+            }
+        }
+    }
 
-  @media screen and (min-width: $wwNormal){
-    .ftContent{ max-width: $wwNormal;}
-  }
+    // @media screen and (min-width: $wwMedium){
+    //   p{ margin: 0;display: inline-block;
+    //     &+p{margin-left: 1.5em;}
+    //   }
+    // }
+
+    @media screen and (min-width: $wwNormal) {
+        .ftContent {
+            max-width: $wwNormal;
+        }
+    }
 }
 
-.loginLayout .webFooter{ border: none; margin-top: 60px;}
-@media screen and (min-width: $wwNormal){
-  .loginLayout + .webFooter {
-    display: none;
-  }
+.loginLayout .webFooter {
+    border: none;
+    margin-top: 10px;
+}
+@media screen and (min-width: $wwNormal) {
+    .loginLayout + .webFooter {
+        display: none;
+    }
 }
 
-.colx2{
-  @media screen and (min-width: $wwNormal){
-    display: flex; justify-content: center;
-    .clo1{flex:1 1 50%;}
-    .clo2{flex:1 1 50%;}
-  }
+.colx2 {
+    @media screen and (min-width: $wwNormal) {
+        display: block;
+        justify-content: center;
+        max-width: 720px;
+        margin: 0 auto;
+        .clo1 {
+            flex: 1 1 50%;
+        }
+        .clo2 {
+            flex: 1 1 50%;
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-

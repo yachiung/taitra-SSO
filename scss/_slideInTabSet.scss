@@ -1,76 +1,107 @@
 // 左右滑動的頁籤
-.sliderTabs{
-  --ih : 2.8em;
+.sliderTabs {
+    --ih: 2.8em;
 
-  width:100vw ; margin: 0 auto; padding:4vw;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 4vw;
 
-  // box-shadow: $borderColorDark 0 0 0 1px inset;
-  background: $grayLight;
+    // box-shadow: $borderColorDark 0 0 0 1px inset;
+    background: $grayLight;
 
-  .tabItems{
-    position: relative; z-index: 9;
-    box-shadow: $shadow 0 4px 8px -2px;
-    border: 4px solid #fff;
-    background: $bodyBgc;
-    border-radius: var(--ih);
+    .tabItems {
+        position: relative;
+        z-index: 9;
+        box-shadow: $shadow 0 4px 8px -2px;
+        border: 4px solid #fff;
+        background: $bodyBgc;
+        border-radius: var(--ih);
 
-    margin:0 auto -1.6em; width: 94%;
-    max-width:calc( #{$wwNormal}*.94);
+        margin: 0 auto -1.6em;
+        width: 94%;
+        max-width: calc(#{$wwNormal}* 0.94);
 
-    ul{
-      display: flex;
-      list-style: none; margin: 0; padding:0; text-align: center;
-      position: relative; z-index: 5;
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .movingBg {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: var(--ih);
+            background: $primaryColor;
+            border-radius: 2em;
+        }
+
+        li {
+            flex: 1 1 auto;
+            height: var(--ih);
+            line-height: var(--ih);
+            padding: 0 1em;
+            margin: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s;
+            &.now {
+                color: #fff;
+            }
+        }
     }
 
-    .movingBg{
-      content: ''; position: absolute; top:0; left:0; height: var(--ih);
-      background: $primaryColor; border-radius: 2em;
+    .slideShow {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 12px;
+
+        max-width: $wwNormal;
     }
-    
-    li{
-      flex:1 1 auto; 
-      height: var(--ih); line-height: var(--ih); 
-      padding: 0 1em; margin: 0;
-      white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
-      cursor: pointer; transition: .3s;
-      &.now{color: #fff;}
+
+    .slideList {
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        top: 0;
+        left: 0;
     }
-  }
 
-  .slideShow{
-    position: relative;overflow: hidden;
-    width: 100%; margin: 0 auto;
-    border-radius: 12px;
-
-    max-width: $wwNormal;
-
-  }
-  
-  .slideList{
-    display: flex; flex-flow: row nowrap;
-    position: relative; top: 0; left: 0;
-  }
-  
-  .slideInBlock{
-    width: 100%; flex: 0 0 100%;
-    padding-top: 2em;
-    background: #fff;
-  }
-
+    .slideInBlock {
+        width: 100%;
+        flex: 0 0 100%;
+        padding-top: 2em;
+        background: #fff;
+    }
 }
 
-
-
 // 多一步驟，把握更多商機
-.slogan{
-  @extend %outerSection;
-  margin: 0 auto 1.5em; padding:1.2em 3vw .8em;
-  background: #f7ef95; border-radius: 12px;
-  box-shadow: #fff 0 0 0 3px;
-  line-height: 1.8;
-  h3{ text-align: center; margin: 0 0 .4em;}
-  p{margin: 0;
-    &+p{margin-top: 1em;}
-  }
+.slogan {
+    @extend %outerSection;
+    margin: 0 auto 1.5em;
+    padding: 1.2em 3vw 0.8em;
+    background: #f7ef95;
+    border-radius: 12px;
+    box-shadow: #fff 0 0 0 3px;
+    line-height: 1.8;
+    text-align: center;
+    h3 {
+        text-align: center;
+        margin: 0 0 0.4em;
+    }
+    p {
+        margin: 0;
+        & + p {
+            margin-top: 1em;
+        }
+    }
 }

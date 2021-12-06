@@ -1,56 +1,99 @@
 // 頁頭
-.webHeader{
-  position: relative; padding: 0 3vw;
-  border-bottom: 1px solid $borderColorLight;
-  .hgroup{ 
-    display: flex;width: 50%;
-    padding: 4px 0; position: relative;
-    h1{
-      display: none;
-      margin: 0; padding: 0 0 0 8px;
-      font-size: 1.3em;  height: 48px; line-height: 48px;
+.webHeader {
+    position: fixed;
+    width: 100%;
+    padding: 0.5em 3vw;
+    // border-bottom: 1px solid $borderColorLight;
+    background: #fff;
+    height: 70px;
+    z-index: 9;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    &.fixed {
     }
-  img{
-      height: 48px; margin: 0;
-      &+img{margin-left: 5px;}
+    .hgroup {
+        display: flex;
+        width: 50%;
+        padding: 4px 0;
+        position: relative;
+        h1 {
+            display: none;
+            margin: 0;
+            padding: 0 0 0 8px;
+            font-size: 1.3em;
+            height: 48px;
+            line-height: 48px;
+        }
+        img {
+            height: 48px;
+            margin: 0;
+            & + img {
+                margin-left: 5px;
+            }
+        }
     }
-  }
-  .topLinks{position: absolute; right: 3vw; top: 50%; transform: translateY(-50%);}
+    .topLinks {
+        position: absolute;
+        right: 3vw;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-  @media screen and (min-width: $wwNormal){
-    padding: 0 4vw;
-    padding: 0 calc( 50vw - #{$wwNormal}*.5);
-    .hgroup{
-      height: 64px;
-      h1{ display: block; height: 56px; line-height: 56px;}
-      img{height: 100%;}
-    }
+    @media screen and (min-width: $wwNormal) {
+        padding: 0 4vw;
+        padding: 0.25em calc(50vw - #{$wwNormal}* 0.5) 0.75em;
+        .hgroup {
+            height: 64px;
+            h1 {
+                display: block;
+                height: 56px;
+                line-height: 56px;
+            }
+            img {
+                height: 100%;
+            }
+        }
 
-    .topLinks{right: calc( 50vw - #{$wwNormal}*.5);}
-  }
+        .topLinks {
+            right: calc(50vw - #{$wwNormal}* 0.5);
+        }
+    }
 }
 
-
-
-
 // 版頭右上連結
-.topLinks{
-  list-style: none; margin:0 auto; padding: 0;
-  overflow: hidden; font-size: .85em;
-  text-align: right;
-  li { display: inline-block; margin: 2px; padding: 0; text-align: center;
-    a{ 
-      display: block; height: 2.5em; line-height: 2.6;
-      min-width: 2.5em; padding:0 1em;
-      text-decoration: none; border-radius: 2em; font-weight: bold;
-      background-color: $bodyBgc;
-      // background: $primaryColor; color: $fontInvert;
-      box-shadow: $borderColor 0 0 0 1px; color: $fontColor;
-      transition: .2s;
-      &:hover{ box-shadow: $borderColorDark 0 0 0 2px;}
+.topLinks {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0.85em;
+    text-align: right;
+    li {
+        display: inline-block;
+        margin: 2px;
+        padding: 0;
+        text-align: center;
+        a {
+            display: block;
+            height: 2.5em;
+            line-height: 2.6;
+            min-width: 2.5em;
+            padding: 0 1em;
+            text-decoration: none;
+            border-radius: 2em;
+            font-weight: bold;
+            background-color: $bodyBgc;
+            // background: $primaryColor; color: $fontInvert;
+            box-shadow: $borderColor 0 0 0 1px;
+            color: $fontColor;
+            transition: 0.2s;
+            &:hover {
+                box-shadow: $borderColorDark 0 0 0 2px;
+            }
+        }
+        &.disk {
+            a {
+                padding: 0;
+            }
+        }
     }
-    &.disk{
-      a{padding: 0;}
-    }
-  }
 }

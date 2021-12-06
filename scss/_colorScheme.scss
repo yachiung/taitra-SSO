@@ -1,50 +1,47 @@
 // $primaryColor: #1A3476; //主色
 // $primaryColor: #3f5e80; //主色
-$primaryColor: #0770C1; 
+$primaryColor: #0770c1;
 //主色
 
-$secondaryColor: #f16113; 
+$secondaryColor: #f16113;
 //輔色
 
-$lightColor: #ebb71c; 
+$lightColor: #ebb71c;
 //點綴
 
-$linkColor: #007cc9; 
+$linkColor: #007cc9;
 //連結文字顏色
 
-$importantColor: #b10097; 
+$importantColor: #b10097;
 //重要
 
-$bodyBgc: #fff; 
+$bodyBgc: #fff;
 //body 背景色
 
-$footerBgc:#6e7c85; 
+$footerBgc: #6e7c85;
 //footer 背景色
 
-
 $fontColor: #444;
-$fontColorLight:#636262;
-$fontColorDark:#000;
-$fontInvert:#fff;
-
+$fontColorLight: #636262;
+$fontColorDark: #000;
+$fontInvert: #fff;
 
 $borderColor: #a9b5ba;
 $borderColorLight: #dbe3e6;
-$borderColorDark:#5f707b;
-$shadow:#0003;
-$shadow2:#0006;
+$borderColorDark: #007cc9;
+$shadow: #0003;
+$shadow2: #0006;
 
-$btnBg1: $primaryColor ;
-$btnBg2:lighten($primaryColor, 12%);
+$btnBg1: $primaryColor;
+$btnBg2: lighten($primaryColor, 12%);
 $btnColor: #fff;
 
 $gray: #c8cdd0;
 $grayLight: #e0e5e8;
 $grayDark: #546471;
 
-
 $msgError: #cf2619;
 // $msgError: #e32316;
-$msgHint: #df6f0c;
+$msgHint: #007cc9;
 $msgSafe: #308a75;
 $msgQuestion: #777;

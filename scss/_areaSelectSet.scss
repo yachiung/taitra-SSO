@@ -1,90 +1,162 @@
-.areaSelectSet{
-  padding:8px 12px;
+.areaSelectSet {
+    padding: 8px 12px;
 
-  .areaSelected{
-    position: relative;
-    margin: .5em auto 1.5em; padding:6px;
-    border-radius: 8px; 
-    // border: 1px solid $borderColor;
-    background-color: $grayLight;
-    p{
-      padding: 10px 48px 10px 8px; margin: 0; line-height: 1.5;
-      // border-radius: 5px 5px 2px 2px; background: #fff;
-      border-bottom: 3px solid $borderColor;
-      em{ font-style: normal; font-weight: bold; margin: 0 3px;}
-    }
-    .count{
-      display: inline-block; text-align: center; vertical-align: middle;
-      font-weight: bold; font-size: 1.4em;
-      margin: auto 5px; height: 1.3em; line-height: 1.1;
-      color: $importantColor;
-    }
-    
-    .pool{
-      display: block; min-height: 1em;
-      overflow: hidden;
-      padding: 8px 0 0; margin: 0;
-      .one{
+    .areaSelected {
         position: relative;
-        float: left; height: 2.2em; line-height: 2.2;
-        margin: 4px 4px 0 0; padding: 0 34px 0 5px;
-        background: #fff; border-radius: 5px;
-        .icon_del{
-          position: absolute;  right: 5px; top: 50%;
-          transform: scale(.6); margin-top: -22px; margin-right: -10px;
-          cursor: pointer;
+        margin: 0.5em auto 1.5em;
+        padding: 6px;
+        border-radius: 8px;
+        // border: 1px solid $borderColor;
+        background-color: $grayLight;
+        p {
+            padding: 10px 48px 10px 8px;
+            margin: 0;
+            line-height: 1.5;
+            // border-radius: 5px 5px 2px 2px; background: #fff;
+            border-bottom: 3px solid $borderColor;
+            em {
+                font-style: normal;
+                font-weight: bold;
+                margin: 0 3px;
+            }
         }
-      }
-    }
-    &>button.icon_del{
-      position: absolute; right: 6px; top: 6px; z-index: 1;
-      &::before{content: attr(title); white-space: nowrap;
-        position: absolute; top: 0; bottom: 0;left: 0;
-        text-align: left;
-        color: $fontColorDark; width: 0; overflow: hidden;
-      }
-      &:hover{ 
-        width: 5.2em;
-      }
-    }
-  }
+        .count {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 1.4em;
+            margin: auto 5px;
+            height: 1.3em;
+            line-height: 1.1;
+            color: $importantColor;
+        }
 
-
-  .areaSearch{
-    // outline: 1px solid red;
-     margin: 15px 0 8px;
-     background: #fff; border-radius: 4px;
-     display: flex; flex-flow: row nowrap;
-     box-shadow: $borderColor 0 0 0 1px;
-     border-radius: 2em;
-
-     input[type="text"]{
-      flex:1 1 60%; height: 44px; margin: 5px;
-      border: none;border-radius: 2em; background: transparent;
-      &:focus{ box-shadow: none;}
+        .pool {
+            display: block;
+            min-height: 1em;
+            overflow: hidden;
+            padding: 8px 0 0;
+            margin: 0;
+            .one {
+                position: relative;
+                float: left;
+                height: 2.2em;
+                line-height: 2.2;
+                margin: 4px 4px 0 0;
+                padding: 0 34px 0 5px;
+                background: #fff;
+                border-radius: 5px;
+                .icon_del {
+                    position: absolute;
+                    right: 5px;
+                    top: 50%;
+                    transform: scale(0.6);
+                    margin-top: -22px;
+                    margin-right: -10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        & > button.icon_del {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            z-index: 1;
+            &::before {
+                content: attr(title);
+                white-space: nowrap;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                text-align: left;
+                color: $fontColorDark;
+                width: 0;
+                overflow: hidden;
+            }
+            &:hover {
+                width: 5.2em;
+            }
+        }
     }
-    .icon_search{
-      flex:0 0 auto; margin: 5px;
-      
+
+    .areaSearch {
+        // outline: 1px solid red;
+        margin: 15px 0 8px;
+        background: #fff;
+        border-radius: 4px;
+        display: flex;
+        flex-flow: row nowrap;
+        box-shadow: $borderColor 0 0 0 1px;
+        border-radius: 2em;
+
+        input[type='text'] {
+            flex: 1 1 60%;
+            height: 44px;
+            margin: 5px;
+            border: none;
+            border-radius: 2em;
+            background: transparent;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        .icon_search {
+            flex: 0 0 auto;
+            margin: 5px;
+        }
     }
-  }
 }
 
 // 地區選單
-.areaList{
-  max-height: 60vh;
-  overflow-y: auto;  padding: 5px;
-  box-shadow: $borderColor 0 0 0 1px; border-radius: 8px;
-  label{ display: block; min-height: 2em; line-height: 1.5;
-    border: 1px solid transparent; border-radius: 4px;
-    padding: .4em 5px; margin: 5px 0 0 1.5em;
-    &:hover{border-color: $borderColor;}
-    &.all{ margin-left: 0; font-weight: bold;}
-  }
-  .group{
-    padding: 0;
-    &+.group{margin-top: 1em;
-      border-top: 1px dashed $borderColor;
+.areaList {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 5px;
+    box-shadow: $borderColor 0 0 0 1px;
+    border-radius: 8px;
+    label {
+        display: block;
+        min-height: 2em;
+        line-height: 1.5;
+        font-size: 0.938rem;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        padding: 0.4em 5px 0.4em 1.75em;
+        margin: 5px 0 0 1.5em;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 28%;
+        position: relative;
+        input[type='checkbox'] {
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+        }
+        @media screen and (max-width: 545px) {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 70%;
+        }
+        &:hover {
+            border-color: $borderColor;
+        }
+        &.all {
+            margin-left: 0;
+            font-weight: bold;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100%;
+        }
     }
-  }
+    .group {
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        & + .group {
+            margin-top: 1em;
+            border-top: 1px dashed $borderColor;
+        }
+    }
 }

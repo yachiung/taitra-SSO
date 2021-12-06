@@ -1,93 +1,156 @@
 // 輸入驗證碼
-.verify{
-  @extend %outerSection; padding-top: 1.2em;
-  h3{margin: 0; padding: 0; line-height: 1;}
-  // border: 1px solid red;
-  line-height: 1.8;
-
-  em {
-    display: inline-block; margin: 0 5px;
-    font-size: 1.2em;
-    // color: $importantColor;
-    color: $fontColorDark;
-  }
-
-
-  .clo2{text-align: center;  }
-
-
-
-
-  .veriMsg{
-    padding:15px 10px;
-    h3{margin-bottom: 0;}
-  }
-  .vcodeInput{
-    text-align: center; padding: 15px 10px;
-    border-radius: 8px;
-    box-shadow: $shadow 0 0 16px;
-    p:first-child{
-      margin-top: 0;
-      em{display: inline-block; font-size: 1.3em;}
-    }
-    .verifCode{
-      border-top: 1px solid $borderColorLight; 
-      padding-top: .6em;
-      h4{margin: 0 0 .2em;}
-      input{}
-      &~.msg{ margin: 5px auto; width: 22em; text-align-last: left;}
-    }
-    .btnDv{padding-top: .5em;}
-  }
-
-
-  @media screen and (min-width: $wwMedium){
-    .veriMsg{
-      padding: 1.5em 50px 15px 0;
-    }
-  }
-
-  @media screen and (min-width: $wwNormal){
-
-    .veriMsg.phone{
-      text-align: right;
+.verify {
+    @extend %outerSection;
+    padding-top: 0.5em;
+    // border: 1px solid red;
+    line-height: 1.8;
+    h3 {
+        margin: 0 0 0.5em 0;
+        padding: 0;
+        line-height: 1;
     }
 
-  }
+    p {
+        line-height: 1.45em;
+        margin: 0.25em 0;
+    }
+    em {
+        display: inline-block;
+        margin: 0 5px;
+        font-size: 1.2em;
+        // color: $importantColor;
+        color: $fontColorDark;
+        @media screen and (max-width: 545px) {
+            word-break: break-all;
+        }
+    }
+
+    .clo2 {
+        text-align: center;
+    }
+
+    .veriMsg {
+        padding: 15px 10px;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 720px;
+        h3 {
+            margin-bottom: 1em;
+            font-size: 1.75em;
+            line-height: 1.45em;
+            @media screen and (max-width: 767px) {
+                font-size: 1.5em;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            padding: 15px 0;
+        }
+    }
+    .vcodeInput {
+        text-align: center;
+        padding: 15px 10px;
+        border-radius: 8px;
+        // background-color: #fff;
+        // box-shadow: $shadow 0 0 16px;
+        max-width: 720px;
+        margin: 0 auto;
+        p:first-child {
+            margin-top: 0;
+            em {
+                display: inline-block;
+                font-size: 1.3em;
+            }
+        }
+        .verifCode {
+            border-top: 1px solid $borderColorLight;
+            padding-top: 0.6em;
+            margin-bottom: 1em;
+            h4 {
+                margin: 0 0 0.2em;
+            }
+            input {
+            }
+            & ~ .msg {
+                margin: 5px auto;
+                width: 22em;
+                text-align-last: left;
+            }
+        }
+        .btnDv {
+            padding-top: 0.5em;
+        }
+    }
+
+    @media screen and (min-width: $wwMedium) {
+        .veriMsg {
+            // max-width: 400px;
+            text-align: center;
+            p {
+                text-align: center;
+            }
+            padding: 1.25em 0px 15px 0;
+        }
+    }
+
+    @media screen and (min-width: $wwNormal) {
+        .veriMsg.phone {
+            text-align: right;
+        }
+    }
 }
 
-
-.verifCode{
-  text-align: center;
-  input{ 
-    font-size: 1.4em; font-weight: bold;
-    border-radius: 1.2em;
-    width: 2.3em; height: 2.3em; padding: 0; margin: 5px 0; text-align: center;
-    &:read-only{
-      color: $fontColorLight;
-      border-color: $borderColorLight;
-      border-style: solid; cursor: default;
+.verifCode {
+    text-align: center;
+    input {
+        font-size: 1.4em;
+        font-weight: bold;
+        border-radius: 1.2em;
+        width: 2.3em;
+        height: 2.3em;
+        padding: 0;
+        margin: 5px 0;
+        text-align: center;
+        &:read-only {
+            color: $fontColorLight;
+            border-color: $borderColorLight;
+            border-style: solid;
+            cursor: default;
+        }
+        &.alert {
+            color: $msgError;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 1.25em;
+            width: 2em;
+            height: 2em;
+        }
     }
-    &.alert{
-      color: $msgError;
+}
+.verifPhone {
+    max-width: 28em;
+    margin: 20px auto;
+    .msg.correct {
+        float: right;
+        margin: -2.2em 3px 0 0;
     }
-  }  
+    .msg.error {
+        margin: 5px 0 0 4em;
+    }
 }
-.verifPhone{
-  max-width: 28em; margin: 20px auto;
-  .msg.correct{ float: right; margin: -2.2em 3px 0 0;}
-  .msg.error{ margin: 5px 0 0 4em;}
-}
-
 
 // 驗證時間倒數
-.countDown{
-  margin-top: 1.8em;
-  time{
-    display: inline-block; vertical-align: middle;
-    font-size: 1.4em; line-height: 1.4; vertical-align: center;
-    padding: 0; margin: -.18em 5px 0;
-    color: $fontColorDark; font-weight: bold;
-    // border-radius: 4px;
-  }
+.countDown {
+    margin-top: 1.8em;
+    time {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.4em;
+        line-height: 1.4;
+        vertical-align: center;
+        padding: 0;
+        margin: -0.18em 5px 0;
+        color: $fontColorDark;
+        font-weight: bold;
+        // border-radius: 4px;
+    }
 }

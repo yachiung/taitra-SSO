@@ -1,126 +1,225 @@
-.formLayout{
-  border-collapse: collapse; line-height: 1.3;
-  padding: 0; margin: 0 auto;
-  td{padding: 4px 0; 
-    &:nth-child(odd){
-      width: 6em; padding: .9em .5em 0 0; 
-      vertical-align: top; text-align: right;
-    }
-  }
-
-  // <tr class="company">，為了處理個人會員checkbox
-  .company { 
-    td{ position: relative; padding-top: 1.7em;
-      &:nth-child(odd){padding-top: 2.4em;}
-    }
-    .singleCheck{ position: absolute; right: 0; top: 0; }
-
-  }
-
-  
-  @media screen and (max-width: $wwNormal - 1){
-    // outline: 1px solid pink;
-    display: block; width: auto;
-    tbody{ display: block; }
-    tr, td{ display: block; width: 100%;}
-    td{
-      padding:1px 0;
-      &:nth-child(odd){
-        width: 100%; padding: .7em 3px 0 3px; 
-        vertical-align: top; text-align: right;
-      }
+.formLayout {
+    border-collapse: collapse;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0 auto;
+    td {
+        padding: 4px 0;
+        &:nth-child(odd) {
+            width: 6em;
+            padding: 0.9em 0.5em 0 0;
+            vertical-align: top;
+            text-align: right;
+        }
     }
 
-    
-     // <tr class="company">，為了處理個人會員checkbox
-    .company { position: relative;
-      td{ position: static ; padding-top: 4px;
-        &:nth-child(odd){ padding-top: 1em;}
-      }
-      .singleCheck{ position: absolute; right: 0; top: .7em; }
+    // <tr class="company">，為了處理個人會員checkbox
+    .company {
+        td {
+            position: relative;
+            padding-top: 1.7em;
+            &:nth-child(odd) {
+                padding-top: 2.4em;
+            }
+        }
+        .singleCheck {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 0.875rem;
+            color: #999;
+        }
     }
-    td{
-      &:nth-child(odd){ text-align: left; width: 100%; }
+
+    @media screen and (max-width: $wwNormal - 1) {
+        // outline: 1px solid pink;
+        display: block;
+        width: auto;
+        tbody {
+            display: block;
+        }
+        tr,
+        td {
+            display: block;
+            width: 100%;
+        }
+        td {
+            padding: 1px 0;
+            &:nth-child(odd) {
+                width: 100%;
+                padding: 0.7em 3px 0 3px;
+                vertical-align: top;
+                text-align: right;
+            }
+        }
+
+        // <tr class="company">，為了處理個人會員checkbox
+        .company {
+            position: relative;
+            td {
+                position: static;
+                padding-top: 4px;
+                &:nth-child(odd) {
+                    padding-top: 1em;
+                }
+            }
+            .singleCheck {
+                position: absolute;
+                right: 0;
+                top: 0.7em;
+            }
+        }
+        td {
+            &:nth-child(odd) {
+                text-align: left;
+                width: 100%;
+            }
+        }
     }
-  }
 }
 
 // 處理小螢幕時「*Company Name」和「Sign up for individual membership」重疊問題
 @media screen and (max-width: $wwSlim - 1) {
-  .eng {
-    .formLayout .company {padding-top: 1.7em;} 
-  }
+    .eng {
+        .formLayout .company {
+            padding-top: 1.7em;
+        }
+    }
 }
 
 // formA /////////////////////////////////
-.formA{
-  @extend %outerSection;
-  margin: 0 auto 3em; padding: 0;
-  .formLayout{ margin: 10px auto; width: 100%; 
-    .pw{
-      .viewIcon{transform: scale(.8); top: -5px;}
+.formA {
+    @extend %outerSection;
+    margin: 0 auto 1em;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @media screen and (max-width: 767px) {
+        padding: 1em 1.5em;
+        border-radius: 1em;
     }
-  }
-
-  // fieldset /////////////////////////////////
-  fieldset {
-    padding:10px 0; margin: 0; border: none;
-
-    &+fieldset { margin-top: 10px; }
-    legend {
-      display: block; position: relative;
-      padding: 0 0 0 3vw; margin: 0 0 0 -3vw; width: 100%;
-      font-weight: normal; font-size: 1.3em; line-height: 1.1;
-      color: $fontColorDark;
-      &::before{
-        content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-        width: 1vw; background-color: $borderColorDark;
-      }
-      &+.formLayout{margin-top: -7px;}
-    }
-  }
-
-  @media screen and (min-width: $wwMedium){
-    margin-top: 10px;
-    .formLayout, .agreeCheck, .msgBlock{ max-width: 672px;}
-    .formLayout + .agreeCheck,
-    fieldset + .agreeCheck {margin-top: -10px;}
-
-    fieldset {position: relative;
-      &+fieldset { margin-top: 0; }
-      legend{
-        position: absolute; left: 0; top: 0; width: auto;
-        margin-left: 0; padding-left: 15px;
-        &::before{ width: 6px;}
-        &+.formLayout{margin-top: 10px;}
-      }
-    }
-  }
-
-  @media screen and (min-width: $wwNormal){
-    padding:10px 0 ;box-shadow: #0002 0 0 8px; border-radius: 16px;
-    .formLayout, .agreeCheck, .msgBlock{width: 70%; max-width: none;}
-    .formLayout + .agreeCheck,
-    fieldset + .agreeCheck {width: calc(70% - 6em); transform: translateX(3em);}
-
-    fieldset {
-      legend{margin:10px 0 0;}
-    }
-
-
-    &.eng{
-
-      .formLayout, .agreeCheck, .msgBlock{width: 80%; max-width: none;}
-      .formLayout{
-        td{
-          &:nth-child(odd){ width: 10em; }
+    .formLayout {
+        margin: 10px auto;
+        width: 100%;
+        .pw {
+            .viewIcon {
+                transform: scale(0.8);
+                top: -5px;
+            }
         }
-      }
-      .formLayout + .agreeCheck,
-      fieldset + .agreeCheck {width: calc(80% - 10em);transform: translateX(5em);
-      }
-  
     }
-  }
 
+    // fieldset /////////////////////////////////
+    fieldset {
+        padding: 10px 0;
+        margin: 0;
+        border: none;
+
+        & + fieldset {
+            margin-top: 10px;
+        }
+        legend {
+            display: block;
+            position: relative;
+            padding: 0 0 0 3vw;
+            margin: 0 0 0 -3vw;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.3em;
+            line-height: 1.1;
+            color: $fontColorDark;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 1vw;
+                background-color: $borderColorDark;
+            }
+            & + .formLayout {
+                margin-top: -7px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $wwMedium) {
+        margin-top: 10px;
+        padding: 1em;
+        border-radius: 1em;
+        .formLayout,
+        .agreeCheck,
+        .msgBlock {
+            max-width: 672px;
+        }
+        .formLayout + .agreeCheck,
+        fieldset + .agreeCheck {
+            margin-top: -10px;
+        }
+
+        fieldset {
+            position: relative;
+            & + fieldset {
+                margin-top: 0;
+            }
+            legend {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: auto;
+                margin-left: 0;
+                padding-left: 15px;
+                &::before {
+                    width: 6px;
+                }
+                & + .formLayout {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $wwNormal) {
+        padding: 1em;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 1em;
+        .formLayout,
+        .agreeCheck,
+        .msgBlock {
+            width: 70%;
+            max-width: none;
+        }
+        .formLayout + .agreeCheck,
+        fieldset + .agreeCheck {
+            width: calc(70% - 6em);
+            transform: translateX(3em);
+        }
+
+        fieldset {
+            legend {
+                margin: 10px 0 0;
+            }
+        }
+
+        &.eng {
+            .formLayout,
+            .agreeCheck,
+            .msgBlock {
+                width: 80%;
+                max-width: none;
+            }
+            .formLayout {
+                td {
+                    &:nth-child(odd) {
+                        width: 10em;
+                    }
+                }
+            }
+            .formLayout + .agreeCheck,
+            fieldset + .agreeCheck {
+                width: calc(80% - 10em);
+                transform: translateX(5em);
+            }
+        }
+    }
 }

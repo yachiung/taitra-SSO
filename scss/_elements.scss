@@ -2,90 +2,136 @@
 // h2.blockHeader{ margin: 0 0 1em; font-weight: normal;}
 
 .pageHeader {
-  @extend %outerSection; margin-top: 10px; margin-bottom: 10px; padding: 0;
-  display: flex; flex-flow: row wrap;
-  align-items: center; justify-content: space-between;
-  h2{ 
-    margin: 0; flex: 1 1 auto; font-weight: normal;
-    .hintIcon{ vertical-align: middle; margin-top: -4px; margin-left: 4px;
-      &::before{background-color: $msgQuestion;}
-      &:hover, &:focus{
-        &::before{background-color: darken($msgQuestion, 15%);}
-      }
+    @extend %outerSection;
+    margin: 1.25em auto 1em;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        margin: 0;
+        flex: 1 1 auto;
+        font-weight: bold;
+        text-align: center;
+        .hintIcon {
+            vertical-align: middle;
+            margin-top: -4px;
+            margin-left: 4px;
+            display: none;
+            &::before {
+                background-color: $msgQuestion;
+            }
+            &:hover,
+            &:focus {
+                &::before {
+                    background-color: darken($msgQuestion, 15%);
+                }
+            }
+        }
     }
-  }
-  // button.switch { flex: 0 0 auto; position: relative;
-  //   color: $fontColor; font-size: .95rem; height: 1.5em; line-height: 1.5;
-  //   background-color: transparent;
-  //   padding: 0; border-radius: 0; margin: 0;
-  //   border: none;
+    // button.switch { flex: 0 0 auto; position: relative;
+    //   color: $fontColor; font-size: .95rem; height: 1.5em; line-height: 1.5;
+    //   background-color: transparent;
+    //   padding: 0; border-radius: 0; margin: 0;
+    //   border: none;
 
-  //   &::after{ content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background-color: $borderColor;}
+    //   &::after{ content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background-color: $borderColor;}
 
-  //   // box-shadow: $borderColor 0 0 0 1px;
-  //   &:hover, &:focus{ box-shadow: none;
-  //     &::after{background-color: $borderColorDark; height: 2px;}
-  //   }
-  // }
+    //   // box-shadow: $borderColor 0 0 0 1px;
+    //   &:hover, &:focus{ box-shadow: none;
+    //     &::after{background-color: $borderColorDark; height: 2px;}
+    //   }
+    // }
 
-  @media screen and (min-width: $wwNormal){
-    width: 92vw; margin:15px auto;
-  }
-
+    @media screen and (min-width: $wwNormal) {
+        width: 92vw;
+        margin: 1.5em auto 1em;
+    }
 }
 
 // 關閉圖示
-.closeThis{
-  a{
-    position: relative; display: block; width: 44px; height: 44px;
-    border-radius: 8px; 
-    cursor: pointer; transition: .2s;
-    &::before, &::after{
-      content: ''; position: absolute; top: 50%; left: 50%;
-      width: 24px; height: 2px; margin: -1px auto auto -12px;
-      background-color: $borderColor;
-    }
-    &::before{ transform: rotate(45deg);}
-    &::after{transform: rotate(135deg);}
-  
-    &:hover{
-      background-color: $grayLight;
-      &::before, &::after{ background-color:$borderColorDark}
-    }
+.closeThis {
+    a {
+        position: relative;
+        display: block;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 2px;
+            margin: -1px auto auto -12px;
+            background-color: $borderColor;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(135deg);
+        }
 
-  }
+        &:hover {
+            background-color: $grayLight;
+            &::before,
+            &::after {
+                background-color: $borderColorDark;
+            }
+        }
+    }
 }
 
 // 顯示密碼（圖示）
-.viewIcon{
-  position: relative;
-  display: inline-block; vertical-align: top; cursor: pointer;
-  margin:4px 2px 0;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: none; border: none; outline: none;
-  text-indent: -10em; overflow: hidden;  
-  background: $grayDark url(../images/icon_eye.png) no-repeat center center;
-  background-size: 32px; transition: .2s;
-  &:hover{ 
-    background-color: $grayDark;
-    box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
-  }
-  &:focus{
-    background-color: $primaryColor;
-    box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
-  }
-  &::before{
-    display: none;
-    content: '';position: absolute; left: 0; right: 0;
-    top: 50%;height: 4px;  margin-top: -2px;
-    transform: rotate(-45deg);
-    background-color: #fff;
+.viewIcon {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin: 4px 2px 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    outline: none;
+    text-indent: -10em;
+    overflow: hidden;
+    background: $grayDark url(../images/icon_eye.png) no-repeat center center;
+    background-size: 32px;
+    transition: 0.2s;
+    &:hover {
+        background-color: $grayDark;
+        box-shadow: $grayDark 0 0 0 2px, #fffc 0 0 0 2px inset;
+    }
+    &:focus {
+        background-color: $primaryColor;
+        box-shadow: $primaryColor 0 0 0 3px, #fffc 0 0 0 1px inset;
+    }
+    &::before {
+        display: none;
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 4px;
+        margin-top: -2px;
+        transform: rotate(-45deg);
+        background-color: #fff;
+    }
 
-  }
-
-  &.pwShow{
-    &::before{ display: block;}
-  }
+    &.pwShow {
+        &::before {
+            display: block;
+        }
+    }
 }
 // more
 // .more{
@@ -97,7 +143,7 @@
 //     transition: .2s;
 //     box-shadow: $borderColor 0 0 0 1px;
 //     background: $bodyBgc; color: $fontColor;
-  
+
 //     &::after{content: ''; position: absolute; top: 50%; right: .9em;
 //       width: 8px; height: 8px;  margin-top: -5px;
 //       border: 2px solid $borderColorDark; border-bottom: none; border-left: none;
@@ -107,53 +153,74 @@
 //   }
 // }
 
-
 // 連結，像 button 樣式
-.linkBtn { display: inline-block;
-  &>a {
-    display: block; text-align: center; text-decoration: none;outline: none;
-    height: 3em; line-height: 3; border-radius: 2em;
-    padding: 0 1em; margin: 3px;
-    border: 1px solid $linkColor;
-    color: $linkColor; background: $bodyBgc;
-    transition: .2s; 
-    &:hover, &:focus {
-      border-color: #fff;
-      box-shadow: $linkColor 0 0 0 2px;
+.linkBtn {
+    display: inline-block;
+    & > a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        height: 3em;
+        line-height: 3;
+        border-radius: 2em;
+        padding: 0 1em;
+        margin: 3px;
+        border: 1px solid $linkColor;
+        color: $linkColor;
+        background: $bodyBgc;
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+            border-color: #fff;
+            box-shadow: $linkColor 0 0 0 2px;
+        }
     }
-  }
-  &.solid{
-    &>a{
-      background-color: $primaryColor; color: $fontInvert;
-      border-color: $primaryColor;
-      &:hover, &:focus {
-        background-color: $btnBg2;
-        border-color: $btnBg2;
-        box-shadow: $btnBg2 0 0 0 2px;
-        color: $fontInvert;
-      }
+    &.solid {
+        & > a {
+            background-color: $primaryColor;
+            color: $fontInvert;
+            border-color: $primaryColor;
+            &:hover,
+            &:focus {
+                background-color: $btnBg2;
+                border-color: $btnBg2;
+                box-shadow: $btnBg2 0 0 0 2px;
+                color: $fontInvert;
+            }
+        }
     }
-  }
 }
-
 
 // （中間有字的）分隔線
-.hr{
-  margin: 0 auto; position: relative;
-  text-align: center; 
-  &::before{
-    content: '';
-    position: absolute; left: 0; top: 50%; width: 100%; 
-    height: 2px; margin-top: -2px;
-    background-color: $borderColor;
-  }
-  span{display: inline-block; z-index: 3; position: relative;
-    padding: 0;font-size: .9em;
-    width: 2.4em; height: 2.4em; line-height: 2.4em; border-radius: 50%;
-    background: $bodyBgc; box-shadow: $borderColor 0 0 0 1px;
-  }
+.hr {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        margin-top: -2px;
+        background-color: #ddd;
+    }
+    span {
+        display: inline-block;
+        z-index: 3;
+        position: relative;
+        padding: 0;
+        font-size: 0.9em;
+        width: 2.4em;
+        height: 2.4em;
+        line-height: 2.4em;
+        border-radius: 50%;
+        background: $bodyBgc;
+        box-shadow: $borderColor 0 0 0 1px;
+    }
 }
-
 
 // 一整塊的錯誤訊息（待刪除）
 /* .warning{
@@ -166,245 +233,422 @@
 } */
 
 // 提示訊息，位置跟隨游標，沒有圖示
-.warning{
-  display: none;
-  position: fixed; z-index: 99;
-  padding:.3em .5em; border-radius: 6px;
-  background-color:  $msgHint; color: #fff; 
-  line-height: 1.5; font-size: .9em;
-  margin:0;
+.warning {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    padding: 0.3em 0.5em;
+    border-radius: 6px;
+    background-color: $msgHint;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 0.9em;
+    margin: 0;
 }
 .checkGrid .warning {
-  transform: translate(-100%, -100%);
-  white-space: nowrap;
+    transform: translate(-100%, -100%);
+    white-space: nowrap;
 }
 
 // 錯誤、提示、警告...訊息
-.msg, .msgBlock, .hintIcon {
-  position: relative;
-  &::before{
-    content: ''; position: absolute;
-    border-radius: 50%;
-    background: url(../images/icon_msg.svg) no-repeat center 0;
-  }
-
-  &.error::before{ background-color: $msgError;}
-  &.hint::before{ background-color: $msgHint;}
-  &.correct::before{ background-color: $msgSafe;}
-  &.question::before{ background-color: $msgQuestion;}
-
-  .bigger{font-size: 1.2em;}
-}
-.msg{
-  line-height: 1.8; font-size: .95rem;
-  padding-left: 27px;
-  margin: 1px auto 5px;
-
-  &::before{
-    left: 4px; top:50%;
-    width: 20px; height: 20px; margin-top: -10px;
-    background-size: 12px;
-  }
-  &.error::before{ background-position: center 4px;}
-  &.correct::before{ background-position: center -26px;}
-  &.hint::before{ background-position: center -56px;}
-  &.question::before{ background-position: center -86px;}
-
-  &.error{ color: $msgError;}
-  &.hint{ color: $msgHint;}
-  &.correct{ color: $msgSafe;}
-  &.question{ color: $msgQuestion;}
-
-}
-.msgBlock{
-  @extend %outerSection;
-  display: block; margin: 2em auto; padding: 0;
-  min-height: 50px; line-height: 1.8; font-size: 1rem;
-  border: 1px solid transparent;  border-radius: 8px;
-  &.error, &.correct, &.hint, &.question{
-    padding: 12px 12px 12px 48px;
-    &::before{ 
-      width: 30px; height: 30px; left: 10px; top: 10px;
-      background-size: 16px;
+.msg,
+.msgBlock,
+.hintIcon {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background: url(../images/icon_msg.svg) no-repeat center 0;
     }
-  }
-  &.error{ border-color: $msgError;}
-  &.correct{ border-color: $msgSafe;}
-  &.hint{ border-color: $msgHint;}
-  &.question{ border-color: $msgQuestion;}
 
-  &.error::before{ background-position: center 7px;}
-  &.correct::before{ background-position: center -33px;}
-  &.hint::before{ background-position: center -73px;}
-  &.question::before{ background-position: center -113px;}
+    &.error::before {
+        background-color: $msgError;
+    }
+    &.hint::before {
+        background-color: $msgHint;
+    }
+    &.correct::before {
+        background-color: $msgSafe;
+    }
+    &.question::before {
+        background-color: $msgQuestion;
+    }
 
-  h3{margin: -7px 0 .5em;}
-  p{margin: 0;
-    &+p{margin-top: 1.2em;}
-  }
-  a{display: inline-block; text-decoration: underline; cursor: pointer; margin: 0 .3em;}
-
-  em{display: inline-block; font-style: normal; font-weight: bold; color: $importantColor;}
-  b{display: inline-block; font-weight: bold; color: $fontColorDark;}
-
-
-  .btnDv{
-    justify-content: flex-end; margin-top: 1em;
-    border-top: 1px solid $borderColor;
-    &>*:only-child{margin: 0; min-width: 4em; width: auto; flex:0 0 auto;}
-  }
-
-  @media screen and (min-width: $wwNormal){
-  }
-
+    .bigger {
+        font-size: 1.2em;
+    }
 }
-.webHeader+.msgBlock{ margin-top: 4vw;}
+.msg {
+    line-height: 1.8;
+    font-size: 0.95rem;
+    padding-left: 27px;
+    margin: 1px auto 5px;
 
-.main>.msgBlock{
-  max-width: 600px;
+    &::before {
+        left: 4px;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        background-size: 12px;
+    }
+    &.error::before {
+        background-position: center 4px;
+    }
+    &.correct::before {
+        background-position: center -26px;
+    }
+    &.hint::before {
+        background-position: center -56px;
+    }
+    &.question::before {
+        background-position: center -86px;
+    }
+
+    &.error {
+        color: $msgError;
+    }
+    &.hint {
+        color: $msgHint;
+    }
+    &.correct {
+        color: $msgSafe;
+    }
+    &.question {
+        color: $msgQuestion;
+    }
+}
+.msgBlock {
+    @extend %outerSection;
+    display: block;
+    margin: 1em auto;
+    padding: 0 1em;
+    min-height: 50px;
+    line-height: 1.8;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    max-width: 94%;
+    &.error,
+    &.correct,
+    &.hint,
+    &.question {
+        padding: 12px 12px 12px 48px;
+        &::before {
+            width: 30px;
+            height: 30px;
+            left: 10px;
+            top: 10px;
+            background-size: 16px;
+        }
+    }
+    &.error {
+        border-color: $msgError;
+    }
+    &.correct {
+        border-color: $msgSafe;
+    }
+    &.hint {
+        border-color: $msgHint;
+    }
+    &.question {
+        border-color: $msgQuestion;
+    }
+
+    &.error::before {
+        background-position: center 7px;
+    }
+    &.correct::before {
+        background-position: center -33px;
+    }
+    &.hint::before {
+        background-position: center -73px;
+    }
+    &.question::before {
+        background-position: center -113px;
+    }
+
+    h3 {
+        margin: -7px 0 0.5em;
+    }
+    p {
+        margin: 0;
+        font-size: 0.938em;
+        color: #555;
+        & + p {
+            margin-top: 1.2em;
+        }
+    }
+    a {
+        display: inline-block;
+        text-decoration: underline;
+        cursor: pointer;
+        margin: 0 0.3em;
+    }
+
+    em {
+        display: inline-block;
+        font-style: normal;
+        font-weight: bold;
+        color: $importantColor;
+    }
+    b {
+        display: inline-block;
+        font-weight: bold;
+        color: $fontColorDark;
+    }
+
+    .btnDv {
+        justify-content: flex-end;
+        margin-top: 1em;
+        border-top: 1px solid $borderColor;
+        & > *:only-child {
+            margin: 0;
+            min-width: 4em;
+            width: auto;
+            flex: 0 0 auto;
+        }
+    }
+
+    @media screen and (min-width: $wwNormal) {
+    }
+}
+.webHeader + .msgBlock {
+    margin-top: 4vw;
 }
 
+.main > .msgBlock {
+    max-width: 600px;
+}
 
 // 單獨存在的圖示（白色符號，不同背景色）
-.hintIcon{
-  display: inline-block; padding: 0; margin: auto;
-  // border: 1px solid $msgQuestion;
-  width: 30px; height: 30px; cursor: pointer;
+.hintIcon {
+    display: inline-block;
+    padding: 0;
+    margin: auto;
+    // border: 1px solid $msgQuestion;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 
-  &.error:hover::before{ background-color:darken( $msgError, 15%);}
-  &.hint:hover::before{ background-color:darken( $msgHint, 15%);}
-  &.correct:hover::before{ background-color:darken( $msgSafe, 15%);}
-  &.question:hover::before{ background-color:darken( $msgQuestion, 15%);}
+    &.error:hover::before {
+        background-color: darken($msgError, 15%);
+    }
+    &.hint:hover::before {
+        background-color: darken($msgHint, 15%);
+    }
+    &.correct:hover::before {
+        background-color: darken($msgSafe, 15%);
+    }
+    &.question:hover::before {
+        background-color: darken($msgQuestion, 15%);
+    }
 
+    &::before {
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: 16px;
+    }
 
-  &::before{
-    display: block;
-    width: 100%; height: 100%; left: 0; top: 0;
-    background-size: 16px;
-  }
-  
-  &.error{ border-color: $msgError; }
-  &.correct{ border-color: $msgSafe; }
-  &.hint{ border-color: $msgHint; }
-  &.question{ border-color: $msgQuestion; }
+    &.error {
+        border-color: $msgError;
+    }
+    &.correct {
+        border-color: $msgSafe;
+    }
+    &.hint {
+        border-color: $msgHint;
+    }
+    &.question {
+        border-color: $msgQuestion;
+    }
 
-  &.error::before{ background-position: center 7px;}
-  &.correct::before{ background-position: center -33px;}
-  &.hint::before{ background-position: center -73px;}
-  &.question::before{ background-position: center -113px;}
-
+    &.error::before {
+        background-position: center 7px;
+    }
+    &.correct::before {
+        background-position: center -33px;
+    }
+    &.hint::before {
+        background-position: center -73px;
+    }
+    &.question::before {
+        background-position: center -113px;
+    }
 }
-
 
 // 單獨存在的圖示（透明背景）
-.symbol{
-  position: relative; display: inline-block; 
-  padding: 0; margin: auto; width: 32px; height: 32px;
+.symbol {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
 
-  &::before{
-    content: ''; position: absolute;
-    background: url(../images/icon_msg.svg) no-repeat center 0;
-  }
+    &::before {
+        content: '';
+        position: absolute;
+        background: url(../images/icon_msg.svg) no-repeat center 0;
+    }
 
-  &::before{
-    display: block;
-    width: 100%; height: 100%; left: 0; top: 0;
-    background-size:24px;
-  }
+    &::before {
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: 24px;
+    }
 
-  &.error::before{ background-position: center -237px;}
-  &.correct::before{ background-position: center -297px;}
-  &.hint::before{ background-position: center -357px;}
-  &.question::before{ background-position: center -417px;}
+    &.error::before {
+        background-position: center -237px;
+    }
+    &.correct::before {
+        background-position: center -297px;
+    }
+    &.hint::before {
+        background-position: center -357px;
+    }
+    &.question::before {
+        background-position: center -417px;
+    }
 }
-
 
 // 會員身份提示的預設問題
-.questions{
-  position: relative;
-  line-height: 1.7; 
-  margin: 2em auto 0; padding:25px 15px 20px;
-  // box-shadow: $borderColor 0 0 0 1px; 
-  border-radius: 12px;
-  background-color: $grayLight;
+.questions {
+    position: relative;
+    line-height: 1.7;
+    margin: 2em auto 0;
+    padding: 25px 15px 20px;
+    // box-shadow: $borderColor 0 0 0 1px;
+    border-radius: 12px;
+    background-color: $grayLight;
 
-  .more{
-    text-align: right; margin: 15px .6em 0;
-  }
-
-  // 問題列表
-  ol{ margin:0; padding:0; list-style: none; line-height: 1.5;
-    li{
-      margin: 4px 0 10px ; padding: 0;
-      a{ 
-        display: block; text-decoration: none;position: relative;
-        padding: .6em 1em .5em 3em; margin: 0;
-        transition: .2s;
-        color: $fontColorDark; background: #fff;
-        border-radius: 1.3em;
-        &:hover{
-          box-shadow: $borderColor 0 2px 6px 1px;
-          transform: translateY(-2px);
-          .qNumber{background-color: $secondaryColor;}
-        }
-      }
-      .qNumber{
-        position: absolute;left: 3px; top: 3px;  text-align: center;
-        width: calc(2.6em - 6px); height: calc(2.6em - 6px);  line-height: 2.4;
-        border-radius: 1.5em;
-
-        background: $grayDark; color: #fff;
-        transition: .2s;
-        &::before{content: 'Q';}
-      }
+    .more {
+        text-align: right;
+        margin: 15px 0.6em 0;
     }
-  }
 
+    // 問題列表
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: 1.5;
+        li {
+            margin: 4px 0 10px;
+            padding: 0;
+            a {
+                display: block;
+                text-decoration: none;
+                position: relative;
+                padding: 0.6em 1em 0.5em 3em;
+                margin: 0;
+                transition: 0.2s;
+                color: $fontColorDark;
+                background: #fff;
+                border-radius: 1.3em;
+                transition: 0.3s ease-out;
+                &:hover {
+                    color: $primaryColor;
+                    // box-shadow: $borderColor 0 2px 6px 1px;
+                    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                    // transform: translateY(-2px);
+                    .qNumber {
+                        background-color: $primaryColor;
+                    }
+                }
+            }
+            .qNumber {
+                position: absolute;
+                left: 3px;
+                top: 3px;
+                text-align: center;
+                width: calc(2.6em - 6px);
+                height: calc(2.6em - 6px);
+                line-height: 2.4;
+                border-radius: 1.5em;
 
-  &+.btnDv{border: none;}
+                background: $grayDark;
+                color: #fff;
+                transition: 0.2s;
+                &::before {
+                    content: 'Q';
+                }
+            }
+        }
+    }
 
+    & + .btnDv {
+        border: none;
+    }
 }
-
-
-
 
 // 我不是機器人
-.recaptcha{
-  margin: 1em auto 0;
-  img{display: block; width: 100%; max-width: 308px; margin: 0 auto;}
+.recaptcha {
+    margin: 1em auto 0;
+    img {
+        display: block;
+        width: 100%;
+        max-width: 308px;
+        margin: 0 auto;
+    }
 }
-
-
-
 
 // icons
-button[class^="icon_"], span[class^="icon_"]{
-  display: inline-block; position: relative; box-sizing: content-box;
-  margin: 0; padding: 0 44px 0 0;border-radius: 25px;
-  width: 0; height: 44px; line-height: 44px; 
-  white-space: nowrap; overflow: hidden; text-indent: .6em;
-  border: none; background-color: transparent;
-  transition: .2s;
-  // background: $btnBg1 url(../images/icons.png) no-repeat center 10px;
-  // background-size: 24px;
-  &::after{
-    content: '';position: absolute; top: 0; right: 0;
-    width: 44px; height: 44px; border-radius: 50%;
-    background: $btnBg1  url(../images/icons.png) no-repeat center 10px;
-    background-size: 24px;
-  }
-
-  &:hover{
-    background-color: $btnBg1; border: none;
-    box-shadow: $btnBg1 0 0 0 3px;
-    &::after{
-      background-color: $btnBg2;
+button[class^='icon_'],
+span[class^='icon_'] {
+    display: inline-block;
+    position: relative;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0 44px 0 0;
+    border-radius: 25px;
+    width: 0;
+    height: 44px;
+    line-height: 44px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 0.6em;
+    border: none;
+    background-color: transparent;
+    transition: 0.2s;
+    // background: $btnBg1 url(../images/icons.png) no-repeat center 10px;
+    // background-size: 24px;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: $btnBg1 url(../images/icons.png) no-repeat center 10px;
+        background-size: 24px;
     }
-  }
+
+    &:hover {
+        background-color: $btnBg1;
+        border: none;
+        box-shadow: $btnBg1 0 0 0 3px;
+        &::after {
+            background-color: $btnBg2;
+        }
+    }
 }
-button.icon_del::after{
-  background-position: center -70px;
+button.icon_del::after {
+    background-position: center -70px;
 }
-button.icon_search::after{
-  background-position: center -150px;
+button.icon_search::after {
+    background-position: center -150px;
+}
+hr {
+    border-top: 1px solid #e6e6e6;
+    margin: 1em 0;
+    height: 0;
 }
