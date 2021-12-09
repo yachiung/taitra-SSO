@@ -132,5 +132,10 @@
                 }
             }
         }
-    }
+  }
+}
+
+.scrollArea{
+  height: calc(100vh - 150px - 7em);
+  margin-bottom: 0;
 }
