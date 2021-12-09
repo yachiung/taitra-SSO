@@ -424,6 +424,8 @@
 
 .main > .msgBlock {
     max-width: 600px;
+    p+.btnDv{margin-top: 0;}
+    .btnDv{  border: none;}
 }
 
 // 單獨存在的圖示（白色符號，不同背景色）
@@ -527,7 +529,7 @@
 .questions {
     position: relative;
     line-height: 1.7;
-    margin: 2em auto 0;
+    margin: 0 auto 1em;
     padding: 25px 15px 20px;
     // box-shadow: $borderColor 0 0 0 1px;
     border-radius: 12px;
