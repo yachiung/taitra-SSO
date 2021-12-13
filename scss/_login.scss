@@ -92,7 +92,7 @@
         input[type='button'],
         input[type='submit'],
         input[type='reset'] {
-            height: 3.2em;
+            height: 3em;
             flex-grow: 1;
             &:only-child {
                 width: 100%;
@@ -106,7 +106,7 @@
                 flex-basis: 100%;
             }
             & > a {
-                height: 3.2em;
+                height: 3em;
             }
         }
     }
