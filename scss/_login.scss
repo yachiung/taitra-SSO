@@ -130,22 +130,14 @@
         }
     }
     .links {
-        margin: 0.5em 0.6em;
-        overflow: hidden;
-        a {
-            display: inline-block;
-            font-size: 0.938rem;
-        }
-        p {
-            float: left;
-            margin: 0;
-            font-size: 0.938rem;
-            a {
-                margin-left: 0.3em;
-            }
+        overflow: hidden;margin: 0.5em 0.6em;
+        font-size: 0.938rem; line-height: 1.5;
+        a {display: inline-block;}
+        p {float: left; line-height: inherit; margin: 0;
+            a {margin-left: 0.3em;}
         }
         .forget {
-            float: right;
+            float: right;line-height: inherit;
         }
     }
     .hr {
