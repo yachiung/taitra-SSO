@@ -5,11 +5,9 @@
     position: relative;
     margin: .5em auto 1.5em; padding:6px;
     border-radius: 8px; 
-    // border: 1px solid $borderColor;
     background-color: $grayLight;
     p{
       padding: 10px 48px 10px 8px; margin: 0; line-height: 1.5;
-      // border-radius: 5px 5px 2px 2px; background: #fff;
       border-bottom: 3px solid $borderColor;
       em{ font-style: normal; font-weight: bold; margin: 0 3px;}
     }
